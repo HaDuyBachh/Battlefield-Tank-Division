@@ -6,7 +6,7 @@ public class NetworkSender : MonoBehaviour
 {
     string sendStr = "";
     public UDPSender udp;
-    private float sendITimeout = 0.1f; // Interval in seconds between each send
+    private float sendITimeout = 0.005f; // Interval in seconds between each send
     private float nextSendTime = 0f;
 
     public void Awake()

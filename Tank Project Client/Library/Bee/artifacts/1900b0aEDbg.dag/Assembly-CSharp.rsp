@@ -567,7 +567,7 @@
 "Assets/Script/InputListener.cs"
 "Assets/Script/MoveBasic.cs"
 "Assets/Script/Network_Move_Control.cs"
-"Assets/Script/Network_PosRot.cs"
+"Assets/Script/Network_RecvPos.cs"
 -langversion:9.0
 /deterministic
 /optimize-

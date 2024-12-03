@@ -181,7 +181,7 @@ namespace ChobiAssets.PTM
 
         void Update()
         {
-            if (isSelected || inputType == 10)
+            if ((isSelected || inputType == 10) && inputScript != null)
             { // The tank is selected, or AI.
                 inputScript.Drive_Input();
             }

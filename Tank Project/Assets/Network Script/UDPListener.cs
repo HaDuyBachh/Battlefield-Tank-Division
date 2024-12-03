@@ -33,10 +33,10 @@ public class UDPListener : MonoBehaviour
             Debug.Log($"Received from server.c: {message}");
 
             // Xử lí dữ liệu
-            general.SetRevc(message);
+            general.SetRevcStr(message);
 
             // Gửi phản hồi lại server.c
-            SendResponse("lis" + message , remoteEndPoint);
+            SendResponse(general.SendStr , remoteEndPoint);
         }
         catch (Exception e)
         {

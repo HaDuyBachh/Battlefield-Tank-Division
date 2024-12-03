@@ -7,7 +7,7 @@
 
 #define SERVER_PORT 8080
 #define UNITY_LISTENER_PORT 9999
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 5012
 
 int main()
 {

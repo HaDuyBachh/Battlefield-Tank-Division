@@ -561,6 +561,7 @@
 "Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Track_Scroll_CS.cs"
 "Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Wheel_Resize_CS.cs"
 "Assets/Script/Network_Move_Control.cs"
+"Assets/Script/Network_SendPos.cs"
 -langversion:9.0
 /deterministic
 /optimize-

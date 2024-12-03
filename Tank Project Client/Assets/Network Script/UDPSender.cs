@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class UDPSender : MonoBehaviour
 {
+    public NetworkGeneral general;
     private UdpClient udpClient;
     public string serverIP = "127.0.0.1"; // IP của server.c
     public int serverPort = 8080;        // Cổng của server.c
@@ -13,6 +14,7 @@ public class UDPSender : MonoBehaviour
 
     void Start()
     {
+        general = FindObjectOfType<NetworkGeneral>();
         udpClient = new UdpClient(clientPort); // Lắng nghe phản hồi trên cổng clientPort
         Debug.Log("UDPSender started.");
 
@@ -40,6 +42,7 @@ public class UDPSender : MonoBehaviour
         IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
         byte[] receivedData = udpClient.EndReceive(ar, ref remoteEndPoint);
         string message = Encoding.UTF8.GetString(receivedData);
+        general.SetRevc(message);
         Debug.Log($"Received from server.c: {message}");
     }
 

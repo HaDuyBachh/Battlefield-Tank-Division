@@ -7,7 +7,9 @@ public class NetworkGeneral : MonoBehaviour
 
     public Network_Move_Control moveControl;
     private string revcStr = "";
-    public void SetRevc(string revcStr)
+    private string sendStr;
+    public string SendStr { get { return sendStr; } }
+    public void SetRevcStr(string revcStr)
     {
         //this.revcStr = revcStr;
 
@@ -39,5 +41,10 @@ public class NetworkGeneral : MonoBehaviour
             }
             revcStr = "";
         }
+    }
+
+    public void SetSendStr(string sendStr)
+    {
+        this.sendStr = sendStr;
     }
 }

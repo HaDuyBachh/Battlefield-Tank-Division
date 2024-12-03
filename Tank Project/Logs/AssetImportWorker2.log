@@ -1,0 +1,1442 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.50f1 (c3db7f8bf9b1) revision 12835711'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit CoreSingleLanguage' Language: 'en' Physical Memory: 16163 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.50f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+D:/Unity Project/Battlefield--Tank-Division/Tank Project
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+55474
+Successfully changed project path to: D:/Unity Project/Battlefield--Tank-Division/Tank Project
+D:/Unity Project/Battlefield--Tank-Division/Tank Project
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [29376]  Target information:
+
+Player connection [29376]  * "[IP] 169.254.153.48 [Port] 0 [Flags] 2 [Guid] 3362790705 [EditorId] 3362790705 [Version] 1048832 [Id] WindowsEditor(7,Ha-Duy-Bach) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [29376]  * "[IP] 192.168.1.13 [Port] 0 [Flags] 2 [Guid] 3362790705 [EditorId] 3362790705 [Version] 1048832 [Id] WindowsEditor(7,Ha-Duy-Bach) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [29376] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [29376] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+Refreshing native plugins compatible for Editor in 11.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.50f1 (c3db7f8bf9b1)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity Project/Battlefield--Tank-Division/Tank Project/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f9d)
+    Vendor:   NVIDIA
+    VRAM:     3950 MB
+    Driver:   31.0.15.2824
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56196
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.50f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.010801 seconds.
+- Loaded All Assemblies, in  0.515 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 361 ms
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.759 seconds
+Domain Reload Profiling: 1271ms
+	BeginReloadAssembly (144ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (60ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (73ms)
+	LoadAllAssembliesAndSetupDomain (222ms)
+		LoadAssemblies (142ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (219ms)
+			TypeCache.Refresh (217ms)
+				TypeCache.ScanAssembly (199ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (759ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (693ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (469ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (158ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.762 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.946 seconds
+Domain Reload Profiling: 1706ms
+	BeginReloadAssembly (181ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (38ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (485ms)
+		LoadAssemblies (362ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (224ms)
+			TypeCache.Refresh (195ms)
+				TypeCache.ScanAssembly (172ms)
+			ScanForSourceGeneratedMonoScriptInfo (18ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (947ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (760ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (29ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (98ms)
+			ProcessInitializeOnLoadAttributes (594ms)
+			ProcessInitializeOnLoadMethodAttributes (27ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 4.90 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3383 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (54.9 KB). Loaded Objects now: 3871.
+Memory consumption went from 134.9 MB to 134.9 MB.
+Total: 8.037800 ms (FindLiveObjects: 1.902800 ms CreateObjectMapping: 1.081500 ms MarkObjects: 4.895700 ms  DeleteObjects: 0.155900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 29503.448574 seconds.
+  path: Assets/Physics Tank Maker/Prefabs/Explosion_Effects/Explosion_Middle.prefab
+  artifactKey: Guid(7fdd24647c3016946841cfd2c48c2f3e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Prefabs/Explosion_Effects/Explosion_Middle.prefab using Guid(7fdd24647c3016946841cfd2c48c2f3e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'bfb5d279f39d65da19bfeea6996c9e2b') in 0.306277 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 0.074339 seconds.
+  path: Assets/Physics Tank Maker/Textures/Particles/Particle_Glow.mat
+  artifactKey: Guid(b8441d387a5261646b45f6744420ac14) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Textures/Particles/Particle_Glow.mat using Guid(b8441d387a5261646b45f6744420ac14) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3b7db60a2fd05567ddd43d6b93301f1c') in 0.023744 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Event_Scripts/Event_Event_02_Show_Message_CS.cs
+  artifactKey: Guid(12a462d53b30d3a4cbe75cf7ec48097c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Event_Scripts/Event_Event_02_Show_Message_CS.cs using Guid(12a462d53b30d3a4cbe75cf7ec48097c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2593e032b20716edce78bd802950770d') in 0.017571 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Event_Scripts/Event_Event_01_Spawn_Tank_CS.cs
+  artifactKey: Guid(6a9498792e0950841a6288c99092181f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Event_Scripts/Event_Event_01_Spawn_Tank_CS.cs using Guid(6a9498792e0950841a6288c99092181f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3de4977f9df2dae0fce837b1ad212d87') in 0.013558 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Camera_Points_Manager_Scripts/Camera_Points_Manager_Input_00_Base_CS.cs
+  artifactKey: Guid(c33a27be0b81e8440bde196b631af713) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Camera_Points_Manager_Scripts/Camera_Points_Manager_Input_00_Base_CS.cs using Guid(c33a27be0b81e8440bde196b631af713) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '464657592805b170c234e2e17e027a60') in 0.015292 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Event_Scripts/Event_Event_03_Change_AI_Settings_CS.cs
+  artifactKey: Guid(c647a2f952e5fb345af7363249232373) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Event_Scripts/Event_Event_03_Change_AI_Settings_CS.cs using Guid(c647a2f952e5fb345af7363249232373) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f2cf922821b242edc889a924d5b4edf8') in 0.014870 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Editor/Camera_Zoom_CSEditor.cs
+  artifactKey: Guid(078e462d479bc49449f4cd3275ab7399) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Editor/Camera_Zoom_CSEditor.cs using Guid(078e462d479bc49449f4cd3275ab7399) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '78259249244e07f3224557fe22c593e3') in 0.016080 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Physics Tank Maker/Textures/Terrain/Sand_01_Normal.png
+  artifactKey: Guid(b0a811881538ec24c88e12e56f8472bb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Textures/Terrain/Sand_01_Normal.png using Guid(b0a811881538ec24c88e12e56f8472bb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b0590028d768cdb951c66950e3bc34cc') in 0.073101 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Camera_Zoom_Scripts/Camera_Zoom_Input_00_Base_CS.cs
+  artifactKey: Guid(bc990f370226f6a43a2ee186ba850ede) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Camera_Zoom_Scripts/Camera_Zoom_Input_00_Base_CS.cs using Guid(bc990f370226f6a43a2ee186ba850ede) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '86d2b737d30c76be4ffb03e505e9e86e') in 0.015296 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Physics Tank Maker/Textures/Terrain/Water_01_Normal.png
+  artifactKey: Guid(44148284ed3c4a745a762d6a21bdc19b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Textures/Terrain/Water_01_Normal.png using Guid(44148284ed3c4a745a762d6a21bdc19b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9331cb04334897eb2b878baab3301787') in 0.030364 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Trigger_Scripts/Event_Trigger_02_00_Destroy_Base_CS.cs
+  artifactKey: Guid(ed0b6c27957cb7a45baaf69b1f9b75fd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Trigger_Scripts/Event_Trigger_02_00_Destroy_Base_CS.cs using Guid(ed0b6c27957cb7a45baaf69b1f9b75fd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6fb05c24a69952f1563c9cc31252dadb') in 0.014898 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Camera_Rotation_Scripts/Camera_Rotation_Input_02_For_Single_Stick_Drive_CS.cs
+  artifactKey: Guid(ec8743bd82badcf4893656db5041aa19) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Camera_Rotation_Scripts/Camera_Rotation_Input_02_For_Single_Stick_Drive_CS.cs using Guid(ec8743bd82badcf4893656db5041aa19) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd4e2f67b2829ec7dd1473870018afc62') in 0.016478 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Physics Tank Maker/Textures/Terrain/Image_Water.png
+  artifactKey: Guid(55aef5c771f7b904b9bb2dc24eea0348) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Textures/Terrain/Image_Water.png using Guid(55aef5c771f7b904b9bb2dc24eea0348) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1c7a90b90cb362eaec7b02a09e3a9272') in 0.035511 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Camera_Zoom_Scripts/Camera_Zoom_Input_01_Mouse_CS.cs
+  artifactKey: Guid(e544c28a6f95c4c4b8bb2c835a3c52ca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Camera_Zoom_Scripts/Camera_Zoom_Input_01_Mouse_CS.cs using Guid(e544c28a6f95c4c4b8bb2c835a3c52ca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '407c7a46fe9d2d5fb19a4eed11c7b221') in 0.017336 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Cannon_Fire_Scripts/Editor/Cannon_Fire_CSEditor.cs
+  artifactKey: Guid(e1b9ddd972a395a45a2e0b45e83b4df6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Cannon_Fire_Scripts/Editor/Cannon_Fire_CSEditor.cs using Guid(e1b9ddd972a395a45a2e0b45e83b4df6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5e38780f28d8acef667765edbea8d8af') in 0.018015 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Editor/Event_Controller_CSEditor.cs
+  artifactKey: Guid(6c0d79275c4713245a2f67da4552011f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Editor/Event_Controller_CSEditor.cs using Guid(6c0d79275c4713245a2f67da4552011f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'dba7fc079ba3e4ecede60a2b9d95e9ba') in 0.014519 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Physics Tank Maker/Textures/Particles/Smoke_01.png
+  artifactKey: Guid(bd45cb6626838a943b6d2cec4680a788) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Textures/Particles/Smoke_01.png using Guid(bd45cb6626838a943b6d2cec4680a788) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e8ab476242e6a680341ee13f9247511f') in 0.029733 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Editor/Camera_Rotation_CSEditor.cs
+  artifactKey: Guid(a42632ed135f10c42b7227eca669d360) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Editor/Camera_Rotation_CSEditor.cs using Guid(a42632ed135f10c42b7227eca669d360) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '22c2fd83a35ebb17433e3de3f503074e') in 0.015040 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Camera_Points_Manager_Scripts/Camera_Points_Manager_CS.cs
+  artifactKey: Guid(40509177ab196944099a3f884d992981) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Camera_Scripts/Camera_Points_Manager_Scripts/Camera_Points_Manager_CS.cs using Guid(40509177ab196944099a3f884d992981) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '39c3a3c809d68d7e120377da82510e0a') in 0.014257 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.105591 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Trigger_Scripts/Event_Trigger_03_01_TriggerCollider_AND_CS.cs
+  artifactKey: Guid(a573dffb3674eab4788c1bbf70addd2a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Event_Controller_Scripts/Trigger_Scripts/Event_Trigger_03_01_TriggerCollider_AND_CS.cs using Guid(a573dffb3674eab4788c1bbf70addd2a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd789a19c73e4750b46970a2fb123c650') in 0.018435 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Create_ScrollTrack_CS.cs
+  artifactKey: Guid(27a2ceb7565b973478f587a8eb128a84) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Create_ScrollTrack_CS.cs using Guid(27a2ceb7565b973478f587a8eb128a84) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '71b2037c10052760f055849f07951dd9') in 0.018508 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Static_Wheel_CS.cs
+  artifactKey: Guid(d6e461881ab003a44a06b52caa45d59e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Static_Wheel_CS.cs using Guid(d6e461881ab003a44a06b52caa45d59e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fb2ae21fa584af55f6e3accf925e9251') in 0.016319 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Create_SprocketWheel_CS.cs
+  artifactKey: Guid(5771a667258cc704cb6f842edab9b5c9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Create_SprocketWheel_CS.cs using Guid(5771a667258cc704cb6f842edab9b5c9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '760e30c64d6c60619a289a79c4184a71') in 0.018207 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Sound_Control_Scripts/Editor/Sound_Control_Impact_CSEditor.cs
+  artifactKey: Guid(ffc112af49fa1d147b5755c5483cfbfa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Sound_Control_Scripts/Editor/Sound_Control_Impact_CSEditor.cs using Guid(ffc112af49fa1d147b5755c5483cfbfa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cbe1c45871e67a9a628a3a5d3e1980e0') in 0.013213 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Static_Track_Switch_Mesh_CS.cs
+  artifactKey: Guid(2de82127108ce6e479f5e7f36c74191d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Static_Track_Switch_Mesh_CS.cs using Guid(2de82127108ce6e479f5e7f36c74191d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6e3fe3561b16360931be97e045a5b0fd') in 0.018120 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Editor/PTS_Create_ScrollTrack_CSEditor.cs
+  artifactKey: Guid(c04f48e640816684286ae01213ef011b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Editor/PTS_Create_ScrollTrack_CSEditor.cs using Guid(c04f48e640816684286ae01213ef011b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '404589966fa5a3fa48c68760a623d6b6') in 0.014699 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Physics Tank Maker/C#_Script/Obsolete_Scripts/Editor/Tank_ID_Control_CSEditor.cs
+  artifactKey: Guid(97fbc157235ed0f4e991ad095b45a965) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/C#_Script/Obsolete_Scripts/Editor/Tank_ID_Control_CSEditor.cs using Guid(97fbc157235ed0f4e991ad095b45a965) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a54cc45c5b0f6feea01209d9e304cc77') in 0.015180 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Layer_Settings_CS.cs
+  artifactKey: Guid(642b6405e9fca094f9b95ff608aa5b57) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Layer_Settings_CS.cs using Guid(642b6405e9fca094f9b95ff608aa5b57) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd7566261b555d9d09299b9588c019894') in 0.017266 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Editor/PTS_Create_RoadWheel_CSEditor.cs
+  artifactKey: Guid(3eaeee035b965af4c89e64863f3c5ef2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Editor/PTS_Create_RoadWheel_CSEditor.cs using Guid(3eaeee035b965af4c89e64863f3c5ef2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a4f3cff495db83d327aa073129b6d534') in 0.016114 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_MainBody_Setting_CS.cs
+  artifactKey: Guid(4a1da553641874e4a8f0c16a318226f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_MainBody_Setting_CS.cs using Guid(4a1da553641874e4a8f0c16a318226f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f6a23f0ca26ff9925cd637faeb05f7db') in 0.019169 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Editor/PTS_Create_SupportWheel_CSEditor.cs
+  artifactKey: Guid(00b958742f68f0d4390cb638d57cb46a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Editor/PTS_Create_SupportWheel_CSEditor.cs using Guid(00b958742f68f0d4390cb638d57cb46a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f5c7e5b3132aed17db388a364519706c') in 0.016449 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Prefabs/PTS_KV-I_PT.prefab
+  artifactKey: Guid(35376784a571db140844cca7cf7667bb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Prefabs/PTS_KV-I_PT.prefab using Guid(35376784a571db140844cca7cf7667bb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '04e95f3111d655e2d5393477e87aa687') in 0.076646 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1883
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Simple_Camera_CS.cs
+  artifactKey: Guid(727baf4aff0c8f44b9393179a161f134) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Simple_Camera_CS.cs using Guid(727baf4aff0c8f44b9393179a161f134) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'be8dddc036587abaf0db5e58298d2df4') in 0.016946 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Editor/PTS_Create_SprocketWheel_CSEditor.cs
+  artifactKey: Guid(88b2dfe235d78a84a8b40469e65e6be5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Editor/PTS_Create_SprocketWheel_CSEditor.cs using Guid(88b2dfe235d78a84a8b40469e65e6be5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c3373a700753dd254c3b0dd838af5782') in 0.015537 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Prefabs/PTS_KV-I_ST.prefab
+  artifactKey: Guid(70609b08cf7669d44aeda6616081bd94) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Prefabs/PTS_KV-I_ST.prefab using Guid(70609b08cf7669d44aeda6616081bd94) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2c721844a134ff34f14ac549d57386d3') in 0.059796 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1498
+========================================================================
+Received Import Request.
+  Time since last request: 0.116788 seconds.
+  path: Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Track_LOD_Control_CS.cs
+  artifactKey: Guid(9f9c753705afc83458c9c0182da035c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Track_LOD_Control_CS.cs using Guid(9f9c753705afc83458c9c0182da035c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4f09498b07d13b806458a7927b1827b1') in 0.016085 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Physics Tank Maker/Models/Base/Materials/Tester_Mat.mat
+  artifactKey: Guid(e2e7d3eae2980c6498f6466a13e08081) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Base/Materials/Tester_Mat.mat using Guid(e2e7d3eae2980c6498f6466a13e08081) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '8f040196688740ffadfcf66687c70129') in 0.036006 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Physics Tank Maker/Models/BT-42/Materials/BT-42_Body_Normal.png
+  artifactKey: Guid(56a6ab1d32dc23e41b4b6df1906ea898) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/BT-42/Materials/BT-42_Body_Normal.png using Guid(56a6ab1d32dc23e41b4b6df1906ea898) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '584d934c6a6a4fdc83faa322d527110c') in 0.053963 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Physics Tank Maker/Models/Bullet/Materials/Bullet_01_AP.png
+  artifactKey: Guid(b300fdf6c4d57b94dbefe0dcf256284d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Bullet/Materials/Bullet_01_AP.png using Guid(b300fdf6c4d57b94dbefe0dcf256284d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '14dc44af1db1f38161c1f530fc24796c') in 0.026083 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_01_Mat_MetallicSmoothness.png
+  artifactKey: Guid(55dcdfb478070084ba3c08dad81fde61) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_01_Mat_MetallicSmoothness.png using Guid(55dcdfb478070084ba3c08dad81fde61) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3eb53ad3be6b10098da5c0530cdace98') in 0.026509 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Turret.mat
+  artifactKey: Guid(7c9a4c3478217e648bf2538447b38dd6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Turret.mat using Guid(7c9a4c3478217e648bf2538447b38dd6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '496bc00b626135d2c97dd89748cf424f') in 0.065485 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Turret_AlbedoTransparency.png
+  artifactKey: Guid(9dbae13e7bb65fa4cafafb1fe53a9bbb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Turret_AlbedoTransparency.png using Guid(9dbae13e7bb65fa4cafafb1fe53a9bbb) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'effe5bc5b7c579b0247aabcdfaaa0855') in 0.036705 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Detail.mat
+  artifactKey: Guid(18b8877f9bfef284dab1ee73692e320c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Detail.mat using Guid(18b8877f9bfef284dab1ee73692e320c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '53fd03da2be07ccca419995289dc063c') in 0.078668 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Detail_Emission.png
+  artifactKey: Guid(a73a4f0d6201d1249884512eccd07128) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Detail_Emission.png using Guid(a73a4f0d6201d1249884512eccd07128) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '58cb1b53ad779d5ee029996f7eb38260') in 0.034671 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_01_Mat (Green).mat
+  artifactKey: Guid(3bc4cc983901c904fb0347ef217ed733) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_01_Mat (Green).mat using Guid(3bc4cc983901c904fb0347ef217ed733) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '288143bf71d24c72f04d0d5007a07b38') in 0.024697 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Physics Tank Maker/Models/Base/Materials/Symbol_Red.mat
+  artifactKey: Guid(9d75371b712e3d643b3e8c7bd4b352ff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Base/Materials/Symbol_Red.mat using Guid(9d75371b712e3d643b3e8c7bd4b352ff) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5d0db8e45d1cbd76b80152de5afb97f7') in 0.026692 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Wheel_AlbedoTransparency.png
+  artifactKey: Guid(7187d34e79e58a047be7ac9a87a9a908) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Wheel_AlbedoTransparency.png using Guid(7187d34e79e58a047be7ac9a87a9a908) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ff0867374472e5cdfbd84f799ae63490') in 0.036328 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Physics Tank Maker/Models/BT-42/Materials/BT-42_Body_AlbedoTransparency.png
+  artifactKey: Guid(c8a874195e7606c42b6a51e84598dc30) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/BT-42/Materials/BT-42_Body_AlbedoTransparency.png using Guid(c8a874195e7606c42b6a51e84598dc30) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '05d450a9acdf7ef2d59232309bfef6fb') in 0.039817 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Physics Tank Maker/Models/Base/Materials/For_Marker.mat
+  artifactKey: Guid(100d169e279148347b597cf5902d8f10) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Base/Materials/For_Marker.mat using Guid(100d169e279148347b597cf5902d8f10) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '93f33ae4c78f2e76c127082d1382ac12') in 0.022067 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Physics Tank Maker/Models/BT-42/Materials/BT-42.mat
+  artifactKey: Guid(0f53eb4a72529204e917b00e87b17245) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/BT-42/Materials/BT-42.mat using Guid(0f53eb4a72529204e917b00e87b17245) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b6f0103c72b7ea44a52a8575c6a9f2ea') in 0.038963 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Detail.mat
+  artifactKey: Guid(8c6c13c2c15cdc548bf3c4432ac39798) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Detail.mat using Guid(8c6c13c2c15cdc548bf3c4432ac39798) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '27b1824bd49321e4af8cdfec123252aa') in 0.070685 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Wheel_SpecularSmoothness.png
+  artifactKey: Guid(bb626719624128e44953b8a28f72f9e7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Wheel_SpecularSmoothness.png using Guid(bb626719624128e44953b8a28f72f9e7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '10c112a621cd3e21c1f842c36bdb32e2') in 0.044927 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Body.mat
+  artifactKey: Guid(25c7c60b358863442ad6f0f6707f37b6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Body.mat using Guid(25c7c60b358863442ad6f0f6707f37b6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a2487513cb6a36fc6a660465203033dc') in 0.118222 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Turret_AlbedoTransparency (No Marking).png
+  artifactKey: Guid(1e57ca3ca80b7364199b1a0b4a0167e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Turret_AlbedoTransparency (No Marking).png using Guid(1e57ca3ca80b7364199b1a0b4a0167e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1265706f3144e49db74b8a45e8bb5c82') in 0.054995 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_03_Mat_Normal.png
+  artifactKey: Guid(84a6137ebe35b5b4bbc57cbb4c1ecdd1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_03_Mat_Normal.png using Guid(84a6137ebe35b5b4bbc57cbb4c1ecdd1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '59536d8b03ba47d6982948a1f864fa33') in 0.032324 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Wheel.mat
+  artifactKey: Guid(6b2f622f89c86fe41aa6b88436e6c73c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Wheel.mat using Guid(6b2f622f89c86fe41aa6b88436e6c73c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c5f786f97002460eb250195ecc662c75') in 0.048667 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_01_Mat_Normal.png
+  artifactKey: Guid(021dd0ced6099b240bd3304a753d05a8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_01_Mat_Normal.png using Guid(021dd0ced6099b240bd3304a753d05a8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0e053501f86596a4ceca5134c8b2eae3') in 0.032076 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Turret_SpecularSmoothness.png
+  artifactKey: Guid(ce5e63978c3c99d43ac9692bc46c35af) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Turret_SpecularSmoothness.png using Guid(ce5e63978c3c99d43ac9692bc46c35af) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '71e37a5496fb720b543c443e41bdb863') in 0.034401 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Body.mat
+  artifactKey: Guid(90e7600f31686f04db50d11536b88e51) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_Body.mat using Guid(90e7600f31686f04db50d11536b88e51) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '157e6f409c3fbf26d4019f1c281a217c') in 0.058874 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Mount_Normal.png
+  artifactKey: Guid(39a5b5579effb9143a82613bb2501953) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Mount_Normal.png using Guid(39a5b5579effb9143a82613bb2501953) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'bb3b3f4fa6c5207128d926b381913b36') in 0.043398 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Physics Tank Maker/Models/KV-I/Materials/KV-I_ScrollTrack_Normal.png
+  artifactKey: Guid(47ae01c1c2f7821419e7ae20b9f836c3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/KV-I/Materials/KV-I_ScrollTrack_Normal.png using Guid(47ae01c1c2f7821419e7ae20b9f836c3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '660053c069c6f23d247c2beeb1eae412') in 0.045060 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Mount_AlbedoTransparency.png
+  artifactKey: Guid(5994ed20a33b0774db6613a60a3d3f73) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Mount_AlbedoTransparency.png using Guid(5994ed20a33b0774db6613a60a3d3f73) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b6c332ba31a38e97e1db56c636d7f3fb') in 0.032776 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Physics Tank Maker/Models/KV-I/Materials/KV-I_Body_Normal.png
+  artifactKey: Guid(d532c0f56a466894fadb792a7a1c3579) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/KV-I/Materials/KV-I_Body_Normal.png using Guid(d532c0f56a466894fadb792a7a1c3579) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '933ee47ce7c94d8ecdc451a764572c16') in 0.041526 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Detail.mat
+  artifactKey: Guid(7b81245b17ca040409f2690789166c27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Detail.mat using Guid(7b81245b17ca040409f2690789166c27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fd8bd495edaed1f531dcb75057931230') in 0.071364 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_ScrollTrack.mat
+  artifactKey: Guid(34380c5c468d30641971bf8e94c6672f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_ScrollTrack.mat using Guid(34380c5c468d30641971bf8e94c6672f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f56e2dd5168a9d66647997b5cfe87cf6') in 0.032494 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Body_AlbedoTransparency.png
+  artifactKey: Guid(d5a4c9d37d5dce741a1b0e219ee9693e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Body_AlbedoTransparency.png using Guid(d5a4c9d37d5dce741a1b0e219ee9693e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b5f057d28b3030222165abd0be3c033f') in 0.028777 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_01_Mat (Red).mat
+  artifactKey: Guid(916f13ebd33757c46be3bbfbcdb364a5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_01_Mat (Red).mat using Guid(916f13ebd33757c46be3bbfbcdb364a5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd9f0ae9da1cb81a4455a3354b9caa543') in 0.025775 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/Physics Tank Maker/Models/Karl/Materials/Karl_ScrollTrack_SpecularSmoothness.png
+  artifactKey: Guid(bddc28519a85f114e9aeb7e9dae62235) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Karl/Materials/Karl_ScrollTrack_SpecularSmoothness.png using Guid(bddc28519a85f114e9aeb7e9dae62235) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fc0c1a1187a86fc6b864726ca1327245') in 0.027763 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_03_Mat (Purple).mat
+  artifactKey: Guid(0944d78f532b1204594595f78b785b7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_03_Mat (Purple).mat using Guid(0944d78f532b1204594595f78b785b7e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'efa09795c51c60b42f4c858b31c4d0f4') in 0.029063 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000088 seconds.
+  path: Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_03_Mat (Red).mat
+  artifactKey: Guid(5492a644500801a4f95fcfbe10802089) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Exam_Box/Materials/Exam_Box_03_Mat (Red).mat using Guid(5492a644500801a4f95fcfbe10802089) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd4639ea7842ec016d0d84b11251ca381') in 0.030499 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Physics Tank Maker/Models/KV-I/Materials/KV-I_Detail_Normal.png
+  artifactKey: Guid(485210c2ddacab2408f3b3cf46668736) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/KV-I/Materials/KV-I_Detail_Normal.png using Guid(485210c2ddacab2408f3b3cf46668736) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '77be0eb2f6a2b29c0beb1caa310c9988') in 0.041715 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Wheel_SpecularSmoothness.png
+  artifactKey: Guid(84ecd336e9951d64195acb408e1b96c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Wheel_SpecularSmoothness.png using Guid(84ecd336e9951d64195acb408e1b96c4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6306363db7c4bc027af935e7c7ad2bdd') in 0.028017 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_ScrollTrack.mat
+  artifactKey: Guid(d7327a289f5fbca4e9765250b8a62f4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Firefly/Materials/Firefly_ScrollTrack.mat using Guid(d7327a289f5fbca4e9765250b8a62f4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '450811d428531fe8f9529500b21a2f05') in 0.042125 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Body.mat
+  artifactKey: Guid(4cb8738c78866644c87da0a4a71908e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Body.mat using Guid(4cb8738c78866644c87da0a4a71908e1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd1e517b06d6e8c66a3e6db2e6b3bc4b2') in 0.111111 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Body_AlbedoTransparency.png
+  artifactKey: Guid(3843a4289fc8f7f4586cf9b18b04ab35) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Body_AlbedoTransparency.png using Guid(3843a4289fc8f7f4586cf9b18b04ab35) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'dbbd9d7d67bb06195e7a1e9e5aa758b6') in 0.030934 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Turret.mat
+  artifactKey: Guid(c6112a9ef3c793b4f928272f7178e7b1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Turret.mat using Guid(c6112a9ef3c793b4f928272f7178e7b1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7f1f73c3fa6fa2b354482b196bd5165a') in 0.066132 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Physics Tank Maker/Models/KV-II/Materials/KV-II_Turret_AlbedoTransparency.png
+  artifactKey: Guid(287b1b5b5a4591046a0b870e2d272c33) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/KV-II/Materials/KV-II_Turret_AlbedoTransparency.png using Guid(287b1b5b5a4591046a0b870e2d272c33) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f38d30c705fc9b127479962775122880') in 0.038367 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Body_AlbedoTransparency (No Marking).png
+  artifactKey: Guid(f181bb6e198bee640a6a7cd1478bed27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Body_AlbedoTransparency (No Marking).png using Guid(f181bb6e198bee640a6a7cd1478bed27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '06bed1225559a4a2ec0f606de465f526') in 0.039381 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Physics Tank Maker/Models/KV-II/Materials/KV-II_Turret.mat
+  artifactKey: Guid(011145249e6172047a6ecf23850143b2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/KV-II/Materials/KV-II_Turret.mat using Guid(011145249e6172047a6ecf23850143b2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '358d941ca5157e4e186d319acffb970d') in 0.056446 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_ScrollTrack_Normal.png
+  artifactKey: Guid(2872825224447204687c3096617d1776) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_ScrollTrack_Normal.png using Guid(2872825224447204687c3096617d1776) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a0f265268e01a061aaa6f3e30d82765c') in 0.036884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Body_AlbedoTransparency.png
+  artifactKey: Guid(08df7fa4b70f13941a3f53ad4e49b1b6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Body_AlbedoTransparency.png using Guid(08df7fa4b70f13941a3f53ad4e49b1b6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '432c664d0fb48aa85d0285aaa70a6f40') in 0.025985 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Wheel_SpecularSmoothness.png
+  artifactKey: Guid(238339c233ecb1942a63954d79e3a80c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Wheel_SpecularSmoothness.png using Guid(238339c233ecb1942a63954d79e3a80c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '824d36cd9604b6d270210bdb971d9c27') in 0.034350 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Wheel_Normal.png
+  artifactKey: Guid(20258c1331e196a4991a0ee5f9ecdc47) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Wheel_Normal.png using Guid(20258c1331e196a4991a0ee5f9ecdc47) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0bf16253116ea80c3a20408c2b84be23') in 0.034784 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Inside_Normal.png
+  artifactKey: Guid(bf2fafd54ef1604469235937ad21567f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Inside_Normal.png using Guid(bf2fafd54ef1604469235937ad21567f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c4aeb95beb629405029d1bffccd30d8c') in 0.042112 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Physics Tank Maker/Models/T-34-76/Materials/T-34-76_Detail_SpecularSmoothness.png
+  artifactKey: Guid(1926494e4e0a6904bb115f7ead24ece5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-34-76/Materials/T-34-76_Detail_SpecularSmoothness.png using Guid(1926494e4e0a6904bb115f7ead24ece5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cd56719918795ae9b457dbdf5026c01a') in 0.051602 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Detail_SpecularSmoothness.png
+  artifactKey: Guid(b6275ec7b2fb39b44a47d21229cf4202) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Detail_SpecularSmoothness.png using Guid(b6275ec7b2fb39b44a47d21229cf4202) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a1d8fdfaca3b6d453a2a0b1d1bd05f1f') in 0.048785 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Physics Tank Maker/Models/T-34-76/Materials/T-34-76_Turret_AlbedoTransparency.png
+  artifactKey: Guid(38f34de0962c52940be51b2f6b3a22d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-34-76/Materials/T-34-76_Turret_AlbedoTransparency.png using Guid(38f34de0962c52940be51b2f6b3a22d8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f6c8a151c31a1b0eb159fcce83a48cda') in 0.046274 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Inside.mat
+  artifactKey: Guid(dab62b0d6afae8248a15ed31228cde1d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Inside.mat using Guid(dab62b0d6afae8248a15ed31228cde1d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2f583ff9771a6b25d8e01aecec0a9576') in 0.063808 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Physics Tank Maker/Models/Simple_Body/Materials/Simple_Body.mat
+  artifactKey: Guid(603a67a0737b5bc4ab08dc2b04b72b31) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Simple_Body/Materials/Simple_Body.mat using Guid(603a67a0737b5bc4ab08dc2b04b72b31) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c617ba3a6d78d858967d046091f838f4') in 0.048184 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Physics Tank Maker/Models/Simple_Body/Materials/Simple_Body_01_Simple_Body_AlbedoTransparency.png
+  artifactKey: Guid(dcadc3d6961828145be19142a1c2c59d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Simple_Body/Materials/Simple_Body_01_Simple_Body_AlbedoTransparency.png using Guid(dcadc3d6961828145be19142a1c2c59d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4ee2d057f493c6150fb76247740acbff') in 0.034849 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Turret_AlbedoTransparency.png
+  artifactKey: Guid(f3f555351ebecab46b5009417e143e2e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Turret_AlbedoTransparency.png using Guid(f3f555351ebecab46b5009417e143e2e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ff758ac198b707d91dd97c08cbd36cea') in 0.029274 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Detail_AlbedoTransparency.png
+  artifactKey: Guid(c7fee55e07da44f42b370b0ad48f7736) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Detail_AlbedoTransparency.png using Guid(c7fee55e07da44f42b370b0ad48f7736) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '809b09ce9fae94d047c2371e28da822a') in 0.027715 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_ScrollTrack_AlbedoTransparency.png
+  artifactKey: Guid(c7de294715263084d8b047bef62d2191) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_ScrollTrack_AlbedoTransparency.png using Guid(c7de294715263084d8b047bef62d2191) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd8c4e7a766dd3af254f92e0f5ef261fa') in 0.039249 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Physics Tank Maker/Models/KV-I/Materials/KV-I_Detail.mat
+  artifactKey: Guid(b22be83fc2a75b943baf6db9b204d8f9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/KV-I/Materials/KV-I_Detail.mat using Guid(b22be83fc2a75b943baf6db9b204d8f9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2ab67920faa2c432557a9f26a525aa31') in 0.036530 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Body_AlbedoTransparency (No Number).png
+  artifactKey: Guid(f001bd1610064174fb61f4b3cee579f9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Body_AlbedoTransparency (No Number).png using Guid(f001bd1610064174fb61f4b3cee579f9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1e99bfe85fbbfea5e8607447e4b82cd2') in 0.038501 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Turret.mat
+  artifactKey: Guid(c3093bb26827a2c44ba1fceaa50811b3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Turret.mat using Guid(c3093bb26827a2c44ba1fceaa50811b3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9db5b60f29476cc4d5fc48d9049b127f') in 0.067168 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Detail.mat
+  artifactKey: Guid(0e2b70e4df925734aacbf17240c1be34) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Detail.mat using Guid(0e2b70e4df925734aacbf17240c1be34) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '17e7f413a8e10913bb8d1102c612d9cc') in 0.069948 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Physics Tank Maker/Models/T-35/Materials/T-35_Detail_SpecularSmoothness.png
+  artifactKey: Guid(6eb6850a81e6d2d4f9e71d4a44542879) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-35/Materials/T-35_Detail_SpecularSmoothness.png using Guid(6eb6850a81e6d2d4f9e71d4a44542879) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f14e677c1ededbfc5bfe6780b5b6d393') in 0.043529 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Physics Tank Maker/Models/T-34-76/Materials/T-34-76_Turret_Normal.png
+  artifactKey: Guid(2bf1bf44500d14a4a9f0de2385f25782) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-34-76/Materials/T-34-76_Turret_Normal.png using Guid(2bf1bf44500d14a4a9f0de2385f25782) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'dc3719b171c257270e3feb8c7644bf3b') in 0.031570 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Turret_AlbedoTransparency.png
+  artifactKey: Guid(9cdfaecd6674465439d255c6979a17e5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Turret_AlbedoTransparency.png using Guid(9cdfaecd6674465439d255c6979a17e5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '76767d8d1c270a8a3ea57694883e69b9') in 0.028961 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Turret_Normal.png
+  artifactKey: Guid(b13572094c491de4eaca8c5f8dfbf3bf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Turret_Normal.png using Guid(b13572094c491de4eaca8c5f8dfbf3bf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2268fc7aac1266d37dc4db397736175e') in 0.030017 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Body_SpecularSmoothness.png
+  artifactKey: Guid(c5e94c6a0499e7a4eb568481ab465ac6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Body_SpecularSmoothness.png using Guid(c5e94c6a0499e7a4eb568481ab465ac6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '92e25cfe309d98d0159c6f0e088fe93f') in 0.050866 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Detail_AlbedoTransparency.png
+  artifactKey: Guid(2f80b5f15d03b644288c860acf542733) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Detail_AlbedoTransparency.png using Guid(2f80b5f15d03b644288c860acf542733) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5037a257a4a9059e5a725c5ce737f664') in 0.035703 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Detail_SpecularSmoothness.png
+  artifactKey: Guid(32992b4c86da09c4685a45017df881c6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-34-85/Materials/T-34-85_Detail_SpecularSmoothness.png using Guid(32992b4c86da09c4685a45017df881c6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '210896a66340be5b463b50333bbc0ff5') in 0.039365 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Physics Tank Maker/Models/T-35/Materials/T-35_Body_SpecularSmoothness.png
+  artifactKey: Guid(3d96f138c8f555344833ba13e8943cdd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-35/Materials/T-35_Body_SpecularSmoothness.png using Guid(3d96f138c8f555344833ba13e8943cdd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '619123e0cc35578735d2067057a5bb11') in 0.036511 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Physics Tank Maker/Models/T-35/Materials/T-35_Body_AlbedoTransparency.png
+  artifactKey: Guid(4c96b485ddca30043bb9b689248af6d4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-35/Materials/T-35_Body_AlbedoTransparency.png using Guid(4c96b485ddca30043bb9b689248af6d4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1c9b4c60ef711277b51667de5d93c95f') in 0.035075 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Physics Tank Maker/Models/T-35/Materials/T-35_Detail_Normal.png
+  artifactKey: Guid(f725b7ca24bab014da8c5042678f9a7f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-35/Materials/T-35_Detail_Normal.png using Guid(f725b7ca24bab014da8c5042678f9a7f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0114322934d9100f546e2decc48294b3') in 0.028029 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Physics Tank Maker/Models/KV-I/Materials/KV-I_Body_AlbedoTransparency.png
+  artifactKey: Guid(10786b0de7a44cd4a9db3abcde3fe727) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/KV-I/Materials/KV-I_Body_AlbedoTransparency.png using Guid(10786b0de7a44cd4a9db3abcde3fe727) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2cc9f628bb99fb302b1cc4e8d5d817d6') in 0.031741 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_Turret_AlbedoTransparency (No Marking).png
+  artifactKey: Guid(1550c0ea60b98294bb80d7fe07ce32a9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_Turret_AlbedoTransparency (No Marking).png using Guid(1550c0ea60b98294bb80d7fe07ce32a9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '35948eb4be2a457e9b846323797ecdfa') in 0.043502 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_Turret_SpecularSmoothness.png
+  artifactKey: Guid(1f0726a0abaf9d549af0991ea6bcdf51) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_Turret_SpecularSmoothness.png using Guid(1f0726a0abaf9d549af0991ea6bcdf51) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '12358e9743637892da89290deabf19ec') in 0.031984 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_Detail_SpecularSmoothness.png
+  artifactKey: Guid(be021ceeab35845469e4578885d88893) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_Detail_SpecularSmoothness.png using Guid(be021ceeab35845469e4578885d88893) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'db7541edb7daeb53ae38346d95411d46') in 0.039064 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Body_AlbedoTransparency.png
+  artifactKey: Guid(344c6fa7469a5ea4a9a93b5c53367330) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Body_AlbedoTransparency.png using Guid(344c6fa7469a5ea4a9a93b5c53367330) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '59903c5d0ab727c3d7dd9ee17e19d0ab') in 0.037004 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Detail_AlbedoTransparency.png
+  artifactKey: Guid(77dacf6c458c2d5419c0349a99341e87) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Detail_AlbedoTransparency.png using Guid(77dacf6c458c2d5419c0349a99341e87) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4272003a22eaa14dc8f04fbc4815f966') in 0.047494 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_Wheel_Normal.png
+  artifactKey: Guid(6a1078cbb34bca84cbda90671483bd50) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_Wheel_Normal.png using Guid(6a1078cbb34bca84cbda90671483bd50) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1fca10065cf78b45b8c6fb26a98b5c86') in 0.044373 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_ScrollTrack_Normal.png
+  artifactKey: Guid(460e63af7f038ec4ebaeab42b7aa498b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_ScrollTrack_Normal.png using Guid(460e63af7f038ec4ebaeab42b7aa498b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '02542e43f9bf10f2c386d412d4a80f48') in 0.029518 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Detail_Normal.png
+  artifactKey: Guid(d3f08109825ac5f4a87f7a34493f0cdf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Detail_Normal.png using Guid(d3f08109825ac5f4a87f7a34493f0cdf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ef9e039d19da5444d1b21b81c6e5b8e9') in 0.046033 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_Body_Normal.png
+  artifactKey: Guid(bc1caf725a2c4894ca5ab7b875ccf81a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_Body_Normal.png using Guid(bc1caf725a2c4894ca5ab7b875ccf81a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fcb73b9d651658735494abf4bafb8ef8') in 0.043907 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_ScrollTrack_AlbedoTransparency.png
+  artifactKey: Guid(8649ad2df685c8c40b221ff0b089d3c1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Tiger-I/Materials/Tiger-I_ScrollTrack_AlbedoTransparency.png using Guid(8649ad2df685c8c40b221ff0b089d3c1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e213f7a626ea56a9114cae48158c1d17') in 0.032732 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Physics Tank Maker/Models/T-35/Materials/T-35_Wheel.mat
+  artifactKey: Guid(81ba16f072f89504b8e944624466cc97) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-35/Materials/T-35_Wheel.mat using Guid(81ba16f072f89504b8e944624466cc97) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e21e2ae1d0647d57e8deae4f19b8e1eb') in 0.038550 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Wheel.mat
+  artifactKey: Guid(84677b1ae8b02204eb580232be2203d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Cromwell/Materials/Cromwell_Wheel.mat using Guid(84677b1ae8b02204eb580232be2203d2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4b62013299fa91a251d2eb8995296e11') in 0.057057 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Turret_AlbedoTransparency.png
+  artifactKey: Guid(c3c8664a91016d44f991474d9f48adec) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Turret_AlbedoTransparency.png using Guid(c3c8664a91016d44f991474d9f48adec) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cb10b3b10a06724cda1f525a7eaa0fed') in 0.036268 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Wheel_AlbedoTransparency.png
+  artifactKey: Guid(897b2083694aea946aa27614fdee3b71) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Wheel_AlbedoTransparency.png using Guid(897b2083694aea946aa27614fdee3b71) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '49bd76c76963dbaf467f859ad5f20aa7') in 0.038401 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Physics Tank Maker/Prefabs/Scene_Components/Menu_Items/Menu_Dictionary.prefab
+  artifactKey: Guid(9d75ef0bc79b28d49bf2f1e401983474) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Prefabs/Scene_Components/Menu_Items/Menu_Dictionary.prefab using Guid(9d75ef0bc79b28d49bf2f1e401983474) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cb6fa09ca39c81ddf559c8f591d673d5') in 0.043116 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Physics Tank Maker/Prefabs/Scene_Components/Menu_Items/Symbol_Player.prefab
+  artifactKey: Guid(e3217d77df6399a46b7d416aa9b20a9c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Prefabs/Scene_Components/Menu_Items/Symbol_Player.prefab using Guid(e3217d77df6399a46b7d416aa9b20a9c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7485bf667f155a4340adfa832d4d7382') in 0.031123 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Turret_SpecularSmoothness.png
+  artifactKey: Guid(06675d85878e5ad41963e6a7f9ebbbb7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Type89/Materials/Type89_Turret_SpecularSmoothness.png using Guid(06675d85878e5ad41963e6a7f9ebbbb7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2bca74ec95e00ad899ef58a60f1a0343') in 0.034872 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Physics Tank Maker/Prefabs/Scene_Components/Menu_Items/Canvas_Dropdown.prefab
+  artifactKey: Guid(6d46254716cf63941a8e6b072c5caecf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Prefabs/Scene_Components/Menu_Items/Canvas_Dropdown.prefab using Guid(6d46254716cf63941a8e6b072c5caecf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '793f93280b51a7051f6a6393d74696ef') in 0.071286 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 127
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Inside_SpecularSmoothness.png
+  artifactKey: Guid(903d107c58dc93442b7a50921988a576) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_Inside_SpecularSmoothness.png using Guid(903d107c58dc93442b7a50921988a576) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f6c6faca8340027d0c7b7c49c19f48e3') in 0.034763 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Body_SpecularSmoothness.png
+  artifactKey: Guid(347de2d9f9e02854d8909b3b2b77e3d5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Karl/Materials/Karl_Body_SpecularSmoothness.png using Guid(347de2d9f9e02854d8909b3b2b77e3d5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '03744e237daf340bdc45b574dbd5b3f9') in 0.033950 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Detail_SpecularSmoothness.png
+  artifactKey: Guid(a7013a90cbf250a4180f72112e66d597) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Panzer_IV/Materials/Panzer_IV_Detail_SpecularSmoothness.png using Guid(a7013a90cbf250a4180f72112e66d597) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cb250c1e2996499a5783c026d861105f') in 0.031291 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_ScrollTrack.mat
+  artifactKey: Guid(8ad126e28e6e6294f82fe8c8440b55d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/Sdkfz251/Materials/Sdkfz251_ScrollTrack.mat using Guid(8ad126e28e6e6294f82fe8c8440b55d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7f6bcbe8f8335b6831da6a91eb2de7d2') in 0.032840 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Physics Tank Maker/Models/T-34-76/Materials/T-34_ScrollTrack_Normal.png
+  artifactKey: Guid(589e8ad9f3df1d349a60859bc64dbbc1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/Physics Tank Maker/Models/T-34-76/Materials/T-34_ScrollTrack_Normal.png using Guid(589e8ad9f3df1d349a60859bc64dbbc1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f692ba12efaadb3f35603eeb70a2f66b') in 0.027896 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.692 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.579 seconds
+Domain Reload Profiling: 2271ms
+	BeginReloadAssembly (155ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (47ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (469ms)
+		LoadAssemblies (494ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (47ms)
+			TypeCache.Refresh (27ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (1580ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (603ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (21ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (84ms)
+			ProcessInitializeOnLoadAttributes (464ms)
+			ProcessInitializeOnLoadMethodAttributes (22ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 5.37 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3374 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (32.3 KB). Loaded Objects now: 3877.
+Memory consumption went from 135.2 MB to 135.1 MB.
+Total: 5.050500 ms (FindLiveObjects: 0.470900 ms CreateObjectMapping: 0.243300 ms MarkObjects: 4.196500 ms  DeleteObjects: 0.138400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

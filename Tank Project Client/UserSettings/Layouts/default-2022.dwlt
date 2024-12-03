@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 47
+  controlID: 113
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -191,7 +191,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 337.6
+    width: 336.8
     height: 396
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
@@ -215,12 +215,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 337.6
+    x: 336.8
     y: 0
-    width: 273.6
+    width: 515.2
     height: 396
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 15}
@@ -242,12 +242,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 611.2
+    x: 852
     y: 0
-    width: 508.8
+    width: 268
     height: 396
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -328,9 +328,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 611.2
+    x: 852
     y: 73.6
-    width: 506.8
+    width: 266
     height: 375
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 633.5, y: 442.5}
+  m_TargetSize: {x: 332.5, y: 442.5}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -363,8 +363,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -253.40001
-    m_HBaseRangeMax: 253.40001
+    m_HBaseRangeMin: -133
+    m_HBaseRangeMax: 133
     m_VBaseRangeMin: -177
     m_VBaseRangeMax: 177
     m_HAllowExceedBaseRangeMin: 1
@@ -384,23 +384,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 506.8
+      width: 266
       height: 354
-    m_Scale: {x: 0.99999994, y: 0.99999994}
-    m_Translation: {x: 253.4, y: 177}
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 133, y: 177}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -253.40001
-      y: -177.00002
-      width: 506.80002
-      height: 354.00003
+      x: -133
+      y: -177
+      width: 266
+      height: 354
     m_MinimalGUI: 1
-  m_defaultScale: 0.99999994
-  m_LastWindowPixelSize: {x: 633.5, y: 468.75}
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 332.5, y: 468.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -428,7 +428,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73.6
-    width: 336.6
+    width: 335.8
     height: 375
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -445,18 +445,18 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 36f8fdffc2dcfeff08defeffe009ffffa0f6ffffc2a4000008a500009caa0000
+      m_ExpandedIDs: 74f3ffff14fbffffe66c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Camera_Point (2)
-        m_OriginalName: Camera_Point (2)
+        m_Name: Tiger-I_ST Main
+        m_OriginalName: Tiger-I_ST Main
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 43300
+        m_UserData: 27878
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -559,9 +559,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 337.6
+    x: 336.80002
     y: 73.6
-    width: 271.6
+    width: 513.2
     height: 375
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -973,9 +973,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.9881057, y: 2.1763442, z: -0.4735551}
+    m_Target: {x: 0.023340888, y: -0.48121074, z: -0.5848963}
     speed: 2
-    m_Value: {x: -0.9881057, y: 2.1763442, z: -0.4735551}
+    m_Value: {x: 0.023340888, y: -0.48121074, z: -0.5848963}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1021,13 +1021,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.10462935, y: 0.6540683, z: -0.09204716, w: 0.7434984}
+    m_Target: {x: 0.048407305, y: 0.752323, z: -0.055630825, w: 0.65466565}
     speed: 2
-    m_Value: {x: 0.10195135, y: 0.65439045, z: -0.08969121, w: 0.7438646}
+    m_Value: {x: 0.04820636, y: 0.75466925, z: -0.055804312, w: 0.65194815}
   m_Size:
-    m_Target: 0.8660254
+    m_Target: 3.356468
     speed: 2
-    m_Value: 0.8660254
+    m_Value: 3.356468
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1107,14 +1107,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: 82
-  m_LastProjectPath: D:\Unity Project\Tank Project Client
+  m_LastProjectPath: D:\Unity Project\Battlefield--Tank-Division\Tank Project Client
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d25a0000
-    m_LastClickedID: 23250
-    m_ExpandedIDs: 00000000cc5a0000
+    m_SelectedIDs: 8a5c0000
+    m_LastClickedID: 23690
+    m_ExpandedIDs: 00000000805c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1142,7 +1142,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cc5a0000
+    m_ExpandedIDs: 00000000805c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

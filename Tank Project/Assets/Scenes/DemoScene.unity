@@ -41775,6 +41775,9 @@ GameObject:
   - component: {fileID: 1182523478}
   - component: {fileID: 1182523491}
   - component: {fileID: 1182523490}
+  - component: {fileID: 1182523493}
+  - component: {fileID: 1182523492}
+  - component: {fileID: 1182523494}
   m_Layer: 11
   m_Name: MainBody
   m_TagString: Untagged
@@ -42356,6 +42359,49 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300022, guid: 8b963d69f5ffbc046a0a1fee65a9a309, type: 3}
+--- !u!114 &1182523492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182523473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6afa41aaa25c147ae028092e5d27e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1182523493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182523473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d61b0d1b22fa44cb75a67fa42471b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {fileID: 1182523494}
+--- !u!114 &1182523494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182523473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 977c8754708fbff4999f92240202421a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: -1
+  Forward: 0
+  Backward: 0
+  Left: 0
+  Right: 0
+  Brake: 0
 --- !u!1 &1185684131
 GameObject:
   m_ObjectHideFlags: 0
@@ -64571,7 +64617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1774304051
 Transform:
   m_ObjectHideFlags: 0
@@ -65792,7 +65838,7 @@ GameObject:
   - component: {fileID: 1808182598}
   - component: {fileID: 1808182597}
   m_Layer: 0
-  m_Name: Tiger-I_ST
+  m_Name: Tiger-I_ST Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70268,7 +70314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd25d09a1e928d94bb6c12c3c47ac4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveControl: {fileID: 0}
+  moveControl: {fileID: 1182523494}
 --- !u!1 &1992159852
 GameObject:
   m_ObjectHideFlags: 0

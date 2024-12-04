@@ -10,6 +10,13 @@ public class UDPListener : MonoBehaviour
     private UdpClient udpClient;
     private NetworkGeneral general;
 
+    public enum Command
+    {
+        None,
+        Move,
+        Login,
+    }
+    
     void Start()
     {
         general = FindAnyObjectByType<NetworkGeneral>();
@@ -29,12 +36,10 @@ public class UDPListener : MonoBehaviour
         {
             IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
             byte[] receivedData = udpClient.EndReceive(ar, ref remoteEndPoint);
-            string message = DecodeData(receivedData);
-            Debug.Log($"Received from server.c: {message}");
 
-            // Xử lí dữ liệu
-            general.SetRevcStr(message);
-
+            ///Nhận câu lệnh:
+            RecvCommand(receivedData);
+            
             // Gửi phản hồi lại server.c
             SendResponse(general.SendStr , remoteEndPoint);
         }
@@ -57,6 +62,21 @@ public class UDPListener : MonoBehaviour
     private void OnApplicationQuit()
     {
         udpClient.Close();
+    }
+
+    public void RecvCommand(byte[] receivedData)
+    {
+        if (receivedData.Length < 3) return;
+
+        switch (receivedData[1])
+        {
+            case (int)Command.None: break;
+            case (int)Command.Move:
+                string message = DecodeData(receivedData);
+                general.SetRevcMove(message,receivedData[2]);
+                break;
+            case (int)Command.Login: break;
+        }
     }
     public string DecodeData(byte[] receivedData)
     {

@@ -117,7 +117,7 @@ namespace ChobiAssets.PTM
                     // Find the target.
                     screenCenter.x = Screen.width * 0.5f;
                     screenCenter.y = Screen.height * (0.5f + General_Settings_CS.Aiming_Offset);
-                    aimingScript.Cast_Ray_Free(screenCenter);
+                    //aimingScript.Cast_Ray_Free(screenCenter);
                 }
 
                 // Control "reticleAimingFlag" in "Aiming_Control_CS".

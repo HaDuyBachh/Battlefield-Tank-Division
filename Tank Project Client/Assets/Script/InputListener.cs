@@ -20,7 +20,7 @@ public class InputListener: MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             sendStr += "L ";
-        }    
+        }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             sendStr += "R ";

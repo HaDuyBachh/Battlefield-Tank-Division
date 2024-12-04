@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NetworkSender : MonoBehaviour
 {
+    public byte id = 1;
     string sendStr = "";
     public UDPSender udp;
     private float sendITimeout = 0.005f; // Interval in seconds between each send
@@ -20,7 +21,7 @@ public class NetworkSender : MonoBehaviour
     }
     public void SendData()
     {
-        udp.SendData(sendStr);
+        udp.SendMove(sendStr,(byte)UDPSender.Command.Move,id);
         udp.BeginReceive();
         sendStr = "";
     }    

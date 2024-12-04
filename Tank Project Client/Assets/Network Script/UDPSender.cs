@@ -13,20 +13,21 @@ public class UDPSender : MonoBehaviour
     public int serverPort = 8080;        // Cổng của server.c
     public int clientPort = 8888;       // Cổng để nhận phản hồi từ server.c
 
+    public enum Command
+    {
+        None,
+        Move,
+        Login,
+    }
+
     void Start()
     {
         general = FindObjectOfType<NetworkGeneral>();
         udpClient = new UdpClient(clientPort); // Lắng nghe phản hồi trên cổng clientPort
         Debug.Log("UDPSender started.");
-
-        // Gửi dữ liệu đến server.c
-        SendData("Hello from Unity!");
-
-        // Lắng nghe phản hồi
-        BeginReceive();
     }
 
-    public void SendData(string message)
+    public void SendMove(string message,byte command, byte id)
     {
         byte CHECK_BYTE = 0x11; // Giá trị cần để vượt qua kiểm tra trong server.c
 
@@ -34,9 +35,11 @@ public class UDPSender : MonoBehaviour
         byte[] messageBytes = Encoding.UTF8.GetBytes(message);
 
         // Tạo mảng dữ liệu mới với CHECK_BYTE ở đầu
-        byte[] data = new byte[messageBytes.Length + 1];
+        byte[] data = new byte[messageBytes.Length + 3];
         data[0] = CHECK_BYTE; // Gán CHECK_BYTE vào byte đầu tiên
-        Array.Copy(messageBytes, 0, data, 1, messageBytes.Length); // Sao chép thông điệp vào sau CHECK_BYTE
+        data[1] = command;
+        data[2] = id;
+        Array.Copy(messageBytes, 0, data, 3, messageBytes.Length); // Sao chép thông điệp vào sau CHECK_BYTE
 
         // Gửi dữ liệu qua UDP
         udpClient.Send(data, data.Length, serverIP, serverPort);
@@ -53,7 +56,11 @@ public class UDPSender : MonoBehaviour
     {
         IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
         byte[] receivedData = udpClient.EndReceive(ar, ref remoteEndPoint);
-        general.SetRevc(DecodeTransformData(receivedData));
+
+        int offset = 0;
+        general.SetRevc(DecodeTransformData(receivedData, ref offset),1);
+        general.SetRevc(DecodeTransformData(receivedData, ref offset),2);
+
         Debug.Log($"Received from server.c");
     }
 
@@ -62,9 +69,9 @@ public class UDPSender : MonoBehaviour
         udpClient.Close();
     }
 
-    public List<(Vector3 position, Quaternion rotation)> DecodeTransformData(byte[] receivedData)
+    public List<(Vector3 position, Quaternion rotation)> DecodeTransformData(byte[] receivedData, ref int offset)
     {
-        List<(Vector3 position, Quaternion rotation)> result = new List<(Vector3 position, Quaternion rotation)>();
+        List<(Vector3 position, Quaternion rotation)> result = new();
 
         // Kiểm tra dữ liệu nhận được có hợp lệ không
         if (receivedData == null || receivedData.Length < 28)
@@ -72,8 +79,6 @@ public class UDPSender : MonoBehaviour
             Debug.LogError("Received data is invalid or too short.");
             return result;
         }
-
-        int offset = 0;
 
         // Hàm trợ giúp: Đọc float từ byte[]
         float ReadFloat(byte[] data, ref int offset)

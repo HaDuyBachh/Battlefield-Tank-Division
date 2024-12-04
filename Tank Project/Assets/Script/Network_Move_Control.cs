@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Network_Move_Control : MonoBehaviour
 {
-    public int ID = -1;
+    public int ID = 1;
     public bool Forward = false;
     public bool Backward = false;
     public bool Left = false;

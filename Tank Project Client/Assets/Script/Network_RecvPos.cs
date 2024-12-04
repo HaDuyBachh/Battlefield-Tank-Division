@@ -24,6 +24,7 @@ public class Network_RecvPos : MonoBehaviour
         Debug.Log(Body.transform.localPosition + "   " + general.revcStr[id][d].position);
 
         Body.transform.localRotation = Quaternion.Lerp(Body.transform.localRotation, general.revcStr[id][d].rotation, Time.deltaTime * 6f);
+
         for (int i = 8; i < WheelOut.childCount; i++)
         {
             ++d;

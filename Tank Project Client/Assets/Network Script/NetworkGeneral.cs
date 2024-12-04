@@ -1,13 +1,18 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NetworkGeneral : MonoBehaviour
 {
-    private List<(Vector3 position, Quaternion rotation)> revcStr = new();
-    public List<(Vector3 position, Quaternion rotation)> RevcStr { get { return revcStr; } }
-    public void SetRevc(List<(Vector3 position, Quaternion rotation)> revcStr)
+    public List<(Vector3 position, Quaternion rotation)>[] revcStr = new List<(Vector3 position, Quaternion rotation)>[10];
+
+    public void Start()
     {
-        this.revcStr = revcStr;
+        revcStr[1] = new();
+        revcStr[2] = new();
+    }
+    public void SetRevc(List<(Vector3 position, Quaternion rotation)> revcStr, int id)
+    {
+        this.revcStr[id] = revcStr;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Network_SendPos : MonoBehaviour
 {
+    public int id;
     public NetworkGeneral general;
     public Transform Body;
     public Transform IdlerWheel;
@@ -64,7 +65,7 @@ public class Network_SendPos : MonoBehaviour
     }
     public void Update()
     {
-        general.SetSendStr(GetValue());
+        general.SetSendStr(GetValue(),id);
     }
 
 }

@@ -1,54 +1,71 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <winsock2.h>
+#include <windows.h>
 
 #pragma comment(lib, "ws2_32.lib")
 
-#define SERVER_PORT 8888
+#define SERVER_IP "127.0.0.1"
+#define SERVER_PORT 8080
+#define UNITY_LISTENER_PORT 9999
+#define BUFFER_SIZE 5012
 
-int main(int argc, char *argv[]) {
-    WSADATA wsa;
-    SOCKET clientSocket;
+void sendData(SOCKET sockfd, struct sockaddr_in *serverAddr, char *data, int dataLen) {
+    // Gửi dữ liệu đến server
+    if (sendto(sockfd, data, dataLen, 0, (struct sockaddr *)serverAddr, sizeof(*serverAddr)) == SOCKET_ERROR) {
+        printf("sendto failed. Error Code: %d\n", WSAGetLastError());
+        return;
+    }
+    printf("Sent data to server.\n");
+}
+
+void receiveData(SOCKET sockfd) {
+    char buffer[BUFFER_SIZE];
     struct sockaddr_in serverAddr;
-    int serverAddrLen = sizeof(serverAddr);
-
-    // Kiểm tra tham số dòng lệnh
-    if (argc < 2) {
-        printf("Usage: %s <message>\n", argv[0]);
-        return 1;
+    int addrLen = sizeof(serverAddr);
+    
+    // Nhận dữ liệu từ server
+    int recvLen = recvfrom(sockfd, buffer, BUFFER_SIZE, 0, (struct sockaddr *)&serverAddr, &addrLen);
+    if (recvLen == SOCKET_ERROR) {
+        printf("recvfrom failed. Error Code: %d\n", WSAGetLastError());
+        return;
     }
 
-    const char *message = argv[1]; // Lấy tham số đầu tiên (message)
+    printf("Received %d bytes from server: %s\n", recvLen, buffer);
+}
 
+int main() {
+    WSADATA wsaData;
+    SOCKET sockfd;
+    struct sockaddr_in serverAddr;
+    char message[] = "hello from client!";
+    
     // Khởi tạo Winsock
-    if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0) {
-        printf("Failed to initialize Winsock. Error Code: %d\n", WSAGetLastError());
+    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+        printf("WSAStartup failed. Error Code: %d\n", WSAGetLastError());
         return 1;
     }
 
-    // Tạo socket
-    if ((clientSocket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == INVALID_SOCKET) {
-        printf("Could not create socket. Error Code: %d\n", WSAGetLastError());
+    // Tạo socket UDP
+    if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) == INVALID_SOCKET) {
+        printf("Socket creation failed. Error Code: %d\n", WSAGetLastError());
         WSACleanup();
         return 1;
     }
 
-    // Thiết lập thông tin server
-    memset(&serverAddr, 0, sizeof(serverAddr));
+    // Cấu hình server
     serverAddr.sin_family = AF_INET;
-    serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
     serverAddr.sin_port = htons(SERVER_PORT);
+    serverAddr.sin_addr.s_addr = inet_addr(SERVER_IP);
 
-    // Gửi thông điệp tới server
-    if (sendto(clientSocket, message, strlen(message), 0, (struct sockaddr *)&serverAddr, serverAddrLen) == SOCKET_ERROR) {
-        printf("sendto failed. Error Code: %d\n", WSAGetLastError());
-    } else {
-        printf("Sent message: %s\n", message);
-    }
+    // Gửi dữ liệu tới server
+    sendData(sockfd, &serverAddr, message, sizeof(message));
+
+    // Nhận phản hồi từ server
+    receiveData(sockfd);
 
     // Đóng socket
-    closesocket(clientSocket);
+    closesocket(sockfd);
     WSACleanup();
     return 0;
 }

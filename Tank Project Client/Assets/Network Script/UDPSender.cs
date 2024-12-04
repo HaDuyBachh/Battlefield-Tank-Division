@@ -11,7 +11,7 @@ public class UDPSender : MonoBehaviour
     private UdpClient udpClient;
     public string serverIP = "127.0.0.1"; // IP của server.c
     public int serverPort = 8080;        // Cổng của server.c
-    public int clientPort = 8888;       // Cổng để nhận phản hồi từ server.c
+    public int clientPort = 8880;       // Cổng để nhận phản hồi từ server.c
 
     public enum Command
     {
@@ -39,7 +39,7 @@ public class UDPSender : MonoBehaviour
         data[0] = CHECK_BYTE; // Gán CHECK_BYTE vào byte đầu tiên
         data[1] = command;
         data[2] = id;
-        Array.Copy(messageBytes, 0, data, 3, messageBytes.Length); // Sao chép thông điệp vào sau CHECK_BYTE
+        Array.Copy(messageBytes, 0, data, 3, messageBytes.Length);
 
         // Gửi dữ liệu qua UDP
         udpClient.Send(data, data.Length, serverIP, serverPort);
@@ -59,9 +59,9 @@ public class UDPSender : MonoBehaviour
 
         int offset = 0;
         general.SetRevc(DecodeTransformData(receivedData, ref offset),1);
+        Debug.Log("Dữ liệu off là: " + offset);
         general.SetRevc(DecodeTransformData(receivedData, ref offset),2);
-
-        Debug.Log($"Received from server.c");
+        Debug.Log("Dữ liệu off 2 là: " + offset);
     }
 
     private void OnApplicationQuit()
@@ -104,8 +104,9 @@ public class UDPSender : MonoBehaviour
         // Thêm kết quả Body vào danh sách
         result.Add((bodyPosition, bodyRotation));
 
+        int temp = 0;
         // Giải mã từng WheelOut child (3 floats cho position + 4 floats cho rotation mỗi child)
-        while (offset + 28 <= receivedData.Length) // 28 bytes = 7 floats
+        while (offset + 28 <= receivedData.Length && temp++<8) // 28 bytes = 7 floats
         {
             Vector3 childPosition = new Vector3(
                 ReadFloat(receivedData, ref offset),

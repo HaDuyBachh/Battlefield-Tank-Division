@@ -116,10 +116,10 @@ namespace ChobiAssets.PTM
 
         void LateUpdate()
         {
-            if (Is_Selected == false || Main_Camera.enabled == false)
-            {
-                return;
-            }
+            //if (Is_Selected == false || Main_Camera.enabled == false)
+            //{
+            //    return;
+            //}
 
             inputScript.Get_Input();
 

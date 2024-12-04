@@ -1,5 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp:
+    - Michsky.MUIP.IconLibrary
+    - Michsky.MUIP.UIManager
     Assembly-CSharp.dll:
     - ChobiAssets.PTM.AI_Headquaters_CS
     - ChobiAssets.PTM.Aiming_Control_CS
@@ -24,7 +27,6 @@ ScriptsOnlyBuild:
     - ChobiAssets.PTM.Damage_Control_09_Armor_Collider_CS
     - ChobiAssets.PTM.Damage_Control_Center_CS
     - ChobiAssets.PTM.Drive_Control_CS
-    - ChobiAssets.PTM.Drive_Control_Input_02_Keyboard_Pressing_CS
     - ChobiAssets.PTM.Drive_Wheel_CS
     - ChobiAssets.PTM.Drive_Wheel_Parent_CS
     - ChobiAssets.PTM.Dummy_Audio_Listener_CS
@@ -58,6 +60,7 @@ ScriptsOnlyBuild:
     - ChobiAssets.PTM.UI_Lead_Marker_Control_CS
     - ChobiAssets.PTM.UI_Position_Marker_Control_CS
     - ChobiAssets.PTM.UI_Reloading_Circle_CS
+    - ClientManager
     - InputListener
     - NetworkGeneral
     - NetworkSender
@@ -65,6 +68,11 @@ ScriptsOnlyBuild:
     - UDPSender
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -75,18 +83,33 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
-    UnityEngine.UI.dll:
-    - UnityEngine.UI.Image
   serializedClasses:
     Assembly-CSharp:
     - ChobiAssets.PTM.CameraPoint
     - ChobiAssets.PTM.IntArray
     - ChobiAssets.PTM.RoadWheelsProp
     - ChobiAssets.PTM.TurretDamageControlProp
-    UnityEngine.CoreModule:
-    - UnityEngine.Events.PersistentCallGroup
-    UnityEngine.UI:
-    - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+    - Michsky.MUIP.IconLibrary/IconItem
+    Unity.TextMeshPro:
+    - TMPro.FaceInfo_Legacy
+    - TMPro.FontAssetCreationSettings
+    - TMPro.KerningTable
+    - TMPro.TMP_Character
+    - TMPro.TMP_FontFeatureTable
+    - TMPro.TMP_FontWeightPair
+    - TMPro.TMP_Glyph
+    - TMPro.TMP_GlyphAdjustmentRecord
+    - TMPro.TMP_GlyphPairAdjustmentRecord
+    - TMPro.TMP_GlyphValueRecord
+    - TMPro.TMP_Sprite
+    - TMPro.TMP_SpriteCharacter
+    - TMPro.TMP_SpriteGlyph
+    - TMPro.TMP_Style
+    UnityEngine.TextCoreFontEngineModule:
+    - UnityEngine.TextCore.FaceInfo
+    - UnityEngine.TextCore.Glyph
+    - UnityEngine.TextCore.GlyphMetrics
+    - UnityEngine.TextCore.GlyphRect
   methodsToPreserve: []
   sceneClasses:
     Assets/Scenes/DemoScene.unity:
@@ -107,6 +130,8 @@ ScriptsOnlyBuild:
     - Class: 43
       Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
@@ -129,8 +154,6 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 16648}
-    - Class: 114
       Script: {instanceID: 16670}
     - Class: 114
       Script: {instanceID: 16694}
@@ -141,13 +164,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16844}
     - Class: 114
-      Script: {instanceID: 16854}
-    - Class: 114
       Script: {instanceID: 17056}
     - Class: 114
       Script: {instanceID: 17074}
     - Class: 114
       Script: {instanceID: 17222}
+    - Class: 114
+      Script: {instanceID: 17334}
     - Class: 114
       Script: {instanceID: 17354}
     - Class: 114
@@ -191,9 +214,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 19120}
     - Class: 114
+      Script: {instanceID: 19408}
+    - Class: 114
       Script: {instanceID: 19510}
     - Class: 114
       Script: {instanceID: 19524}
+    - Class: 114
+      Script: {instanceID: 19676}
     - Class: 114
       Script: {instanceID: 19838}
     - Class: 114
@@ -204,6 +231,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 20096}
     - Class: 114
       Script: {instanceID: 20224}
+    - Class: 114
+      Script: {instanceID: 20440}
     - Class: 114
       Script: {instanceID: 20444}
     - Class: 114
@@ -254,9 +283,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 23006}
     - Class: 114
       Script: {instanceID: 23476}
+    - Class: 114
+      Script: {instanceID: 322532}
+    - Class: 114
+      Script: {instanceID: 322574}
+    - Class: 114
+      Script: {instanceID: 483750}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 134
       Script: {instanceID: 0}
@@ -281,10 +318,6 @@ ScriptsOnlyBuild:
     - Class: 213
       Script: {instanceID: 0}
     - Class: 218
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 224
       Script: {instanceID: 0}
     - Class: 1953259897
       Script: {instanceID: 0}
@@ -1827,7 +1860,7 @@ ScriptsOnlyBuild:
     className: Camera_Points_Manager_Input_01_Mouse_CS
   - hash:
       serializedVersion: 2
-      Hash: 7f9f5338be570362748a01c3ea14132b
+      Hash: 89419b30b464026fc0b986eb5df32bd4
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Network_RecvPos
@@ -2329,6 +2362,552 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: ChobiAssets.PTM
     className: Stabilizer_CS
+  - hash:
+      serializedVersion: 2
+      Hash: eee597b02a0c1f8c258b6f5f5167665c
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerProgressBarLoopEditor
+  - hash:
+      serializedVersion: 2
+      Hash: a6245ffdd4c32a06310cba1e974d3708
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ProgressBar
+  - hash:
+      serializedVersion: 2
+      Hash: c72f30f5dfadb528e1d61aa005fccd98
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ButtonManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 85fade20debcebf118a65bb8be3b0b9d
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ContextMenuContentEditor
+  - hash:
+      serializedVersion: 2
+      Hash: b15f3ae72d3305ae83e8818737a6062e
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: IconManager
+  - hash:
+      serializedVersion: 2
+      Hash: eb71d38e240d330d7ec4d8a87fcb1f7a
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: SliderManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: f5169058947f96cf715235664ec5b4f9
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: RadialSlider
+  - hash:
+      serializedVersion: 2
+      Hash: 0d287a2263170d717da93384beb3d5ec
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ContextMenuManager
+  - hash:
+      serializedVersion: 2
+      Hash: e4a41928f855e34616c8fee6c624f698
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: Ripple
+  - hash:
+      serializedVersion: 2
+      Hash: ce9b6bfd040116642b296403a9831a46
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerButton
+  - hash:
+      serializedVersion: 2
+      Hash: 11c1a112b093187e6ac5ec545a8f1d20
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerScrollbar
+  - hash:
+      serializedVersion: 2
+      Hash: c7057c67453315ffb1a4fcab6133d4f3
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: PieChartEditor
+  - hash:
+      serializedVersion: 2
+      Hash: bf2b76c76595bcac28f80d393163f532
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: IconLibraryEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 5d0853829b0f066eefca4db89886bc08
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: DropdownMultiSelectEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 33b88c48635af4356acc4325e0948a48
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: WindowManager
+  - hash:
+      serializedVersion: 2
+      Hash: 9a52ad396c0f6fabed0ade705ca7bbef
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: DropdownMultiSelect
+  - hash:
+      serializedVersion: 2
+      Hash: 5ca5e123f4490ca720d587346d92c116
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: RadialSliderEditor
+  - hash:
+      serializedVersion: 2
+      Hash: d0f94fe88232b156e0efba659be71504
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerInputField
+  - hash:
+      serializedVersion: 2
+      Hash: 4c7b15dbfc3f10630d0f2a4c0aad416e
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerDropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 3a9cd9c99a99cae687bcc2361e58081b
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: HorizontalSelector
+  - hash:
+      serializedVersion: 2
+      Hash: 190f743e569210705642731559717e0d
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: CustomDropdownEditor
+  - hash:
+      serializedVersion: 2
+      Hash: a109faa2eea0a4c62ddc911be362ff3e
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: RangeMaxSlider
+  - hash:
+      serializedVersion: 2
+      Hash: 5af8a1191d7dd820ff8f84c05e8e1c35
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ContextMenuManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 2e8d1df1947d0874ba61c5844422afc7
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerSliderEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 2b64d4b8de53d265eeaea3c8e48d3746
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ProgressBarEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 3505fc495753e12942f52f5e43da0845
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerToggle
+  - hash:
+      serializedVersion: 2
+      Hash: 45573318d073cc914410d73254113504
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerCustom
+  - hash:
+      serializedVersion: 2
+      Hash: 3143da2ee5d38b536c9c9dd7e0e6957f
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: LaunchURL
+  - hash:
+      serializedVersion: 2
+      Hash: 67b58e0d86a3d888cbe34092cd2fd2cd
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerPieChart
+  - hash:
+      serializedVersion: 2
+      Hash: 4c8ce900f9f405185a391f454f515f9c
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerContextMenu
+  - hash:
+      serializedVersion: 2
+      Hash: e92d9065bdf05c21954c4ee60d150607
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: DemoListShadow
+  - hash:
+      serializedVersion: 2
+      Hash: a22425e1fe36e70b09e72f593b40bf2e
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: CustomDropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 52339be50820781ca3581ecc0dbd6f5a
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIGradientEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 634e92d416cf0dcf061ebbc872fc2897
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 99a0d09087dcf8e31b5ba24cc35b9955
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: SwitchManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: c1e1b8e5425188b9edf584a842ef575e
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ModalWindowManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 5cdecef9ec17f2023b2742710170928b
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: LayoutGroupFix
+  - hash:
+      serializedVersion: 2
+      Hash: 97334026e66513c13fbc7eb1bd425f2e
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ListViewItem
+  - hash:
+      serializedVersion: 2
+      Hash: 3c49d51673bc8df5cf2533bd6dd07dc6
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerButtonEditor
+  - hash:
+      serializedVersion: 2
+      Hash: c10d954c8870f2f8055d7450c27fd248
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: MUIPInternalTools
+  - hash:
+      serializedVersion: 2
+      Hash: 9504f15fd889677b63777833b3bd5f87
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerModalWindow
+  - hash:
+      serializedVersion: 2
+      Hash: e4c87ff11cba42ee6ba98216a7494fa1
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: AnimatedIconHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 0beb3dcdeaf9f98fedbf604e7c381594
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ListViewRow
+  - hash:
+      serializedVersion: 2
+      Hash: 7584c82360a6b7a37bb817e7099b4265
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: CustomInputField
+  - hash:
+      serializedVersion: 2
+      Hash: 57da28edebb342a7e1cb6ff3e50cb338
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: RadialLayoutGroupEditor
+  - hash:
+      serializedVersion: 2
+      Hash: b8e94a92c7eba00b27a0cbf9ef98f21d
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: RadialLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: e922ed835a2dbddb17c2e594a32ac564
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ListView
+  - hash:
+      serializedVersion: 2
+      Hash: e74be9506c26a52c88d93d5afa4bbcd4
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: DemoElementSway
+  - hash:
+      serializedVersion: 2
+      Hash: e0385987e2d8b77e55fb8abb54e07002
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: NotificationManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 97ee134ddd6396c88016f8e32fe45439
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerSwitch
+  - hash:
+      serializedVersion: 2
+      Hash: 79f8cfe54410b4116e53b0c5701774d3
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: TooltipManager
+  - hash:
+      serializedVersion: 2
+      Hash: 90cd5c084723d8836a001af004d4e4c4
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerTooltip
+  - hash:
+      serializedVersion: 2
+      Hash: ef1aa6c80f749d4cb2dda74e96249587
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: WindowDragger
+  - hash:
+      serializedVersion: 2
+      Hash: 0d55be1f8f86aa963262db0c697cccd0
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: TooltipContent
+  - hash:
+      serializedVersion: 2
+      Hash: 7a95906134a4d80ee2d3bb4f55bc7a64
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: WindowManagerButton
+  - hash:
+      serializedVersion: 2
+      Hash: a751dee8eb997689a42381512c8d9c6f
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerHSelector
+  - hash:
+      serializedVersion: 2
+      Hash: ac980c6d88ba6024c7f7f70aea265e40
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: SliderInput
+  - hash:
+      serializedVersion: 2
+      Hash: 3cfc76a56f31d5421cc93dd585a64dfe
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: RangeSlider
+  - hash:
+      serializedVersion: 2
+      Hash: 58f3a404bec3746b42117b1cc352e082
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIGradient
+  - hash:
+      serializedVersion: 2
+      Hash: c884cad7fd0488d56a65a7169a738b1e
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: TooltipManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 7071b0ad455552ae4eb4656d10a24b55
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ListViewEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 123431e26b4cdf053e52c4880906a208
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ContextMenuContentMobile
+  - hash:
+      serializedVersion: 2
+      Hash: bf3bad4ee2ee11e8531404b47e9f3428
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: IconLibrary
+  - hash:
+      serializedVersion: 2
+      Hash: eacc9cc8e09900ac74ddbcbe6ec5ef0f
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: SwitchManager
+  - hash:
+      serializedVersion: 2
+      Hash: 560431c71006af41c4702ef55ddbcd7c
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: CustomToggle
+  - hash:
+      serializedVersion: 2
+      Hash: 9758aa254eb6f2ea9043a42f17a334d0
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerAnimatedIcon
+  - hash:
+      serializedVersion: 2
+      Hash: 201fd5fd55befd3df560c26401dff204
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: MUIPEditorHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 7805d280a1c8eed16610efffda694320
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: NotificationManager
+  - hash:
+      serializedVersion: 2
+      Hash: 3f82028bc49fe5dcbad1f11c30ae0a83
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerDropdownItem
+  - hash:
+      serializedVersion: 2
+      Hash: b0f3d46d33624f40088072d93f238356
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: PBFilled
+  - hash:
+      serializedVersion: 2
+      Hash: 2ea08b161c843f3ec9c8c8db3f91b3bc
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerNotification
+  - hash:
+      serializedVersion: 2
+      Hash: 4b92c7cc88a4b18d855ce2156a67a551
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManager
+  - hash:
+      serializedVersion: 2
+      Hash: e54e1afd74e75123dc7fdbbb918ecaa6
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerWindowManager
+  - hash:
+      serializedVersion: 2
+      Hash: eb3ffc288fa51170f9fc254c8d249a0d
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: IconManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 8703fc70040fac10f1e3e7b0fa6a9555
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: NotificationStacking
+  - hash:
+      serializedVersion: 2
+      Hash: 0d545468981506895a0393be3d828716
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: InputSystemChecker
+  - hash:
+      serializedVersion: 2
+      Hash: 8d01ba854df092c5072bdbb895d95ea2
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: HorizontalSelectorEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 275e52de2074f337c9e75067831df18e
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ButtonManager
+  - hash:
+      serializedVersion: 2
+      Hash: dd74b8b8ff1574a6ef8f2122a6bc3a83
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ContextMenuSubMenu
+  - hash:
+      serializedVersion: 2
+      Hash: 95fafd19691f058d21a0a98e53af9dea
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: WindowManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: b35cdf7034510df3a4b7c19a328bf7e1
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: SliderManager
+  - hash:
+      serializedVersion: 2
+      Hash: a32daf89ce41447030d714f836d22f8f
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: PieChart
+  - hash:
+      serializedVersion: 2
+      Hash: 727ca1fc74de29b5ef2f4ff50121e192
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ElementTabbing
+  - hash:
+      serializedVersion: 2
+      Hash: 81134e2c9f41915563fd1f4360f220c5
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerSlider
+  - hash:
+      serializedVersion: 2
+      Hash: 8ff5479224074fdc53eeae995b3343d3
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: RangeMinSlider
+  - hash:
+      serializedVersion: 2
+      Hash: 70e026271daa5b40d775db4f8ca17c11
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerProgressBarLoop
+  - hash:
+      serializedVersion: 2
+      Hash: 7f5cfee704b75e22695cb3f3a7c8adfe
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: UIManagerProgressBar
+  - hash:
+      serializedVersion: 2
+      Hash: 449c9dc65256344daf713c2e06914e3a
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ContextMenuContent
+  - hash:
+      serializedVersion: 2
+      Hash: e446a5fea1d6971186f9fb4a81c27912
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: DemoElementSwayParent
+  - hash:
+      serializedVersion: 2
+      Hash: 1f45653e543de2b8d4e41916a9eab81b
+    assemblyName: Assembly-CSharp
+    namespaceName: Michsky.MUIP
+    className: ModalWindowManager
+  - hash:
+      serializedVersion: 2
+      Hash: ce051d137cf7307c463dee30e5134d22
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ClientManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/DemoScene.unity

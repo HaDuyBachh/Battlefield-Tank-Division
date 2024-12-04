@@ -18,6 +18,8 @@ public class Network_RecvPos : MonoBehaviour
     }
     public void SetValue()
     {
+        if (id == 2) Debug.Log("Đang chạy đây pa");
+
         int d = 0;
         Body.transform.localPosition = Vector3.Lerp(Body.transform.localPosition, general.revcStr[id][d].position, Time.deltaTime * 6f);
 

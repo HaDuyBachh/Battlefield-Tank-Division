@@ -6517,7 +6517,7 @@ GameObject:
   - component: {fileID: 385869069}
   - component: {fileID: 385869070}
   m_Layer: 11
-  m_Name: MainBody
+  m_Name: MainBody 002
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -7019,8 +7019,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385869068}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.9996134, z: -0, w: 0.027806014}
+  m_LocalPosition: {x: -135.75967, y: 0, z: -26.698202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7042,8 +7042,8 @@ Transform:
   - {fileID: 2116222296}
   - {fileID: 1057646619}
   - {fileID: 1339383908}
-  m_Father: {fileID: 1848870310}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 176.813, z: 0}
 --- !u!1 &413176788
 GameObject:
   m_ObjectHideFlags: 0
@@ -17810,6 +17810,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &752308519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 752308520}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &752308520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752308519}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.122595, y: -1.0218828, z: 17.499182}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &755911285
 GameObject:
   m_ObjectHideFlags: 0
@@ -31414,7 +31445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1848870310
 Transform:
   m_ObjectHideFlags: 0
@@ -31427,8 +31458,7 @@ Transform:
   m_LocalPosition: {x: -0.66, y: 0, z: 14.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 385869088}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1848870311
@@ -50102,7 +50132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &3142849117501386244
 GameObject:
   m_ObjectHideFlags: 0
@@ -51093,8 +51123,7 @@ Transform:
   m_LocalPosition: {x: -0.66, y: 0, z: -4.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4117097548885944900}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &3398367068634332392
@@ -53912,7 +53941,7 @@ Transform:
   m_GameObject: {fileID: 6066334089853665881}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -135.1, y: 0, z: -46.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53934,7 +53963,7 @@ Transform:
   - {fileID: 8158429303179572197}
   - {fileID: 7694919782986195514}
   - {fileID: 2873334285485797225}
-  m_Father: {fileID: 3396093985794507199}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4130081357217260826
 CapsuleCollider:
@@ -66628,7 +66657,7 @@ GameObject:
   - component: {fileID: 1213169205546800738}
   - component: {fileID: 2316500500962027335}
   m_Layer: 11
-  m_Name: MainBody
+  m_Name: MainBody 001
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -80173,6 +80202,9 @@ SceneRoots:
   - {fileID: 2101987705}
   - {fileID: 1582974738}
   - {fileID: 1406885797}
+  - {fileID: 385869088}
   - {fileID: 1848870310}
+  - {fileID: 4117097548885944900}
   - {fileID: 3396093985794507199}
   - {fileID: 1990859382}
+  - {fileID: 752308520}

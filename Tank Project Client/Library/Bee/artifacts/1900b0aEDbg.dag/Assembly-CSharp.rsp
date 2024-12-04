@@ -652,6 +652,7 @@
 "Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Track_LOD_Control_CS.cs"
 "Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Track_Scroll_CS.cs"
 "Assets/Physics Tank Maker/Extra_Packages/Physics_Track_System/Scripts/PTS_Wheel_Resize_CS.cs"
+"Assets/Script/ClientManager.cs"
 "Assets/Script/InputBasic.cs"
 "Assets/Script/InputListener.cs"
 "Assets/Script/MoveBasic.cs"

@@ -29,7 +29,7 @@ public class UDPListener : MonoBehaviour
         {
             IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
             byte[] receivedData = udpClient.EndReceive(ar, ref remoteEndPoint);
-            string message = Encoding.UTF8.GetString(receivedData);
+            string message = DecodeData(receivedData);
             Debug.Log($"Received from server.c: {message}");
 
             // Xử lí dữ liệu
@@ -48,15 +48,33 @@ public class UDPListener : MonoBehaviour
         }
     }
 
-    void SendResponse(string message, IPEndPoint remoteEndPoint)
+    void SendResponse(byte[] data, IPEndPoint remoteEndPoint)
     {
-        byte[] data = Encoding.UTF8.GetBytes(message);
         udpClient.Send(data, data.Length, remoteEndPoint);
-        Debug.Log($"Response sent to server.c: {message}");
+        Debug.Log($"Response sent to server.c");
     }
 
     private void OnApplicationQuit()
     {
         udpClient.Close();
     }
+    public string DecodeData(byte[] receivedData)
+    {
+        // Kiểm tra nếu dữ liệu rỗng hoặc không đủ byte
+        if (receivedData == null || receivedData.Length < 2)
+        {
+            Debug.LogWarning("Received data is too short to decode.");
+            return "";
+        }
+        
+        // Loại bỏ byte đầu tiên và chuyển phần còn lại về chuỗi
+        byte[] messageBytes = new byte[receivedData.Length - 1];
+        Array.Copy(receivedData, 1, messageBytes, 0, messageBytes.Length);
+
+        // Chuyển đổi byte[] thành chuỗi UTF-8
+        string message = Encoding.UTF8.GetString(messageBytes);
+
+        return message;
+    }
+
 }

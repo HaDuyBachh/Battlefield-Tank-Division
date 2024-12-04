@@ -6,17 +6,16 @@ public class NetworkGeneral : MonoBehaviour
 {
 
     public Network_Move_Control moveControl;
-    private string revcStr = "";
-    private string sendStr;
-    public string SendStr { get { return sendStr; } }
+    private byte[] sendStr;
+    public byte[] SendStr { get { return sendStr; } }
     public void SetRevcStr(string revcStr)
     {
         //this.revcStr = revcStr;
 
+        moveControl.ResetValue();
         if (revcStr.Length > 0)
         {
             string[] cmd = revcStr.Split(' ');
-            moveControl.ResetValue();
             for (int i = 1; i < cmd.Length; i++)
             {
                 if (cmd[i].Length == 0) continue;
@@ -39,11 +38,10 @@ public class NetworkGeneral : MonoBehaviour
                         break;
                 }
             }
-            revcStr = "";
         }
     }
 
-    public void SetSendStr(string sendStr)
+    public void SetSendStr(byte[] sendStr)
     {
         this.sendStr = sendStr;
     }

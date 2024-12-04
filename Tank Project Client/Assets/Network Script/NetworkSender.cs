@@ -16,13 +16,13 @@ public class NetworkSender : MonoBehaviour
     }
     public void SetData(string sendStr)
     {
-        this.sendStr = "^" + sendStr;
+        this.sendStr = sendStr;
     }
     public void SendData()
     {
         udp.SendData(sendStr);
         udp.BeginReceive();
-        sendStr = "^";
+        sendStr = "";
     }    
     public void Update()
     {

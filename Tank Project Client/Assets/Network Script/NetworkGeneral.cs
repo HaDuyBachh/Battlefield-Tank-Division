@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NetworkGeneral : MonoBehaviour
 {
-    private string revcStr = "";
-    public string RevcStr { get { return revcStr; } }
-    public void SetRevc(string revcStr)
+    private List<(Vector3 position, Quaternion rotation)> revcStr = new();
+    public List<(Vector3 position, Quaternion rotation)> RevcStr { get { return revcStr; } }
+    public void SetRevc(List<(Vector3 position, Quaternion rotation)> revcStr)
     {
         this.revcStr = revcStr;
     }

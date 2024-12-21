@@ -6,7 +6,16 @@ public class NetworkGeneral : MonoBehaviour
 {
 
     public List<Network_Move_Control> moveControl;
+
     private byte[][] sendStr = new byte[10][];
+    private void Awake()
+    {
+        for (int i = 1; i <moveControl.Count; i++)
+        {
+            moveControl[i].SetID(i);
+            moveControl[i].GetComponent<Network_SendPos>().SetID(i);
+        }
+    }
     public byte[] SendStr
     {
         get

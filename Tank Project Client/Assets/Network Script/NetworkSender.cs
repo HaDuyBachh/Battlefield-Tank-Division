@@ -14,6 +14,21 @@ public class NetworkSender : MonoBehaviour
     {
         udp = FindAnyObjectByType<UDPSender>();
         Application.targetFrameRate = 60;
+
+        int id_temp = 1;
+        foreach (var body in FindObjectsOfType<Network_RecvPos>())
+        { 
+            if (body.gameObject.CompareTag("MainPlayer"))
+            {
+                body.id = this.id;
+            }
+            else
+            {
+                id_temp += (id_temp != id) ? 0:1;
+                body.id = id_temp;
+                id_temp++;
+            }
+        }
     }
     public void SetData(string sendStr)
     {

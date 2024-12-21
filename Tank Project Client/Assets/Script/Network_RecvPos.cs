@@ -7,11 +7,7 @@ public class Network_RecvPos : MonoBehaviour
     public int id;
     public NetworkGeneral general;
     public Transform Body;
-    public Transform IdlerWheel;
     public Transform WheelOut;
-    public Transform WheelIn;
-    public Transform SprocketWheel;
-
     public void Start()
     {
         general = FindAnyObjectByType<NetworkGeneral>();

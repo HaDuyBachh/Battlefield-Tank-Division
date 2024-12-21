@@ -41777,7 +41777,7 @@ GameObject:
   - component: {fileID: 1182523497}
   m_Layer: 11
   m_Name: MainBody
-  m_TagString: Untagged
+  m_TagString: MainPlayer
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42146,7 +42146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4d4bafd53656f488ac0b5ca382ffd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
+  id: 2
   general: {fileID: 0}
   Body: {fileID: 1182523474}
   IdlerWheel: {fileID: 0}
@@ -46941,7 +46941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4d4bafd53656f488ac0b5ca382ffd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
+  id: 1
   general: {fileID: 0}
   Body: {fileID: 1357129257}
   IdlerWheel: {fileID: 0}
@@ -51054,9 +51054,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clientID: 1
+  clientPort: 8880
   sender: {fileID: 1990859386}
   mainPos: {fileID: 1182523490}
   clonePos: {fileID: 1357129275}
+  UDP: {fileID: 0}
 --- !u!1 &1498138909
 GameObject:
   m_ObjectHideFlags: 0

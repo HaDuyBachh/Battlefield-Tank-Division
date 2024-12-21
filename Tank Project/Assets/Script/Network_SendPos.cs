@@ -8,15 +8,15 @@ public class Network_SendPos : MonoBehaviour
     public int id;
     public NetworkGeneral general;
     public Transform Body;
-    public Transform IdlerWheel;
     public Transform WheelOut;
-    public Transform WheelIn;
-    public Transform SprocketWheel;
     public void Start()
     {
         general = FindAnyObjectByType<NetworkGeneral>();
     }
-
+    public void SetID(int id)
+    {
+        this.id = id;
+    }
     public byte[] GetValue()
     {
         // Tạo danh sách chứa các giá trị float từ position và rotation

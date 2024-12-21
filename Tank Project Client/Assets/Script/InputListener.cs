@@ -8,7 +8,6 @@ public class InputListener: MonoBehaviour
     string sendStr;
     public void GetInput()
     {
-        sendStr = "M ";
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             sendStr += "B ";
@@ -25,10 +24,10 @@ public class InputListener: MonoBehaviour
         {
             sendStr += "R ";
         }
-        if (sendStr.Length > 2)
+        if (sendStr.Length > 0)
         {
             Debug.Log(sendStr);
-            sender.SetData(sendStr);
+            sender.SetMoveData(sendStr);
         }
     }
 

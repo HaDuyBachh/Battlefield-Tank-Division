@@ -92,21 +92,21 @@ namespace ChobiAssets.PTM
                 case 0: // Mouse + Keyboard (Stepwise)
                 case 1: // Mouse + Keyboard (Pressing)
                 case 10: // AI.
-                    inputScript = gameObject.AddComponent<Camera_Rotation_Input_01_Mouse_CS>();
+                    inputScript = gameObject.GetComponent<Camera_Rotation_Input_01_Mouse_CS>();
                     break;
 
-                case 2: // Gamepad (Single stick)
-                case 4: // Gamepad (Triggers)
-                    inputScript = gameObject.AddComponent<Camera_Rotation_Input_02_For_Single_Stick_Drive_CS>();
-                    break;
+                //case 2: // Gamepad (Single stick)
+                //case 4: // Gamepad (Triggers)
+                //    inputScript = gameObject.AddComponent<Camera_Rotation_Input_02_For_Single_Stick_Drive_CS>();
+                //    break;
 
-                case 3: // Gamepad (Twin sticks)
-                    inputScript = gameObject.AddComponent<Camera_Rotation_Input_03_For_Twin_Sticks_Drive_CS>();
-                    break;
+                //case 3: // Gamepad (Twin sticks)
+                //    inputScript = gameObject.AddComponent<Camera_Rotation_Input_03_For_Twin_Sticks_Drive_CS>();
+                //    break;
 
-                case 99: // Demo.
-                    inputScript = gameObject.AddComponent<Camera_Rotation_Input_99_Demo_CS>();
-                    break;
+                //case 99: // Demo.
+                //    inputScript = gameObject.AddComponent<Camera_Rotation_Input_99_Demo_CS>();
+                //    break;
             }
         }
 
@@ -211,8 +211,6 @@ namespace ChobiAssets.PTM
             targetAngles.z -= Vertical_Input * General_Settings_CS.Camera_Vertical_Speed;
             targetAngles.z = Mathf.Clamp(targetAngles.z, -60.0f, 60.0f);
         }
-
-
         float noInputCount;
         void Simulate_Head_Vertical_Rotation()
         {
@@ -277,7 +275,6 @@ namespace ChobiAssets.PTM
             }
         }
 
-
         void Change_Camera_Settings(CameraPoint cameraPointClass)
         { // Called from "Camera_Points_Manager_CS".
             currentCameraPoint = cameraPointClass;
@@ -302,22 +299,16 @@ namespace ChobiAssets.PTM
                     break;
             }
         }
-
-
         void Enable_Camera(Vector3 targetPos)
         { // Called from "Gun_Camera_CS".
             Look_At_Target(targetPos);
             currentAngles = targetAngles;
             FixedUpdate();
         }
-        
-
         void Get_AI_CS()
         { // Called from "AI_CS".
             inputType = 10;
         }
-
-
         void Pause(bool isPaused)
         { // Called from "Game_Controller_CS".
             this.enabled = !isPaused;

@@ -6,13 +6,13 @@ namespace ChobiAssets.PTM
 
 	public class Camera_Rotation_CS : MonoBehaviour
 	{
-		/*
+        /*
 		 * This script is attached to the "Camera_Pivot" in the tank.
 		 * This script rotate the camera pivot in two ways, first person view and third person view.
 		*/
 
 
-		// User options >>
+        // User options >>
 		public Camera Main_Camera;
         public bool Use_Demo_Camera = false;
 		// << User options
@@ -74,14 +74,14 @@ namespace ChobiAssets.PTM
                 return;
             }
 
-            // Set the input script.
-            Set_Input_Script(inputType);
+            //// Set the input script.
+            //Set_Input_Script(inputType);
 
-            // Prepare the input script.
-            if (inputScript != null)
-            {
-                inputScript.Prepare(this);
-            }
+            //// Prepare the input script.
+            //if (inputScript != null)
+            //{
+            //    inputScript.Prepare(this);
+            //}
         }
 
 
@@ -92,35 +92,38 @@ namespace ChobiAssets.PTM
                 case 0: // Mouse + Keyboard (Stepwise)
                 case 1: // Mouse + Keyboard (Pressing)
                 case 10: // AI.
-                    inputScript = gameObject.AddComponent<Camera_Rotation_Input_01_Mouse_CS>();
+                    inputScript = gameObject.GetComponent<Camera_Rotation_Input_01_Mouse_CS>();
                     break;
 
-                case 2: // Gamepad (Single stick)
-                case 4: // Gamepad (Triggers)
-                    inputScript = gameObject.AddComponent<Camera_Rotation_Input_02_For_Single_Stick_Drive_CS>();
-                    break;
+                //case 2: // Gamepad (Single stick)
+                //case 4: // Gamepad (Triggers)
+                //    inputScript = gameObject.AddComponent<Camera_Rotation_Input_02_For_Single_Stick_Drive_CS>();
+                //    break;
 
-                case 3: // Gamepad (Twin sticks)
-                    inputScript = gameObject.AddComponent<Camera_Rotation_Input_03_For_Twin_Sticks_Drive_CS>();
-                    break;
+                //case 3: // Gamepad (Twin sticks)
+                //    inputScript = gameObject.AddComponent<Camera_Rotation_Input_03_For_Twin_Sticks_Drive_CS>();
+                //    break;
 
-                case 99: // Demo.
-                    inputScript = gameObject.AddComponent<Camera_Rotation_Input_99_Demo_CS>();
-                    break;
+                //case 99: // Demo.
+                //    inputScript = gameObject.AddComponent<Camera_Rotation_Input_99_Demo_CS>();
+                //    break;
             }
         }
-
 
         void Update()
         {
             // Check the camera.
             if (Main_Camera.enabled == false)
             {
-                return;
+                return; 
             }
 
-            // Get the input.
-            inputScript.Get_Input();
+            //// Get the input. (not network)
+            //inputScript.Get_Input();
+
+            ///Network Get Input
+            ///
+
             if (General_Settings_CS.Camera_Invert_Flag)
             {
                 Vertical_Input = -Vertical_Input;
@@ -128,7 +131,7 @@ namespace ChobiAssets.PTM
 
             // Adjust the input rate accoding to the current fps.
             if (Time.deltaTime != 0.0f)
-            { // (Note.) Sometimes the delta time will be zero while scene transition. 
+            { // (Note.) Sometimes the delta time will be zero while scene transition.
                 var currentDelta = Time.fixedDeltaTime / Time.deltaTime;
                 Horizontal_Input *= currentDelta;
                 Vertical_Input *= currentDelta;
@@ -167,6 +170,9 @@ namespace ChobiAssets.PTM
             // Set the target angles.
             targetAngles.y += Horizontal_Input * General_Settings_CS.Camera_Horizontal_Speed;
             targetAngles.z -= Vertical_Input * General_Settings_CS.Camera_Vertical_Speed;
+            Debug.Log(targetAngles);
+
+            Debug.Log(targetAngles.y);
 
             // Clamp the angles.
             if (General_Settings_CS.Camera_Use_Clamp)

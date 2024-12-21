@@ -7,10 +7,10 @@ public class NetworkGeneral : MonoBehaviour
 
     public List<Network_Move_Control> moveControl;
 
-    private byte[][] sendStr = new byte[10][];
+    private List<byte>[] sendStr = new List<byte>[100];
     private void Awake()
     {
-        for (int i = 1; i <moveControl.Count; i++)
+        for (int i = 1; i < moveControl.Count; i++)
         {
             moveControl[i].SetID(i);
             moveControl[i].GetComponent<Network_SendPos>().SetID(i);
@@ -39,7 +39,13 @@ public class NetworkGeneral : MonoBehaviour
             return byteList.ToArray();
         }
     }
-    public void SetRevcMove(string revcStr,int id)
+
+    public void SetRevcRotate(string revcStr, int id)
+    {
+
+    }
+
+    public void SetRevcMove(string revcStr, int id)
     {
         Debug.Log("Thông số di chuyển là: " + id + "    " + revcStr);
         moveControl[id].ResetValue();
@@ -70,8 +76,8 @@ public class NetworkGeneral : MonoBehaviour
             }
         }
     }
-    public void SetSendStr(byte[] sendStr,int id)
+    public void SetSendStr(byte[] sendStr, int id)
     {
-        this.sendStr[id] = sendStr;
+        //this.sendStr[id] = sendStr;
     }
 }

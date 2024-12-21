@@ -40777,6 +40777,7 @@ GameObject:
   - component: {fileID: 1142684571}
   - component: {fileID: 1142684573}
   - component: {fileID: 1142684572}
+  - component: {fileID: 1142684575}
   m_Layer: 0
   m_Name: Camera_Pivot
   m_TagString: Untagged
@@ -40897,6 +40898,18 @@ Transform:
   - {fileID: 884279692}
   m_Father: {fileID: 1182523474}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 10}
+--- !u!114 &1142684575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142684570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bed89862cf07784baa9ca3d847c3939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1154149546
 GameObject:
   m_ObjectHideFlags: 0
@@ -41759,6 +41772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1182523474}
   - component: {fileID: 1182523489}
+  - component: {fileID: 1182523498}
   - component: {fileID: 1182523494}
   - component: {fileID: 1182523486}
   - component: {fileID: 1182523485}
@@ -42283,6 +42297,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tank_ID: 1
   Relationship: 0
+  Is_Selected: 0
+--- !u!114 &1182523498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182523473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d529722d730504e8756f43f8747a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OpenFire_Angle: 180
+  Use_Auto_Turn: 0
+  Use_Auto_Lead: 0
+  Aiming_Blur_Multiplier: 1
+  reticleAimingFlag: 0
+  Mode: 0
+  Target_Position: {x: 0, y: 0, z: 0}
+  Target_Transform: {fileID: 0}
+  Target_Rigidbody: {fileID: 0}
+  Adjust_Angle: {x: 0, y: 0, z: 0}
+  Turret_Speed_Multiplier: 0
+  Turret_Turn_Rate: 0
+  Cannon_Turn_Rate: 0
   Is_Selected: 0
 --- !u!1 &1185684131
 GameObject:

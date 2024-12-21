@@ -13,8 +13,9 @@ public class UDPListener : MonoBehaviour
     public enum Command
     {
         None,
-        Move,
         Login,
+        Move,
+        Rotate
     }
     
     void Start()
@@ -71,14 +72,20 @@ public class UDPListener : MonoBehaviour
         switch (receivedData[1])
         {
             case (int)Command.None: break;
-            case (int)Command.Move:
-                string message = DecodeData(receivedData);
-                general.SetRevcMove(message,receivedData[2]);
-                break;
+            case (int)Command.Move: {
+                    string message = DecodeMoveData(receivedData);
+                    general.SetRevcMove(message, receivedData[2]);
+                    break;
+                }
+            case (int)Command.Rotate: {
+                    string message = DecodeRotateData(receivedData);
+                    general.SetRevcRotate(message, receivedData[2]);
+                    break;
+                }
             case (int)Command.Login: break;
         }
     }
-    public string DecodeData(byte[] receivedData)
+    public string DecodeMoveData(byte[] receivedData)
     {
         // Kiểm tra nếu dữ liệu rỗng hoặc không đủ byte
         if (receivedData == null || receivedData.Length < 2)
@@ -95,6 +102,25 @@ public class UDPListener : MonoBehaviour
         string message = Encoding.UTF8.GetString(messageBytes);
 
         return message;
+    }
+
+
+    public string DecodeRotateData(byte[] receivedData)
+    {
+        // Kiểm tra nếu dữ liệu rỗng hoặc không đủ byte
+        if (receivedData == null || receivedData.Length < 2)
+        {
+            Debug.LogWarning("Received data is too short to decode.");
+            return "";
+        }
+
+        // Loại bỏ byte đầu tiên và chuyển phần còn lại về chuỗi
+        byte[] messageBytes = new byte[receivedData.Length - 1];
+        Array.Copy(receivedData, 1, messageBytes, 0, messageBytes.Length);
+
+        // Chuyển đổi byte[] thành chuỗi bất kỳ...
+        
+        return "";
     }
 
 }

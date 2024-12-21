@@ -17,6 +17,7 @@ public class UDPSender : MonoBehaviour
     {
         None,
         Move,
+        Rotate,
         Login,
     }
 

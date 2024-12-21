@@ -91,7 +91,7 @@ namespace ChobiAssets.PTM
                 markerImage.color = Color.red;
 
                 // Set the marker on the target.
-                var currentPosition = Camera.main.WorldToScreenPoint(aimingScript.Target_Position);
+                var currentPosition = Camera.main.WorldToScreenPoint(aimingScript.Target_Position_Network);
                 if (currentPosition.z < 0.0f)
                 { // Behind of the camera.
 

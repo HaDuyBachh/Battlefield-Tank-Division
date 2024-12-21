@@ -757,7 +757,7 @@ namespace ChobiAssets.PTM
 
                 // Cast a line from the "Bullet_Generator" to the target.
                 RaycastHit raycastHit;
-                if (Physics.Linecast(bulletGeneratorScripts[i].transform.position, aimingScript.Target_Position, out raycastHit, Layer_Settings_CS.Layer_Mask))
+                if (Physics.Linecast(bulletGeneratorScripts[i].transform.position, aimingScript.Target_Position_Network, out raycastHit, Layer_Settings_CS.Layer_Mask))
                 {
                     if (raycastHit.transform.root == targetRootTransform)
                     { // The line hits the target.

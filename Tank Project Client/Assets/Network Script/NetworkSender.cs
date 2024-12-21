@@ -51,7 +51,7 @@ public class NetworkSender : MonoBehaviour
     }    
     public void SetRotateData(Vector3 rotate)
     {
-        rotateData = Vector3ToBytes(rotate);
+        //rotateData = Vector3ToBytes(rotate);
     }    
     public void Update()
     {
@@ -61,17 +61,5 @@ public class NetworkSender : MonoBehaviour
             SendData();
             nextSendTime = sendITimeout;  // Set next send time
         }
-    }
-
-    public byte[] Vector3ToBytes(Vector3 vector)
-    {
-        byte[] bytes = new byte[sizeof(float) * 3];
-
-        // Chuyển đổi các giá trị float thành byte[]
-        BitConverter.GetBytes(vector.x).CopyTo(bytes, 0);
-        BitConverter.GetBytes(vector.y).CopyTo(bytes, sizeof(float));
-        BitConverter.GetBytes(vector.z).CopyTo(bytes, sizeof(float) * 2);
-
-        return bytes;
     }
 }

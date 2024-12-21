@@ -106,7 +106,7 @@ namespace ChobiAssets.PTM
             { // Tracking the target.
 
                 // Get the target position.
-                Vector3 targetPosition = aimingScript.Target_Position;
+                Vector3 targetPosition = aimingScript.Target_Position_Network;
                 if (aimingScript.Target_Rigidbody && aimingScript.Use_Auto_Lead)
                 { // The target has a rigidbody, and the "Use_Auto_Lead" option is enabled.
 
@@ -133,7 +133,7 @@ namespace ChobiAssets.PTM
                 {
                     targetAngle = Mathf.DeltaAngle(angleY, targetAngle);
                 }
-                targetAngle += aimingScript.Adjust_Angle.x;
+                targetAngle += aimingScript.Adjust_Angle_Network.x;
             }
             else
             { // Not tracking. >> Return to the initial angle.

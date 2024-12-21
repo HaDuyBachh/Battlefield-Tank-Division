@@ -106,7 +106,7 @@ namespace ChobiAssets.PTM
             { // Tracking the target.
                 // Calculate the target angle.
                 targetAngle = Auto_Elevation_Angle();
-                targetAngle += Mathf.DeltaAngle(0.0f, angleX) + aimingScript.Adjust_Angle.y;
+                targetAngle += Mathf.DeltaAngle(0.0f, angleX) + aimingScript.Adjust_Angle_Network.y;
             }
             else
             { // Not tracking. >> Return to the initial angle.
@@ -155,14 +155,14 @@ namespace ChobiAssets.PTM
             // Calculate the proper angle.
             float properAngle;
             Vector2 targetPos2D;
-            targetPos2D.x = aimingScript.Target_Position.x;
-            targetPos2D.y = aimingScript.Target_Position.z;
+            targetPos2D.x = aimingScript.Target_Position_Network.x;
+            targetPos2D.y = aimingScript.Target_Position_Network.z;
             Vector2 thisPos2D;
             thisPos2D.x = thisTransform.position.x;
             thisPos2D.y = thisTransform.position.z;
             Vector2 dist;
             dist.x = Vector2.Distance(targetPos2D, thisPos2D);
-            dist.y = aimingScript.Target_Position.y - thisTransform.position.y;
+            dist.y = aimingScript.Target_Position_Network.y - thisTransform.position.y;
             if (Bullet_Generator_Script)
             {
                 bulletVelocity = Bullet_Generator_Script.Current_Bullet_Velocity;
@@ -200,7 +200,7 @@ namespace ChobiAssets.PTM
         {
             // Simply face the target.
             float directAngle;
-            Vector3 localPos = turretBaseTransform.InverseTransformPoint(aimingScript.Target_Position);
+            Vector3 localPos = turretBaseTransform.InverseTransformPoint(aimingScript.Target_Position_Network);
             directAngle = Mathf.Rad2Deg * (Mathf.Asin((localPos.y - thisTransform.localPosition.y) / Vector3.Distance(thisTransform.localPosition, localPos)));
             return directAngle;
         }

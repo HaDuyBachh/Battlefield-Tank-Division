@@ -6,7 +6,7 @@ namespace ChobiAssets.PTM
 
 	public class Aiming_Control_Input_01_Mouse_Keyboard_CS : Aiming_Control_Input_00_Base_CS
 	{
-
+        [SerializeField]
         protected Gun_Camera_CS gunCameraScript;
         protected int thisRelationship;
 		protected Vector3 screenCenter = Vector3.zero;

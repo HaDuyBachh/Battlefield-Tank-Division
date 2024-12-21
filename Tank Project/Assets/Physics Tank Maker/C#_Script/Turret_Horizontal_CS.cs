@@ -93,12 +93,15 @@ namespace ChobiAssets.PTM
         }
 
 
+        // Network setup here (because aim control 01 is turning = true)
         void Auto_Turn()
         {
             if (isTurning == false)
             {
                 return;
             }
+
+            //Debug.Log("Đang chạy ở auto turn đây");
 
             // Calculate the target angle.
             float targetAngle;
@@ -186,6 +189,7 @@ namespace ChobiAssets.PTM
 
         void Manual_Turn()
         {
+            
             if (aimingScript.Turret_Turn_Rate != 0.0f)
             {
                 isTurning = true;

@@ -83,7 +83,7 @@ namespace ChobiAssets.PTM
         void Rotation_Controll()
         {
             // Get the distance to the target.
-            var targetDistance = Vector3.Distance(thisTransform.position, aimingScript.Target_Position) * Multiplier;
+            var targetDistance = Vector3.Distance(thisTransform.position, aimingScript.Target_Position_Network) * Multiplier;
             currentDistance = Mathf.MoveTowards(currentDistance, targetDistance, Speed * Mathf.Lerp(0.0f, 1.0f, Mathf.Abs(targetDistance - currentDistance) / 500.0f) * Time.deltaTime);
 
             // Set the angles.

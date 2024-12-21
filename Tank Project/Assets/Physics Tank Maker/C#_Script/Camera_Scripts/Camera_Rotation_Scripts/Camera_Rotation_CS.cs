@@ -74,14 +74,14 @@ namespace ChobiAssets.PTM
                 return;
             }
 
-            //// Set the input script.
-            //Set_Input_Script(inputType);
+            // Set the input script.
+            Set_Input_Script(inputType);
 
-            //// Prepare the input script.
-            //if (inputScript != null)
-            //{
-            //    inputScript.Prepare(this);
-            //}
+            // Prepare the input script.
+            if (inputScript != null)
+            {
+                inputScript.Prepare(this);
+            }
         }
 
 
@@ -119,7 +119,7 @@ namespace ChobiAssets.PTM
             }
 
             //// Get the input. (not network)
-            //inputScript.Get_Input();
+            inputScript.Get_Input();
 
             ///Network Get Input
             ///

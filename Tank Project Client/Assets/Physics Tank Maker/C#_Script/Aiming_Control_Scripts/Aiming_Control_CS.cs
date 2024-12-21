@@ -32,13 +32,16 @@ namespace ChobiAssets.PTM
         public int Mode; // Referred to from "UI_Aim_Marker_Control_CS". // 0 => Keep the initial positon, 1 => Free aiming,  2 => Locking on.
         Transform rootTransform;
         Rigidbody thisRigidbody;
+        [SerializeField]
         public Vector3 Target_Position; // Referred to from "Turret_Horizontal_CS", "Cannon_Vertical_CS", "UI_Aim_Marker_Control_CS", "ReticleWheel_Control_CS".
+        public Vector3 Target_Position_Network;
         public Transform Target_Transform; // Referred to from "UI_Aim_Marker_Control_CS", "UI_HP_Bars_Target_CS".
         Vector3 targetOffset;
         public Rigidbody Target_Rigidbody; // Referred to from "Turret_Horizontal_CS".
         public Vector3 Adjust_Angle; // Referred to from "Turret_Horizontal_CS" and "Cannon_Vertical_CS".
+        public Vector3 Adjust_Angle_Network;
         const float spherecastRadius = 3.0f;
-        Camera_Rotation_CS cameraRotationScript;
+        public Camera_Rotation_CS cameraRotationScript;
         public float Turret_Speed_Multiplier; // Referred to from "Turret_Horizontal_CS" and "Cannon_Vertical_CS".
 
         // For manual-turn.
@@ -75,7 +78,7 @@ namespace ChobiAssets.PTM
             cannonVerticalScripts = GetComponentsInChildren<Cannon_Vertical_CS>();
 
             // Get the "Camera_Rotation_CS" script in the tank.
-            cameraRotationScript = transform.parent.GetComponentInChildren<Camera_Rotation_CS>();
+            cameraRotationScript = FindAnyObjectByType<Camera_Rotation_CS>();
 
             // Set the input script.
             Set_Input_Script(inputType);

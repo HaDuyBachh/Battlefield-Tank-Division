@@ -98,21 +98,21 @@ namespace ChobiAssets.PTM
                     inputScript = gameObject.AddComponent<Aiming_Control_Input_01_Mouse_Keyboard_CS>();
                     break;
 
-                case 2: // GamePad (Single stick)
-                    inputScript = gameObject.AddComponent<Aiming_Control_Input_02_For_Single_Stick_Drive_CS>();
-                    break;
+                //case 2: // GamePad (Single stick)
+                //    inputScript = gameObject.AddComponent<Aiming_Control_Input_02_For_Single_Stick_Drive_CS>();
+                //    break;
 
-                case 3: // GamePad (Twin sticks)
-                    inputScript = gameObject.AddComponent<Aiming_Control_Input_03_For_Twin_Sticks_Drive_CS>();
-                    break;
+                //case 3: // GamePad (Twin sticks)
+                //    inputScript = gameObject.AddComponent<Aiming_Control_Input_03_For_Twin_Sticks_Drive_CS>();
+                //    break;
 
-                case 4: // GamePad (Triggers)
-                    inputScript = gameObject.AddComponent<Aiming_Control_Input_04_For_Triggers_Drive_CS>();
-                    break;
+                //case 4: // GamePad (Triggers)
+                //    inputScript = gameObject.AddComponent<Aiming_Control_Input_04_For_Triggers_Drive_CS>();
+                //    break;
 
-                case 10: // AI
-                    // The order is sent from "AI_CS".
-                    break;
+                //case 10: // AI
+                //    // The order is sent from "AI_CS".
+                //    break;
             }
         }
 
@@ -128,6 +128,8 @@ namespace ChobiAssets.PTM
             {
 				inputScript.Get_Input();
 			}
+
+            Debug.Log(Target_Position);
 		}
 
 

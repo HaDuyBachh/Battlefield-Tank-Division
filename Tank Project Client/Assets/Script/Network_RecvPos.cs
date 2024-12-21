@@ -12,6 +12,10 @@ public class Network_RecvPos : MonoBehaviour
     {
         general = FindAnyObjectByType<NetworkGeneral>();
     }
+    public void Thaydoi()
+    {
+
+    }    
     public void SetValue()
     {
         if (id == 2) Debug.Log("Đang chạy đây pa");

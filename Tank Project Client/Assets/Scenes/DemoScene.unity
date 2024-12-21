@@ -42149,10 +42149,7 @@ MonoBehaviour:
   id: 2
   general: {fileID: 0}
   Body: {fileID: 1182523474}
-  IdlerWheel: {fileID: 0}
   WheelOut: {fileID: 1108953356}
-  WheelIn: {fileID: 0}
-  SprocketWheel: {fileID: 0}
 --- !u!114 &1182523491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46944,10 +46941,7 @@ MonoBehaviour:
   id: 1
   general: {fileID: 0}
   Body: {fileID: 1357129257}
-  IdlerWheel: {fileID: 0}
   WheelOut: {fileID: 1263712910}
-  WheelIn: {fileID: 0}
-  SprocketWheel: {fileID: 0}
 --- !u!1 &1358825872
 GameObject:
   m_ObjectHideFlags: 0
@@ -51053,12 +51047,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d9a55d21a364b49a1cb1a5223a59c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientID: 1
+  clientID: 2
   clientPort: 8880
+  clientQuanty: 2
   sender: {fileID: 1990859386}
-  mainPos: {fileID: 1182523490}
-  clonePos: {fileID: 1357129275}
-  UDP: {fileID: 0}
+  UDP: {fileID: 1990859385}
 --- !u!1 &1498138909
 GameObject:
   m_ObjectHideFlags: 0
@@ -70221,7 +70214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105b8e7e85f224b478a062a998b9e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
+  mainID: 0
   udp: {fileID: 1990859385}
 --- !u!1 &2005796342
 GameObject:

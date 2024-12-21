@@ -4,31 +4,38 @@ using UnityEngine;
 
 public class NetworkSender : MonoBehaviour
 {
-    public byte id = 1;
-    string sendStr = "";
-    public UDPSender udp;
+    [SerializeField]
+    private byte mainID = 0;
+    [SerializeField]
+    private UDPSender udp;
     private float sendITimeout = 0.005f; // Interval in seconds between each send
     private float nextSendTime = 0f;
-
-    public void Awake()
+    string sendStr = "";
+    public void SetMainID(byte id)
     {
-        udp = FindAnyObjectByType<UDPSender>();
-        Application.targetFrameRate = 60;
-
+        this.mainID = id;
+    }
+    public void InitClientID()
+    {
         int id_temp = 1;
         foreach (var body in FindObjectsOfType<Network_RecvPos>())
-        { 
+        {
             if (body.gameObject.CompareTag("MainPlayer"))
             {
-                body.id = this.id;
+                body.id = this.mainID;
             }
             else
             {
-                id_temp += (id_temp != id) ? 0:1;
+                id_temp += (id_temp != mainID) ? 0 : 1;
                 body.id = id_temp;
                 id_temp++;
             }
         }
+    }
+    public void Start()
+    {
+        udp = FindAnyObjectByType<UDPSender>();
+        InitClientID();
     }
     public void SetData(string sendStr)
     {
@@ -36,7 +43,7 @@ public class NetworkSender : MonoBehaviour
     }
     public void SendData()
     {
-        udp.SendMove(sendStr,(byte)UDPSender.Command.Move,id);
+        udp.SendMove(sendStr,(byte)UDPSender.Command.Move, mainID);
         udp.BeginReceive();
         sendStr = "";
     }    

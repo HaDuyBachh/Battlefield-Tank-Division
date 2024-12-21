@@ -20,6 +20,11 @@ public class UDPSender : MonoBehaviour
         Login,
     }
 
+    public void SetClientPort(int port)
+    {
+        clientPort = port;
+    }
+
     void Start()
     {
         general = FindObjectOfType<NetworkGeneral>();

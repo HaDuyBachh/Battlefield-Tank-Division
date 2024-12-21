@@ -142,13 +142,11 @@ namespace ChobiAssets.PTM
             switch (type)
             {
                 case 0: // Mouse + Keyboard (Stepwise)
-                //    inputScript = gameObject.AddComponent<Drive_Control_Input_01_Keyboard_Stepwise_CS>();
-                //    break;
+                    //inputScript = gameObject.AddComponent<Drive_Control_Input_01_Keyboard_Stepwise_CS>();
+                    //break;
 
                 case 1: // Mouse + Keyboard (Pressing)
-                    //inputScript = gameObject.AddComponent<Drive_Control_Input_02_Keyboard_Pressing_CS>();
                     inputScript = gameObject.GetComponent<Drive_Control_Input_02_Keyboard_Pressing_CS>();
-                    Debug.Log(inputScript);
                     break;
 
                 //case 2: // Gamepad (Single stick)
@@ -181,7 +179,10 @@ namespace ChobiAssets.PTM
 
         void Update()
         {
-            inputScript.Drive_Input();
+            //if (isSelected || inputType == 10)
+            { // The tank is selected, or AI.
+                inputScript.Drive_Input();
+            }
 
             // Set the driving values, such as speed rate, brake drag and torque.
             Set_Driving_Values();

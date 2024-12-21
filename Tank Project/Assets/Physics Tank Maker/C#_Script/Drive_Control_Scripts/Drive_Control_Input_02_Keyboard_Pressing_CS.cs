@@ -7,42 +7,8 @@ namespace ChobiAssets.PTM
     public class Drive_Control_Input_02_Keyboard_Pressing_CS : Drive_Control_Input_01_Keyboard_Stepwise_CS
     {
         public Network_Move_Control move;
-        //public override void Drive_Input()
-        //{
-        //    // Set "vertical".
-        //    if (Input.GetKey(General_Settings_CS.Drive_Up_Key))
-        //    {
-        //        vertical = 1.0f;
-        //    }
-        //    else if (Input.GetKey(General_Settings_CS.Drive_Down_Key))
-        //    {
-        //        vertical = -0.5f;
-        //    }
-        //    else
-        //    {
-        //        vertical = 0.0f;
-        //    }
 
-        //    // Set "horizontal".
-        //    if (Input.GetKey(General_Settings_CS.Drive_Left_Key))
-        //    {
-        //        horizontal = -1.0f;
-        //    }
-        //    else if (Input.GetKey(General_Settings_CS.Drive_Right_Key))
-        //    {
-        //        horizontal = 1.0f;
-        //    }
-        //    else
-        //    {
-        //        horizontal = 0.0f;
-        //    }
-
-        //    // Control the brake.
-        //    controlScript.Apply_Brake = Input.GetKey(General_Settings_CS.Drive_Brake_Key);
-
-        //    // Set the "Stop_Flag", "L_Input_Rate", "R_Input_Rate" and "Turn_Brake_Rate".
-        //    Set_Values();
-        //}
+        // Modify to run in network        
         public override void Drive_Input()
         {
             // Set "vertical".
@@ -79,6 +45,43 @@ namespace ChobiAssets.PTM
             // Set the "Stop_Flag", "L_Input_Rate", "R_Input_Rate" and "Turn_Brake_Rate".
             Set_Values();
         }
+
+        //public override void Drive_Input()
+        //{
+        //    // Set "vertical".
+        //    if (Input.GetKey(General_Settings_CS.Drive_Up_Key))
+        //    {
+        //        vertical = 1.0f;
+        //    }
+        //    else if (Input.GetKey(General_Settings_CS.Drive_Down_Key))
+        //    {
+        //        vertical = -0.5f;
+        //    }
+        //    else
+        //    {
+        //        vertical = 0.0f;
+        //    }
+
+        //    // Set "horizontal".
+        //    if (Input.GetKey(General_Settings_CS.Drive_Left_Key))
+        //    {
+        //        horizontal = -1.0f;
+        //    }
+        //    else if (Input.GetKey(General_Settings_CS.Drive_Right_Key))
+        //    {
+        //        horizontal = 1.0f;
+        //    }
+        //    else
+        //    {
+        //        horizontal = 0.0f;
+        //    }
+
+        //    // Control the brake.
+        //    controlScript.Apply_Brake = Input.GetKey(General_Settings_CS.Drive_Brake_Key);
+
+        //    // Set the "Stop_Flag", "L_Input_Rate", "R_Input_Rate" and "Turn_Brake_Rate".
+        //    Set_Values();
+        //}
         protected override void Set_Values()
         {
             // In case of stopping.

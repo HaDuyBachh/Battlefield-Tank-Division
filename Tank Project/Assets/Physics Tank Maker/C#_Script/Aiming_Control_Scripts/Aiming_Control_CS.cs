@@ -38,7 +38,7 @@ namespace ChobiAssets.PTM
         public Rigidbody Target_Rigidbody; // Referred to from "Turret_Horizontal_CS".
         public Vector3 Adjust_Angle; // Referred to from "Turret_Horizontal_CS" and "Cannon_Vertical_CS".
         const float spherecastRadius = 3.0f;
-        Camera_Rotation_CS cameraRotationScript;
+        public Camera_Rotation_CS cameraRotationScript;
         public float Turret_Speed_Multiplier; // Referred to from "Turret_Horizontal_CS" and "Cannon_Vertical_CS".
 
         // For manual-turn.
@@ -75,8 +75,8 @@ namespace ChobiAssets.PTM
             cannonVerticalScripts = GetComponentsInChildren<Cannon_Vertical_CS>();
 
             // Get the "Camera_Rotation_CS" script in the tank.
-            //cameraRotationScript = transform.parent.GetComponentInChildren<Camera_Rotation_CS>();
             cameraRotationScript = FindAnyObjectByType<Camera_Rotation_CS>();
+
 
             // Set the input script.
             Set_Input_Script(inputType);
@@ -95,24 +95,24 @@ namespace ChobiAssets.PTM
             {
                 case 0: // Mouse + Keyboard (Stepwise)
                 case 1: // Mouse + Keyboard (Pressing)
-                    inputScript = gameObject.GetComponent<Aiming_Control_Input_01_Mouse_Keyboard_CS>();
+                    inputScript = gameObject.AddComponent<Aiming_Control_Input_01_Mouse_Keyboard_CS>();
                     break;
 
-                //case 2: // GamePad (Single stick)
-                //    inputScript = gameObject.AddComponent<Aiming_Control_Input_02_For_Single_Stick_Drive_CS>();
-                //    break;
+                case 2: // GamePad (Single stick)
+                    inputScript = gameObject.AddComponent<Aiming_Control_Input_02_For_Single_Stick_Drive_CS>();
+                    break;
 
-                //case 3: // GamePad (Twin sticks)
-                //    inputScript = gameObject.AddComponent<Aiming_Control_Input_03_For_Twin_Sticks_Drive_CS>();
-                //    break;
+                case 3: // GamePad (Twin sticks)
+                    inputScript = gameObject.AddComponent<Aiming_Control_Input_03_For_Twin_Sticks_Drive_CS>();
+                    break;
 
-                //case 4: // GamePad (Triggers)
-                //    inputScript = gameObject.AddComponent<Aiming_Control_Input_04_For_Triggers_Drive_CS>();
-                //    break;
+                case 4: // GamePad (Triggers)
+                    inputScript = gameObject.AddComponent<Aiming_Control_Input_04_For_Triggers_Drive_CS>();
+                    break;
 
-                //case 10: // AI
-                //    // The order is sent from "AI_CS".
-                //    break;
+                case 10: // AI
+                    // The order is sent from "AI_CS".
+                    break;
             }
         }
 
@@ -137,6 +137,7 @@ namespace ChobiAssets.PTM
             if (Target_Transform)
             {
                 Update_Target_Position();
+                Debug.Log("Đang chạy ở đây");
             }
             else
             {

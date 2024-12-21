@@ -47,7 +47,7 @@ namespace ChobiAssets.PTM
             }
 
             // Set the tracks activations at the first time.
-            //frustumHeight = 2.0f * Vector3.Distance(thisTransform.position, Camera.main.transform.position) * Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
+            frustumHeight = 2.0f * Vector3.Distance(thisTransform.position, Camera.main.transform.position) * Mathf.Tan(Camera.main.fieldOfView * 0.5f * Mathf.Deg2Rad);
             tankIsNear = (frustumHeight < Threshold);
             if (tankIsNear)
             {
@@ -77,7 +77,7 @@ namespace ChobiAssets.PTM
         void Tracks_LOD()
         {
             var mainCamera = Camera.main;
-            //frustumHeight = 2.0f * Vector3.Distance(thisTransform.position, mainCamera.transform.position) * Mathf.Tan(mainCamera.fieldOfView * 0.5f * Mathf.Deg2Rad);
+            frustumHeight = 2.0f * Vector3.Distance(thisTransform.position, mainCamera.transform.position) * Mathf.Tan(mainCamera.fieldOfView * 0.5f * Mathf.Deg2Rad);
             if (tankIsNear)
             {
                 if (frustumHeight > Threshold)

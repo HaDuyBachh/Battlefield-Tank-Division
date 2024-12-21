@@ -6,7 +6,6 @@ namespace ChobiAssets.PTM
 
     public class Drive_Control_Input_01_Keyboard_Stepwise_CS : Drive_Control_Input_00_Base_CS
     {
-
         protected float vertical;
         protected float horizontal;
 
@@ -14,44 +13,6 @@ namespace ChobiAssets.PTM
         protected int reverseStepCount = 2;
         protected int forwardStepCount = 4;
 
-
-        //public override void Drive_Input()
-        //{
-        //    // Set "vertical".
-        //    if (Input.GetKeyDown(General_Settings_CS.Drive_Up_Key) && speedStep < forwardStepCount)
-        //    { // Forward
-        //        speedStep += 1;
-        //        controlScript.Shift_Gear(speedStep);
-        //    }
-        //    else if (Input.GetKeyDown(General_Settings_CS.Drive_Down_Key) && speedStep > -reverseStepCount)
-        //    { // Backward
-        //        speedStep -= 1;
-        //        controlScript.Shift_Gear(speedStep);
-        //    }
-        //    else if (Input.GetKeyDown(General_Settings_CS.Drive_Brake_Key) && speedStep != 0)
-        //    { // Stop
-        //        speedStep = 0;
-        //        controlScript.Shift_Gear(speedStep);
-        //    }
-        //    vertical = (1.0f / forwardStepCount) * speedStep;
-
-        //    // Set "horizontal".
-        //    if (Input.GetKey(General_Settings_CS.Drive_Left_Key))
-        //    { // Left
-        //        horizontal = -1.0f;
-        //    }
-        //    else if (Input.GetKey(General_Settings_CS.Drive_Right_Key))
-        //    { // Right
-        //        horizontal = 1.0f;
-        //    }
-        //    else
-        //    { // No turn.
-        //        horizontal = 0.0f;
-        //    }
-
-        /// <summary>
-        /// This Drive Input Is Modify For Network -Bach-
-        /// </summary>
         public override void Drive_Input()
         {
             // Set "vertical".

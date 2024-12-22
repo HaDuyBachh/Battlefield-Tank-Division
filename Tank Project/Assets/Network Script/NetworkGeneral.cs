@@ -13,61 +13,52 @@ public class NetworkGeneral : MonoBehaviour
         Rotate,
         Login,
     }
-    public List<GameObject> clientIdObjectControl;
-    [SerializeField]
-    private List<Network_Move_Control> clientMoveControl = new();
-    [SerializeField]
-    private List<Network_Rotate_Control> clientRotateControl = new();
-    public byte[] SendData
+    public List<NetworkObjectControl> clientIdObjectControl;
+    private List<byte>[]sendMoveData = new List<byte>[256];
+    private List<byte>[]sendRotData = new List<byte>[256];
+    private List<byte> respond = new();
+    public void Awake()
     {
-        get
+        for (int id = 1; id < clientIdObjectControl.Count; id++)
         {
-            return null;
-            // Kiểm tra sự tồn tại của sendStr[1] và sendStr[2]
-            if (sendData[1] == null || sendData[2] == null)
-            {
-                return null; // Trả về null nếu một trong các mảng không tồn tại
-            }
-
-            // Sử dụng List<byte> để ghép các mảng byte
-            List<byte> byteList = new List<byte>();
-
-            // Thêm sendStr[1] vào List
-            byteList.AddRange(sendData[1]);
-
-            // Thêm sendStr[2] vào List
-            byteList.AddRange(sendData[2]);
-
-            // Chuyển List<byte> trở lại thành mảng byte
-            return byteList.ToArray();
+            clientIdObjectControl[id].SetID(id);
+            sendMoveData[id] = new();
+            sendRotData[id] = new();
         }
     }
-    private List<byte>[] sendData = new List<byte>[100];
-    private void Init()
+    public byte[] GetMoveDataRespond()
     {
-        for (int i = 0; i < clientIdObjectControl.Count; i++)
+        respond.Clear();
+
+        /// Chuyển thông điệp thành byte  --------------------------------------
+
+        for (byte id = 1; id < clientIdObjectControl.Count; id++)
         {
-            if (i==0)
-            {
-                clientMoveControl.Add(null);
-                clientRotateControl.Add(null);
-            }
-            else
-            {
-                clientMoveControl.Add(clientIdObjectControl[i].GetComponent<Network_Move_Control>());
-                clientRotateControl.Add(clientIdObjectControl[i].GetComponent<Network_Rotate_Control>());
-                clientIdObjectControl[i].GetComponent<Network_Move_Control>().SetID(i);
-                clientIdObjectControl[i].GetComponent<NetworkSendMoveData>().SetID(i);
-            }
+            ///[command]:   1 byte
+            respond.Add((byte)Command.Move);
+            ///[id]:        1 byte
+            respond.Add(id);
+            ///[length]:    2 byte
+            respond.AddRange(EncodeIntTo2Bytes(sendMoveData[id].Count + sendRotData[id].Count));
+            /////[data]: length byte
+            respond.AddRange(sendMoveData[id]);
+            respond.AddRange(sendRotData[id]);
+        }
+
+        if (respond.Count > 0) return respond.ToArray();
+        else
+        {
+            respond.Add((byte)Command.None);
+            return respond.ToArray();
         }
     }
-    private void Awake()
+    public void SetMoveDataRespond(List<byte> data, int id)
     {
-        Init();
+        sendMoveData[id] = data;
     }
-    public void SetMoveDataRespond(byte[] dataRespond, int id)
+    public void SetRotateDataRespond(List<byte> data, int id)
     {
-        //this.sendStr[id] = sendStr;
+        sendRotData[id] = data;
     }
     public void RecvData(byte[] encodedData)
     {
@@ -149,13 +140,13 @@ public class NetworkGeneral : MonoBehaviour
     public void SetRevcRotate(Vector3[] recvData, int id)
     {
         Debug.Log("Thông số xoay là: " + id + "    " + recvData[0] + "  " + recvData[1]);
-        clientRotateControl[id].SetTarget(recvData[0], recvData[1]);
+        clientIdObjectControl[id].rotate_Control.SetTarget(recvData[0], recvData[1]);
     }
     public void SetRevcMove(string recvData, int id)
     {
         Debug.Log("Thông số di chuyển là:" + id + "   " + recvData);
 
-        clientMoveControl[id].ResetValue();
+        clientIdObjectControl[id].move_Control.ResetValue();
 
         if (recvData.Length > 0)
         {
@@ -169,16 +160,16 @@ public class NetworkGeneral : MonoBehaviour
                     case 'X':
                         return;
                     case 'L':
-                        clientMoveControl[id].Left = true;
+                        clientIdObjectControl[id].move_Control.Left = true;
                         break;
                     case 'R':
-                        clientMoveControl[id].Right = true;
+                        clientIdObjectControl[id].move_Control.Right = true;
                         break;
                     case 'F':
-                        clientMoveControl[id].Forward = true;
+                        clientIdObjectControl[id].move_Control.Forward = true;
                         break;
                     case 'B':
-                        clientMoveControl[id].Backward = true;
+                        clientIdObjectControl[id].move_Control.Backward = true;
                         break;
                     default:
                         break;

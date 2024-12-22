@@ -8,7 +8,7 @@
 #define SERVER_IP "127.0.0.1"
 #define SERVER_PORT 8080
 #define UNITY_LISTENER_PORT 9999
-#define BUFFER_SIZE 5012
+#define BUFFER_SIZE 1500
 
 void sendData(SOCKET sockfd, struct sockaddr_in *serverAddr, char *data, int dataLen) {
     // Gửi dữ liệu đến server

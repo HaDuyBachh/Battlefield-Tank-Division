@@ -7,7 +7,7 @@
 
 #define SERVER_PORT 8080
 #define UNITY_LISTENER_PORT 9999
-#define BUFFER_SIZE 1500
+#define BUFFER_SIZE 3000
 #define CHECK_BYTE 0x11 // Giá trị byte đầu cần kiểm tra (ví dụ: 0x11)
 
 typedef struct {
@@ -49,13 +49,6 @@ DWORD WINAPI handleClient(LPVOID param) {
     }
 
     // Gửi dữ liệu tới Unity Listener
-    // if (sendto(threadSocket, clientData->buffer, BUFFER_SIZE, 0,
-    //            (struct sockaddr *)&unityListenerAddr, sizeof(unityListenerAddr)) == SOCKET_ERROR) {
-    //     printf("sendto to Unity Listener failed. Error Code: %d\n", WSAGetLastError());
-    //     closesocket(threadSocket);
-    //     free(clientData);
-    //     return 0;
-    // }
     if (sendto(threadSocket, clientData->buffer, clientData->recvLen, 0,
             (struct sockaddr *)&unityListenerAddr, sizeof(unityListenerAddr)) == SOCKET_ERROR) {
         printf("sendto to Unity Listener failed. Error Code: %d\n", WSAGetLastError());

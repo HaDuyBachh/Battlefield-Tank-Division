@@ -32,10 +32,9 @@ public class UDPListener : MonoBehaviour
 
             // Gửi phản hồi lại server.c
             SendResponse(new byte[] { 0x11, 0x22, 0x12 }, remoteEndPoint);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"Error receiving data: {e.Message}");   
+            //SendResponse(general.GetMoveDataRespond(), remoteEndPoint);
+            Debug.Log("Phản hồi lại: " + general.GetMoveDataRespond().Length);
+            
         }
         finally
         {

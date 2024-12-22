@@ -5,19 +5,9 @@ using UnityEngine;
 
 public class NetworkSendMoveData : MonoBehaviour
 {
-    public int id;
-    public NetworkGeneral general;
     public Transform Body;
     public Transform WheelOut;
-    public void Start()
-    {
-        general = FindAnyObjectByType<NetworkGeneral>();
-    }
-    public void SetID(int id)
-    {
-        this.id = id;
-    }
-    public byte[] GetValue()
+    public List<byte> GetValue()
     {
         // Tạo danh sách chứa các giá trị float từ position và rotation
         List<float> dataList = new();
@@ -61,11 +51,6 @@ public class NetworkSendMoveData : MonoBehaviour
             byteList.AddRange(floatBytes);
         }
 
-        return byteList.ToArray(); // Trả về mảng byte
+        return byteList; // Trả về mảng byte
     }
-    public void Update()
-    {
-        general.SetMoveDataRespond(GetValue(),id);
-    }
-
 }

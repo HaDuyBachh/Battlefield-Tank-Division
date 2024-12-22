@@ -18394,6 +18394,7 @@ GameObject:
   - component: {fileID: 1182523475}
   - component: {fileID: 1182523478}
   - component: {fileID: 1182523490}
+  - component: {fileID: 1182523500}
   - component: {fileID: 1182523491}
   - component: {fileID: 1182523496}
   - component: {fileID: 1182523495}
@@ -18950,6 +18951,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunCameraScript: {fileID: 0}
+--- !u!114 &1182523500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182523473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7005503304bd446a4eedd304e364d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sender: {fileID: 0}
+  aim: {fileID: 0}
 --- !u!1 &1190982896
 GameObject:
   m_ObjectHideFlags: 0
@@ -33038,6 +33053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd25d09a1e928d94bb6c12c3c47ac4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clientManager: {fileID: 0}
 --- !u!114 &1990859385
 MonoBehaviour:
   m_ObjectHideFlags: 0

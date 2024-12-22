@@ -22,7 +22,8 @@ public class NetworkSender : MonoBehaviour
     private string moveData = "";
 
     //Gồm 2 vị trí để xoay xe tăng (1: Target Position Network, 2: Adjust Angle Network)
-    private Vector3[] rotateData = null;
+    private Vector3[] rotateData = new Vector3[2];
+    private bool rotateChange = false;
 
     public enum Command
     {
@@ -76,10 +77,10 @@ public class NetworkSender : MonoBehaviour
         }
         
         ///Encode Rotate
-        if (rotateData != null)
+        if (rotateChange)
         {
             sendData.AddRange(Encode(Vector3ArrayToByte(rotateData), (byte)Command.Rotate, mainID));
-            rotateData = null;
+            rotateChange = false;
         }
 
         Debug.Log("Đang chạy ở đây với send là: " + sendData.Count);
@@ -96,9 +97,11 @@ public class NetworkSender : MonoBehaviour
     {
         this.moveData = moveData;
     }
-    public void SetRotateData(Vector3[] rotateData)
-    {  
-        this.rotateData = rotateData;
+    public void SetRotateData(Vector3 target_Position, Vector3 adjust_Angle)
+    {
+        rotateData[0] = target_Position;
+        rotateData[1] = adjust_Angle;
+        rotateChange = true;
     }    
     public List<byte> Encode(byte[] messageBytes, byte command, byte id)
     {

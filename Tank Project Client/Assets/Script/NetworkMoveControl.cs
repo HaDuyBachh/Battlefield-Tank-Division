@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Network_Move_Control : MonoBehaviour
+public class NetworkMoveControl : MonoBehaviour
 {
     public int ID = -1;
     public bool Forward = false;

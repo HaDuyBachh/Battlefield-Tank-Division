@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputListener: MonoBehaviour
+public class InputMoveListener: MonoBehaviour
 {
     public NetworkSender sender;
     string sendStr;

@@ -37,7 +37,7 @@ namespace ChobiAssets.PTM
             if (ID_Manager_CS.Instance)
             {
                 // Also, the proper ID is set by "ID_Manager_CS",
-                ID_Manager_CS.Instance.SendMessage("Receive_ID_Script" ,this, SendMessageOptions.DontRequireReceiver);
+                //ID_Manager_CS.Instance.SendMessage("Receive_ID_Script" ,this, SendMessageOptions.DontRequireReceiver);
             }
 
             // Set the "Is_Selected" value.

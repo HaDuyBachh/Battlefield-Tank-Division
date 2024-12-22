@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Network_SendPos : MonoBehaviour
+public class NetworkSendMoveData : MonoBehaviour
 {
     public int id;
     public NetworkGeneral general;
@@ -65,7 +65,7 @@ public class Network_SendPos : MonoBehaviour
     }
     public void Update()
     {
-        general.SetSendStr(GetValue(),id);
+        general.SetMoveDataRespond(GetValue(),id);
     }
 
 }

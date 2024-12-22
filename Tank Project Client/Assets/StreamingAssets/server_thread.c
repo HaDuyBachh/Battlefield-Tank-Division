@@ -7,7 +7,7 @@
 
 #define SERVER_PORT 8080
 #define UNITY_LISTENER_PORT 9999
-#define BUFFER_SIZE 5012
+#define BUFFER_SIZE 1500
 #define CHECK_BYTE 0x11 // Giá trị byte đầu cần kiểm tra (ví dụ: 0x11)
 
 typedef struct {

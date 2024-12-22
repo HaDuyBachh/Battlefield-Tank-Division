@@ -95,7 +95,7 @@ namespace ChobiAssets.PTM
             {
                 case 0: // Mouse + Keyboard (Stepwise)
                 case 1: // Mouse + Keyboard (Pressing)
-                    inputScript = gameObject.AddComponent<Aiming_Control_Input_01_Mouse_Keyboard_CS>();
+                    inputScript = gameObject.GetComponent<Aiming_Control_Input_01_Mouse_Keyboard_CS>();
                     break;
 
                 //case 2: // GamePad (Single stick)
@@ -129,7 +129,7 @@ namespace ChobiAssets.PTM
 				inputScript.Get_Input();
 			}
 
-            Debug.Log(Target_Position);
+            //Debug.Log(Target_Position);
 		}
 
 

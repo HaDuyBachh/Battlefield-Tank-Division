@@ -69,6 +69,8 @@ public class NetworkSender : MonoBehaviour
     }
     public void SendData()
     {
+        sendData.Add(0x11);
+
         ///Encode Move
         if (moveData.Length > 0)
         {
@@ -85,13 +87,15 @@ public class NetworkSender : MonoBehaviour
 
         Debug.Log("Đang chạy ở đây với send là: " + sendData.Count);
 
-        DecodeAll(sendData.ToArray());
+        //DecodeAll(sendData.ToArray());
+
+        udp.SendData(sendData.ToArray());
 
         //End Of Send
         sendData.Clear();
         nextSendTime = nextSendITimeout;
 
-
+        udp.BeginReceive();
     }
     public void SetMoveData(string moveData)
     {

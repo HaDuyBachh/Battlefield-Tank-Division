@@ -36,7 +36,8 @@ public class UDPSender : MonoBehaviour
     {
         IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
         byte[] receivedData = udpClient.EndReceive(ar, ref remoteEndPoint);
-        general.SetRevc(receivedData);
+
+        Debug.Log("Nhận phản hồi từ server");
     }
     private void OnApplicationQuit()
     {

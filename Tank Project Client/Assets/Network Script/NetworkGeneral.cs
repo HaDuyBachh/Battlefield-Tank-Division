@@ -32,7 +32,6 @@ public class NetworkGeneral : MonoBehaviour
         SetMoveRevc(DecodeTransformData(receivedData, ref offset), 2);
         Debug.Log("Dữ liệu off 2 là: " + offset);
     }    
-
     public void SetMoveRevc(List<(Vector3 position, Quaternion rotation)> revcStr, int id)
     {
         revcMoveData[id] = revcStr;
@@ -41,7 +40,6 @@ public class NetworkGeneral : MonoBehaviour
     {
 
     }
-
     public List<(Vector3 position, Quaternion rotation)> DecodeTransformData(byte[] receivedData, ref int offset)
     {
         List<(Vector3 position, Quaternion rotation)> result = new();

@@ -27,17 +27,15 @@ public class UDPListener : MonoBehaviour
             IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
             byte[] receivedData = udpClient.EndReceive(ar, ref remoteEndPoint);
 
-            Debug.Log("Số Byte nhận được là: " + receivedData.Length);
-
-            /////Nhận câu lệnh:
-            //general.RecvData(receivedData);
+            ///Nhận câu lệnh:
+            general.RecvData(receivedData);
 
             // Gửi phản hồi lại server.c
             SendResponse(new byte[] { 0x11, 0x22, 0x12 }, remoteEndPoint);
         }
         catch (Exception e)
         {
-            Debug.LogError($"Error receiving data: {e.Message}");
+            Debug.LogError($"Error receiving data: {e.Message}");   
         }
         finally
         {
@@ -47,7 +45,7 @@ public class UDPListener : MonoBehaviour
     void SendResponse(byte[] data, IPEndPoint remoteEndPoint)
     {
         udpClient.Send(data, data.Length, remoteEndPoint);
-        Debug.Log($"Response sent to server.c");
+        //Debug.Log($"Response sent to server.c");
     }
     private void OnApplicationQuit()
     {

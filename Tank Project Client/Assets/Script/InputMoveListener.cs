@@ -5,7 +5,8 @@ using UnityEngine;
 public class InputMoveListener: MonoBehaviour
 {
     public NetworkSender sender;
-    string sendStr;
+    private string sendStr;
+    private bool isSent = false;
     public void GetInput()
     {
         sendStr = "";
@@ -27,9 +28,18 @@ public class InputMoveListener: MonoBehaviour
         }
         if (sendStr.Length > 0)
         {
+            isSent = true;
             Debug.Log(sendStr);
             sender.SetMoveData(sendStr);
         }
+        else
+        if (isSent)
+        {
+            sendStr = "X ";
+            isSent = false;
+            sender.SetMoveData(sendStr);
+        } 
+            
     }
 
     public void Start()

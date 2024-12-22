@@ -14,6 +14,7 @@ typedef struct {
     SOCKET sockfd;
     struct sockaddr_in clientAddr;
     int clientAddrLen;
+    int recvLen;
     char buffer[BUFFER_SIZE];
 } ClientData;
 
@@ -48,8 +49,15 @@ DWORD WINAPI handleClient(LPVOID param) {
     }
 
     // Gửi dữ liệu tới Unity Listener
-    if (sendto(threadSocket, clientData->buffer, BUFFER_SIZE, 0,
-               (struct sockaddr *)&unityListenerAddr, sizeof(unityListenerAddr)) == SOCKET_ERROR) {
+    // if (sendto(threadSocket, clientData->buffer, BUFFER_SIZE, 0,
+    //            (struct sockaddr *)&unityListenerAddr, sizeof(unityListenerAddr)) == SOCKET_ERROR) {
+    //     printf("sendto to Unity Listener failed. Error Code: %d\n", WSAGetLastError());
+    //     closesocket(threadSocket);
+    //     free(clientData);
+    //     return 0;
+    // }
+    if (sendto(threadSocket, clientData->buffer, clientData->recvLen, 0,
+            (struct sockaddr *)&unityListenerAddr, sizeof(unityListenerAddr)) == SOCKET_ERROR) {
         printf("sendto to Unity Listener failed. Error Code: %d\n", WSAGetLastError());
         closesocket(threadSocket);
         free(clientData);
@@ -146,6 +154,7 @@ int main() {
         clientData->sockfd = sockfd;
         clientData->clientAddr = clientAddr;
         clientData->clientAddrLen = addrLen;
+        clientData->recvLen = recvLen;
 
         // Tạo luồng xử lý client
         HANDLE threadHandle = CreateThread(NULL, 0, handleClient, (LPVOID)clientData, 0, NULL);

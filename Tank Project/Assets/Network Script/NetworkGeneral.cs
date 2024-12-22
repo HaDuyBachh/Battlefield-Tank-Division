@@ -9,11 +9,15 @@ public class NetworkGeneral : MonoBehaviour
     public enum Command
     {
         None,
-        Login,
         Move,
-        Rotate
+        Rotate,
+        Login,
     }
-    public List<GameObject> clientIdMoveControl;
+    public List<GameObject> clientIdObjectControl;
+    [SerializeField]
+    private List<Network_Move_Control> clientMoveControl = new();
+    [SerializeField]
+    private List<Network_Rotate_Control> clientRotateControl = new();
     public byte[] SendData
     {
         get
@@ -41,15 +45,25 @@ public class NetworkGeneral : MonoBehaviour
     private List<byte>[] sendData = new List<byte>[100];
     private void Init()
     {
-        for (int i = 1; i < clientIdMoveControl.Count; i++)
+        for (int i = 0; i < clientIdObjectControl.Count; i++)
         {
-            clientIdMoveControl[i].GetComponent<Network_Move_Control>().SetID(i);
-            clientIdMoveControl[i].GetComponent<NetworkSendMoveData>().SetID(i);
+            if (i==0)
+            {
+                clientMoveControl.Add(null);
+                clientRotateControl.Add(null);
+            }
+            else
+            {
+                clientMoveControl.Add(clientIdObjectControl[i].GetComponent<Network_Move_Control>());
+                clientRotateControl.Add(clientIdObjectControl[i].GetComponent<Network_Rotate_Control>());
+                clientIdObjectControl[i].GetComponent<Network_Move_Control>().SetID(i);
+                clientIdObjectControl[i].GetComponent<NetworkSendMoveData>().SetID(i);
+            }
         }
     }
     private void Awake()
     {
-
+        Init();
     }
     public void SetMoveDataRespond(byte[] dataRespond, int id)
     {
@@ -70,12 +84,6 @@ public class NetworkGeneral : MonoBehaviour
 
             // Đọc command và id
             byte command = encodedData[offset];
-
-            if (command == 0)
-            {
-                Debug.Log("End Of Command");
-                break;
-            }
 
             byte id = encodedData[offset + 1];
 
@@ -99,22 +107,23 @@ public class NetworkGeneral : MonoBehaviour
                     SetRevcMove(DecodeMoveData(data), id);
                     break;
                 case (byte)Command.Rotate:
-                    //SetRevcRotate(DecodeRotateData(data), id);
+                    SetRevcRotate(DecodeRotateData(data), id);
                     break;
 
             }
 
-            // Giải mã gói hiện tại
+            ////Giải mã gói hiện tại
             //Debug.Log($"Decoded Packet:");
             //Debug.Log($"Command: {command}");
             //Debug.Log($"ID: {id}");
             //Debug.Log($"Data Length: {dataLength}");
+            //if (command == 1) Debug.Log($"Data Mess: {Encoding.UTF8.GetString(data)}");
 
             // Cập nhật offset để xử lý gói tiếp theo
             offset += 4 + dataLength;
         }
 
-        Debug.Log("Finished decoding all packets.");
+        //Debug.Log("Finished decoding all packets.");
     }
 
     // Decode
@@ -133,34 +142,21 @@ public class NetworkGeneral : MonoBehaviour
     }
     public Vector3[] DecodeRotateData(byte[] receivedData)
     {
-        // Kiểm tra nếu dữ liệu rỗng hoặc không đủ byte
-        if (receivedData == null || receivedData.Length < 2)
-        {
-            Debug.LogWarning("Received data is too short to decode.");
-            return new Vector3[2];
-        }
-
-        // Loại bỏ byte đầu tiên và chuyển phần còn lại về chuỗi
-        byte[] messageBytes = new byte[receivedData.Length - 1];
-        Array.Copy(receivedData, 1, messageBytes, 0, messageBytes.Length);
-
-        // Chuyển đổi byte[] thành chuỗi bất kỳ...
-
-        return new Vector3[2];
+        return ByteArrayToVector3Array(receivedData,2);
     }
 
     // Set Receive
     public void SetRevcRotate(Vector3[] recvData, int id)
     {
-        Debug.Log("Thông số xoay là: " + id + "    " + recvData);
-        var control = clientIdMoveControl[id].GetComponent<Network_Rotate_Control>();
-        control.SetTarget(recvData[1], recvData[2]);
+        Debug.Log("Thông số xoay là: " + id + "    " + recvData[0] + "  " + recvData[1]);
+        clientRotateControl[id].SetTarget(recvData[0], recvData[1]);
     }
     public void SetRevcMove(string recvData, int id)
     {
-        Debug.Log("Thông số di chuyển là: " + id + "    " + recvData);
-        var control = clientIdMoveControl[id].GetComponent<Network_Move_Control>(); 
-        control.ResetValue();
+        Debug.Log("Thông số di chuyển là:" + id + "   " + recvData);
+
+        clientMoveControl[id].ResetValue();
+
         if (recvData.Length > 0)
         {
             string[] cmd = recvData.Split(' ');
@@ -170,17 +166,19 @@ public class NetworkGeneral : MonoBehaviour
 
                 switch (cmd[i][0])
                 {
+                    case 'X':
+                        return;
                     case 'L':
-                        control.Left = true;
+                        clientMoveControl[id].Left = true;
                         break;
                     case 'R':
-                        control.Right = true;
+                        clientMoveControl[id].Right = true;
                         break;
                     case 'F':
-                        control.Forward = true;
+                        clientMoveControl[id].Forward = true;
                         break;
                     case 'B':
-                        control.Backward = true;
+                        clientMoveControl[id].Backward = true;
                         break;
                     default:
                         break;
@@ -188,7 +186,6 @@ public class NetworkGeneral : MonoBehaviour
             }
         }
     }
-
 
     // Function Decode
     public byte[] StringToByte(string data)

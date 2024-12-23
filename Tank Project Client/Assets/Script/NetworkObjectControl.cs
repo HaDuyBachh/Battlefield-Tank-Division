@@ -9,6 +9,7 @@ public class NetworkObjectControl : MonoBehaviour
     public NetworkGeneral general;
     private NetworkRecvMove recvMoveData;
     private NetworkRecvRot recvRotateData;
+    private NetworkRecvInteract recvInteract;
     private InputMoveListener inputMove;
     private InputRotateListener inputRotate;
 
@@ -18,8 +19,11 @@ public class NetworkObjectControl : MonoBehaviour
         general = FindAnyObjectByType<NetworkGeneral>();
         recvMoveData = GetComponent<NetworkRecvMove>();
         recvRotateData = GetComponent<NetworkRecvRot>();
+        recvInteract = GetComponent<NetworkRecvInteract>();
+        
         inputMove = GetComponent<InputMoveListener>();
         inputRotate = GetComponent<InputRotateListener>();
+        
 
         recvMoveData.control = this;
         recvRotateData.control = this;
@@ -29,6 +33,8 @@ public class NetworkObjectControl : MonoBehaviour
     public void SetID(int id)
     {
         this.id = id;
+        general.AddRecvInteract(GetComponent<NetworkRecvInteract>());
+         
     }
     public void Update()
     {

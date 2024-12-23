@@ -148,7 +148,6 @@ namespace ChobiAssets.PTM
                 case 1: // Mouse + Keyboard (Pressing)
                     //inputScript = gameObject.AddComponent<Drive_Control_Input_02_Keyboard_Pressing_CS>();
                     inputScript = gameObject.GetComponent<Drive_Control_Input_02_Keyboard_Pressing_CS>();
-                    Debug.Log(inputScript);
                     break;
 
                 //case 2: // Gamepad (Single stick)

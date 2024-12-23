@@ -8,9 +8,18 @@ using static GeneralSystem;
 public class NetworkGeneral : MonoBehaviour
 {
     public List<NetworkObjectControl> clientIdObjectControl;
-    private List<byte>[]sendMoveData = new List<byte>[256];
-    private List<byte>[]sendRotData = new List<byte>[256];
-    private List<byte> respond = new();
+    private List<byte>[] sendMoveData = new List<byte>[256];
+    private List<byte>[] sendRotData = new List<byte>[256];
+    private bool[] fireData = new bool[256];
+    private bool[] changeFireData = new bool[256];
+    enum Active
+    {
+        Move,
+        Fire,
+        ChangeFire
+    }
+    private bool[] activeList = new bool[Enum.GetValues(typeof(Active)).Length];
+
     public void Awake()
     {
         for (int id = 1; id < clientIdObjectControl.Count; id++)
@@ -20,9 +29,66 @@ public class NetworkGeneral : MonoBehaviour
             sendRotData[id] = new();
         }
     }
-    public byte[] GetMoveDataRespond()
+
+
+    //Reveice
+    public void RecvData(byte[] encodedData)
     {
-        respond.Clear();
+        foreach (var (command, id, dataLength, data) in DecodeWithCheckByte(encodedData))
+        {
+            switch (command)
+            {
+                case (byte)Command.Move:
+                    SetRevcMove(DecodeMoveData(data), id);
+                    activeList[(int)Active.Move] = true;
+                    break;
+                case (byte)Command.Rotate:
+                    SetRevcRotate(DecodeRotateData(data), id);
+                    activeList[(int)Active.Move] = true;
+                    break;
+                case (byte)Command.Fire:
+                    activeList[(int)Active.Fire] = true;
+                    fireData[id] = true;
+                    ///Chỗ này sẽ trả về respond luôn vì UDP sẽ theo cơ chế nhận rồi gửi
+                    break;
+                case (byte)Command.ChangeFire:
+                    activeList[(int)Active.ChangeFire] = true;
+                    changeFireData[id] = true;
+                    ///Chỗ này sẽ trả về respond luôn vì UDP sẽ theo cơ chế nhận rồi gửi
+                    break;
+            }
+        }
+    }
+
+    //Get Data ResPond
+    public byte[] GetDataRespond()
+    {
+        List<byte> respond = new(); 
+        for (int i = 0; i< Enum.GetValues(typeof(Active)).Length; i++)
+        {
+            if (activeList[i])
+            {
+                switch ((Active)i)
+                {
+                    case Active.Move:
+                        respond.AddRange(GetMoveDataRespond());
+                        break;
+                    case Active.Fire:
+                        respond.AddRange(GetFireInteractDataRespond());
+                        break;
+                    case Active.ChangeFire:
+                        respond.AddRange(GetChangeFireInteractDataRespond());
+                        break;
+                }
+
+                activeList[i] = false;
+            }
+        }
+        return respond.ToArray();
+    }
+    public List<byte> GetMoveDataRespond()
+    {
+        List<byte> respond = new();
 
         /// Chuyển thông điệp thành byte  --------------------------------------
 
@@ -39,13 +105,58 @@ public class NetworkGeneral : MonoBehaviour
             respond.AddRange(sendRotData[id]);
         }
 
-        if (respond.Count > 0) return respond.ToArray();
+        if (respond.Count > 0)
+            return respond;
         else
         {
             respond.Add((byte)Command.None);
-            return respond.ToArray();
+            return respond;
         }
     }
+    public List<byte> GetFireInteractDataRespond()
+    {
+        List<byte> respond = new();
+
+        for (byte id = 1; id < clientIdObjectControl.Count; id++)
+        {
+            if (fireData[id])
+            {
+                fireData[id] = false;
+                ///[command]:   1 byte
+                respond.Add((byte)Command.Fire);
+                ///[id]:        1 byte
+                respond.Add(id);
+                ///[length]:    2 byte
+                respond.AddRange(EncodeIntTo2Bytes(0));
+            }
+        }
+
+        return respond;
+    }
+    public List<byte> GetChangeFireInteractDataRespond()
+    {
+        List<byte> respond = new();
+
+        for (byte id = 1; id < clientIdObjectControl.Count; id++)
+        {
+            if (changeFireData[id])
+            {
+                changeFireData[id] = false;
+                ///[command]:   1 byte
+                respond.Add((byte)Command.ChangeFire);
+                ///[id]:        1 byte
+                respond.Add(id);
+                ///[length]:    2 byte
+                respond.AddRange(EncodeIntTo2Bytes(0));
+            }
+        }
+
+        return respond;
+    }
+
+
+
+    //Set Data Respond
     public void SetMoveDataRespond(List<byte> data, int id)
     {
         sendMoveData[id] = data;
@@ -53,64 +164,6 @@ public class NetworkGeneral : MonoBehaviour
     public void SetRotateDataRespond(List<byte> data, int id)
     {
         sendRotData[id] = data;
-    }
-
-    //reveice
-    public void RecvData(byte[] encodedData)
-    {
-        int offset = 1;
-
-        while (offset < encodedData.Length)
-        {
-            // Kiểm tra xem có đủ dữ liệu tối thiểu để đọc header (4 byte)
-            if (encodedData.Length - offset < 4)
-            {
-                Debug.Log($"Incomplete data at offset {offset}. Remaining bytes: {encodedData.Length - offset}");
-                break;
-            }
-
-            // Đọc command và id
-            byte command = encodedData[offset];
-
-            byte id = encodedData[offset + 1];
-
-            // Đọc độ dài dữ liệu (2 byte)
-            int dataLength = BitConverter.ToInt16(new byte[] { encodedData[offset + 3], encodedData[offset + 2] }, 0);
-
-            // Kiểm tra xem có đủ dữ liệu để đọc toàn bộ gói (header + data)
-            if (encodedData.Length - offset < 4 + dataLength)
-            {
-                Debug.Log($"Incomplete packet at offset {offset}. Expected length: {4 + dataLength}, but got: {encodedData.Length - offset}");
-                break;
-            }
-
-            // Lấy phần dữ liệu thực tế
-            byte[] data = new byte[dataLength];
-            Array.Copy(encodedData, offset + 4, data, 0, dataLength);
-
-            switch (command)
-            {
-                case (byte)Command.Move:
-                    SetRevcMove(DecodeMoveData(data), id);
-                    break;
-                case (byte)Command.Rotate:
-                    SetRevcRotate(DecodeRotateData(data), id);
-                    break;
-
-            }
-
-            ////Giải mã gói hiện tại
-            //Debug.Log($"Decoded Packet:");
-            //Debug.Log($"Command: {command}");
-            //Debug.Log($"ID: {id}");
-            //Debug.Log($"Data Length: {dataLength}");
-            //if (command == 1) Debug.Log($"Data Mess: {Encoding.UTF8.GetString(data)}");
-
-            // Cập nhật offset để xử lý gói tiếp theo
-            offset += 4 + dataLength;
-        }
-
-        //Debug.Log("Finished decoding all packets.");
     }
 
     // Decode
@@ -129,19 +182,17 @@ public class NetworkGeneral : MonoBehaviour
     }
     public Vector3[] DecodeRotateData(byte[] receivedData)
     {
-        return ByteArrayToVector3Array(receivedData,2);
+        return ByteArrayToVector3Array(receivedData, 2);
     }
 
     // Set Receive
     public void SetRevcRotate(Vector3[] recvData, int id)
     {
-        Debug.Log("Thông số xoay là: " + id + "    " + recvData[0] + "  " + recvData[1]);
+        //Debug.Log("Thông số xoay là: " + id + "    " + recvData[0] + "  " + recvData[1]);
         clientIdObjectControl[id].rotate_Control.SetTarget(recvData[0], recvData[1]);
     }
     public void SetRevcMove(string recvData, int id)
     {
-        Debug.Log("Thông số di chuyển là:" + id + "   " + recvData);
-
         clientIdObjectControl[id].move_Control.ResetValue();
 
         if (recvData.Length > 0)

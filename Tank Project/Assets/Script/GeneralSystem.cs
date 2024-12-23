@@ -12,9 +12,13 @@ public static class GeneralSystem
     public enum Command
     {
         None,
+        Login,
+        Register,
+        ResetTank,
         Move,
         Rotate,
-        Login,
+        Fire,
+        ChangeFire,
     }
 
     // Function
@@ -132,10 +136,10 @@ public static class GeneralSystem
 
         return data;
     }
-    public static List<(byte command, int id, int dataLength, byte[] data)> DecodeOnce(byte[] encodedData)
+    public static List<(byte command, int id, int dataLength, byte[] data)> DecodeAll(byte[] encodedData, int offsetPre)
     {
         var result = new List<(byte command, int id, int dataLength, byte[] data)>();
-        int offset = 0;
+        int offset = offsetPre;
 
         while (offset < encodedData.Length)
         {
@@ -170,7 +174,9 @@ public static class GeneralSystem
             offset += 4 + dataLength;
         }
 
-        Debug.Log("Decoding complete.");
+        //Debug.Log("Decoding complete.");
         return result;
     }
+    public static List<(byte command, int id, int dataLength, byte[] data)> DecodeWithCheckByte(byte[] encodedData) => DecodeAll(encodedData, 1);
+    public static List<(byte command, int id, int dataLength, byte[] data)> DecodeWithoutCheckByte(byte[] encodedData) => DecodeAll(encodedData, 0);
 }

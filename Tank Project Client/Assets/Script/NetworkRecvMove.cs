@@ -13,7 +13,7 @@ public class NetworkRecvMove : MonoBehaviour
         int d = 0;
         Body.transform.localPosition = Vector3.Lerp(Body.transform.localPosition, control.general.revcMoveData[control.ID][d].position, Time.deltaTime * 6f);
 
-        Debug.Log(Body.transform.localPosition + "   " + control.general.revcMoveData[control.ID][d].position);
+        //Debug.Log(Body.transform.localPosition + "   " + control.general.revcMoveData[control.ID][d].position);
 
         Body.transform.localRotation = Quaternion.Lerp(Body.transform.localRotation, control.general.revcMoveData[control.ID][d].rotation, Time.deltaTime * 6f);
 

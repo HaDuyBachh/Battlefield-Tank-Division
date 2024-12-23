@@ -31,7 +31,7 @@ namespace ChobiAssets.PTM
         public float Attack_Multiplier = 1.0f; // Set by "Special_Settings_CS".
         public int Barrel_Type = 0; // Set by "Barrel_Base". (0 = Single barrel, 1 = Left of twins, 2 = Right of twins)
         public float Current_Bullet_Velocity; // Referred to from "Turret_Horizontal_CS", "Cannon_Vertical_CS", "UI_Lead_Marker_Control_CS".
-        int currentBulletType;
+        public int currentBulletType;
         Transform thisTransform;
 
         // Only for AI tank.

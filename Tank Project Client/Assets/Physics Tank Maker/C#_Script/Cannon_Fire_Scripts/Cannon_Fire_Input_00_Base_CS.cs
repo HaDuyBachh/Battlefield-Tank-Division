@@ -20,6 +20,9 @@ namespace ChobiAssets.PTM
 		{
 		}
 
+		public virtual void NetworkCallFire() {}
+
+		public virtual void NetworkCallChangeFire() {}
 	}
 
 }

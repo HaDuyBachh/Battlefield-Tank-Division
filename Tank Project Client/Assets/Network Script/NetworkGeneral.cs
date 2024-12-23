@@ -9,21 +9,32 @@ public class NetworkGeneral : MonoBehaviour
     public ClientManager clientManager;
     public List<(Vector3 position, Quaternion rotation)>[] revcMoveData;
     public List<Quaternion>[] revcRotData;
+    [SerializeField]
+    private NetworkRecvInteract[] recvInteract;
+    public void AddRecvInteract(NetworkRecvInteract interact)
+    {
+        if (clientManager == null) clientManager = FindAnyObjectByType<ClientManager>();
+        if (recvInteract == null || recvInteract.Length != clientManager.clientQuanty)
+        {
+            recvInteract = new NetworkRecvInteract[clientManager.clientQuanty];
+        }
 
+        recvInteract[interact.control.ID] = interact;
+    }
     public void Init()
     {
         ///Khởi tạo revcStr
         clientManager = FindAnyObjectByType<ClientManager>();
-        revcMoveData = new List<(Vector3 position, Quaternion rotation)>[clientManager.clientQuanty+1];
+        revcMoveData = new List<(Vector3 position, Quaternion rotation)>[clientManager.clientQuanty + 1];
         revcRotData = new List<Quaternion>[clientManager.clientQuanty + 1];
         for (int i = 1; i < revcMoveData.Length; i++)
         {
             revcMoveData[i] = new();
             revcRotData[i] = new();
-        }    
+        }
 
         ///Khởi tạo
-    }    
+    }
     public void Awake()
     {
         Init();
@@ -39,60 +50,34 @@ public class NetworkGeneral : MonoBehaviour
 
     public void RecvData(byte[] encodedData)
     {
-        int offset = 0;
-
-        while (offset < encodedData.Length)
+        foreach (var (command, id, dataLength, data) in DecodeWithoutCheckByte(encodedData))
         {
-            // Kiểm tra xem có đủ dữ liệu tối thiểu để đọc header (4 byte)
-            if (encodedData.Length - offset < 4)
-            {
-                Debug.Log($"Incomplete data at offset {offset}. Remaining bytes: {encodedData.Length - offset}");
-                break;
-            }
-
-            // Đọc command và id
-            byte command = encodedData[offset];
-
-            byte id = encodedData[offset + 1];
-
-            // Đọc độ dài dữ liệu (2 byte)
-            int dataLength = BitConverter.ToInt16(new byte[] { encodedData[offset + 3], encodedData[offset + 2] }, 0);
-
-            // Kiểm tra xem có đủ dữ liệu để đọc toàn bộ gói (header + data)
-            if (encodedData.Length - offset < 4 + dataLength)
-            {
-                Debug.Log($"Incomplete packet at offset {offset}. Expected length: {4 + dataLength}, but got: {encodedData.Length - offset}");
-                break;
-            }
-
-            // Lấy phần dữ liệu thực tế
-            byte[] data = new byte[dataLength];
-            Array.Copy(encodedData, offset + 4, data, 0, dataLength);
-
             var offsetIn = 0;
-            switch (command)
+            Debug.Log("Command:" + command);
+            switch ((Command)command)
             {
-                case (byte)Command.Move:
-                    //SetRevcMove(DecodeMoveData(data), id);
-                    SetMoveRevc(DecodeMoveData(data,ref offsetIn),id);
+                case Command.Move:
+                    SetMoveRevc(DecodeMoveData(data, ref offsetIn), id);
                     SetRotRevc(DecodeRotateData(data, ref offsetIn), id);
+                    break;
+                case Command.Fire:
+                    if (recvInteract[id] != null)
+                        recvInteract[id].NetworkCallFire();
+                    else
+                        Debug.LogError("Error recvInteract[id] not found");
+                    //Debug.Log("Đã nhận được phản hồi: fire");
+                    break;
+                case Command.ChangeFire:
+                    if (recvInteract[id] != null)
+                        recvInteract[id].NetworkCallChangeFire();
+                    else
+                        Debug.LogError("Error recvInteract[id] not found");
+                    //Debug.Log("Đã nhận được phản hồi: change fire");
                     break;
                 default:
                     break;
             }
-
-            ////Giải mã gói hiện tại
-            //Debug.Log($"Decoded Packet:");
-            //Debug.Log($"Command: {command}");
-            //Debug.Log($"ID: {id}");
-            //Debug.Log($"Data Length: {dataLength}");
-            //if (command == 1) Debug.Log($"Data Mess: {Encoding.UTF8.GetString(data)}");
-
-            // Cập nhật offset để xử lý gói tiếp theo
-            offset += 4 + dataLength;
         }
-
-        //Debug.Log("Finished decoding all packets.");
     }
     public void SetMoveRevc(List<(Vector3 position, Quaternion rotation)> revcData, int id)
     {

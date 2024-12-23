@@ -8,7 +8,9 @@ namespace ChobiAssets.PTM
 	{
 
         protected Turret_Horizontal_CS turretScript;
-
+        private float thresh_hold = 0;
+        public bool fire = false;
+        public bool changeFire = false;
 
         public override void Prepare(Cannon_Fire_CS cannonFireScript)
         {
@@ -21,14 +23,22 @@ namespace ChobiAssets.PTM
         public override void Get_Input()
 		{
             // Fire.
-            if (turretScript.Is_Ready && Input.GetKey(General_Settings_CS.Fire_Key))
+            if (thresh_hold > 0) thresh_hold -= Time.deltaTime;
+            if (turretScript.Is_Ready && Input.GetKey(General_Settings_CS.Fire_Key) && thresh_hold <= 0)
             {
-                cannonFireScript.Fire();
+                cannonFireScript.SendActiveFire();
+                thresh_hold = cannonFireScript.Reload_Time;
             }
 
             // Switch the bullet type.
             if (Input.GetKeyDown(General_Settings_CS.Switch_Bullet_Key))
             {
+                cannonFireScript.SendActiveFireChange();
+            }
+
+            if (changeFire)
+            {
+                changeFire = false;
                 // Call the "Bullet_Generator_CS" scripts.
                 for (int i = 0; i < cannonFireScript.Bullet_Generator_Scripts.Length; i++)
                 {
@@ -36,14 +46,32 @@ namespace ChobiAssets.PTM
                     {
                         continue;
                     }
+                    Debug.Log("Da Doi Kieu");
                     cannonFireScript.Bullet_Generator_Scripts[i].Switch_Bullet_Type();
                 }
 
                 // Reload.
                 cannonFireScript.StartCoroutine("Reload");
             }
+
+            if (fire)
+            {
+                fire = false;
+                cannonFireScript.Fire();
+            }
         }
 
-	}
+        public override void NetworkCallFire()
+        {
+            fire = true;
+            Get_Input();
+        }
+
+        public override void NetworkCallChangeFire()
+        {
+            changeFire = true;
+            Get_Input();
+        }
+    }
 
 }

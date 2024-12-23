@@ -54,10 +54,10 @@ public class NetworkSender : MonoBehaviour
         nextSendTime -= Time.deltaTime;
         if (nextSendTime <= 0.0f)
         {
-            SendData();
+            SendMoveData();
         }
     }
-    public void SendData()
+    public void SendMoveData()
     {
         sendData.Add(0x11);
 
@@ -77,14 +77,22 @@ public class NetworkSender : MonoBehaviour
 
         Debug.Log("Đang chạy ở đây với send là: " + sendData.Count);
 
-        //DecodeAll(sendData.ToArray());
+        if (sendData.Count < 2) sendData.AddRange(Encode(StringToByte("X "), (byte)Command.Move, mainID));
 
         udp.SendData(sendData.ToArray());
+            
 
         //End Of Send
         sendData.Clear();
         nextSendTime = nextSendITimeout;
 
+        udp.BeginReceive();
+    }
+    public void SendInteractData(Command type)
+    {
+        var data = new List<byte> { 0x11 };
+        data.AddRange(Encode(new byte[0], (byte)type, mainID));
+        udp.SendData(data.ToArray());
         udp.BeginReceive();
     }
     public void SendInteractiveData()

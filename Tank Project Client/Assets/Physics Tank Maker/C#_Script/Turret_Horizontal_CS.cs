@@ -82,14 +82,14 @@ namespace ChobiAssets.PTM
 
         void FixedUpdate()
         {
-            if (aimingScript.Use_Auto_Turn)
-            {
-                Auto_Turn();
-            }
-            else
-            {
-                Manual_Turn();
-            }
+            //if (aimingScript.Use_Auto_Turn)
+            //{
+            //    Auto_Turn();
+            //}
+            //else
+            //{
+            //    Manual_Turn();
+            //}
         }
 
 

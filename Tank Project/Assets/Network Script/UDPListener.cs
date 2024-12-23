@@ -41,8 +41,8 @@ public class UDPListener : MonoBehaviour
             //SendResponse(new byte[] { 0x11, 0x22, 0x12 }, remoteEndPoint);
 
             // Đã nén gói
-            SendResponse(Compress(general.GetMoveDataRespond()), remoteEndPoint);
-            Debug.Log("Phản hồi lại: " + general.GetMoveDataRespond().Length);
+            SendResponse(Compress(general.GetDataRespond()), remoteEndPoint);
+            //Debug.Log("Phản hồi lại: " + general.GetMoveDataRespond().Length);
             
         }
         finally
@@ -52,8 +52,6 @@ public class UDPListener : MonoBehaviour
     }
     void SendResponse(byte[] data, IPEndPoint remoteEndPoint)
     {
-        
-
         udpClient.Send(data, data.Length, remoteEndPoint);
         //Debug.Log($"Response sent to server.c");
     }

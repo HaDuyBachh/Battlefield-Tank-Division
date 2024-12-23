@@ -6,18 +6,19 @@ namespace ChobiAssets.PTM
 
 	public class Cannon_Fire_CS : MonoBehaviour
 	{
-		/*
+        /*
 		 * This script is attached to the "Cannon_Base" in the tank.
 		 * This script controls the firining of the tank.
 		 * When firing, this script calls "Bullet_Generator_CS" and "Recoil_Brake_CS" scripts placed under this object in the hierarchy.
 		 * In case of AI tank, this script works in combination with "AI_CS", "Turret_Horizontal_CS", "Cannon_Vertical_CS" and "Aiming_Control_CS".
 		*/
 
+        public NetworkRecvInteract networkInteract;
+
 		// User options >>
 		public float Reload_Time = 2.0f;
 		public float Recoil_Force = 5000.0f;
 		// << User options
-
 
 		// Set by "inputType_Settings_CS".
 		public int inputType = 0;
@@ -66,6 +67,23 @@ namespace ChobiAssets.PTM
             }
         }
 
+        public void SendActiveFire()
+        {
+            Debug.Log("Send Fire");
+            networkInteract.SendActiveFire();
+        }
+        public void SendActiveFireChange()
+        {
+            networkInteract.SendActiveChangeFire();
+        }
+        public void NetworkCallFire()
+        {
+            inputScript.NetworkCallFire();
+        }
+        public void NetworkCallChangeFire()
+        {
+            inputScript.NetworkCallChangeFire();
+        }
 
         protected virtual void Set_Input_Script(int type)
         {
@@ -76,18 +94,18 @@ namespace ChobiAssets.PTM
                     inputScript = gameObject.AddComponent<Cannon_Fire_Input_01_Mouse_CS>();
                     break;
 
-                case 2: // GamePad (Single stick)
-                case 3: // GamePad (Twin stick)
-                    inputScript = gameObject.AddComponent<Cannon_Fire_Input_02_For_Sticks_Drive_CS>();
-                    break;
+                //case 2: // GamePad (Single stick)
+                //case 3: // GamePad (Twin stick)
+                //    inputScript = gameObject.AddComponent<Cannon_Fire_Input_02_For_Sticks_Drive_CS>();
+                //    break;
 
-                case 4: // GamePad (Triggers)
-                    inputScript = gameObject.AddComponent<Cannon_Fire_Input_03_For_Triggers_Drive_CS>();
-                    break;
+                //case 4: // GamePad (Triggers)
+                //    inputScript = gameObject.AddComponent<Cannon_Fire_Input_03_For_Triggers_Drive_CS>();
+                //    break;
 
-                case 10: // AI
-                    inputScript = gameObject.AddComponent<Cannon_Fire_Input_99_AI_CS>();
-                    break;
+                //case 10: // AI
+                //    inputScript = gameObject.AddComponent<Cannon_Fire_Input_99_AI_CS>();
+                //    break;
             }
         }
 

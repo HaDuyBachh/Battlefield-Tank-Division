@@ -8,15 +8,18 @@ public class NetworkGeneral : MonoBehaviour
 {
     public ClientManager clientManager;
     public List<(Vector3 position, Quaternion rotation)>[] revcMoveData;
+    public List<Quaternion>[] revcRotData;
 
     public void Init()
     {
         ///Khởi tạo revcStr
         clientManager = FindAnyObjectByType<ClientManager>();
         revcMoveData = new List<(Vector3 position, Quaternion rotation)>[clientManager.clientQuanty+1];
+        revcRotData = new List<Quaternion>[clientManager.clientQuanty + 1];
         for (int i = 1; i < revcMoveData.Length; i++)
         {
             revcMoveData[i] = new();
+            revcRotData[i] = new();
         }    
 
         ///Khởi tạo
@@ -66,11 +69,13 @@ public class NetworkGeneral : MonoBehaviour
             byte[] data = new byte[dataLength];
             Array.Copy(encodedData, offset + 4, data, 0, dataLength);
 
+            var offsetIn = 0;
             switch (command)
             {
                 case (byte)Command.Move:
                     //SetRevcMove(DecodeMoveData(data), id);
-                    SetMoveRevc
+                    SetMoveRevc(DecodeMoveData(data,ref offsetIn),id);
+                    SetRotRevc(DecodeRotateData(data, ref offsetIn), id);
                     break;
                 default:
                     break;
@@ -90,15 +95,15 @@ public class NetworkGeneral : MonoBehaviour
         //Debug.Log("Finished decoding all packets.");
     }
 
-    public void SetMoveRevc(List<(Vector3 position, Quaternion rotation)> revcStr, int id)
+    public void SetMoveRevc(List<(Vector3 position, Quaternion rotation)> revcData, int id)
     {
-        revcMoveData[id] = revcStr;
+        revcMoveData[id] = revcData;
     }
-    public void SetRotRevc()
+    public void SetRotRevc(List<Quaternion> revcData, int id)
     {
-
+        revcRotData[id] = revcData;
     }
-    public List<(Vector3 position, Quaternion rotation)> DecodeTransformData(byte[] receivedData, ref int offset)
+    public List<(Vector3 position, Quaternion rotation)> DecodeMoveData(byte[] receivedData, ref int offset)
     {
         List<(Vector3 position, Quaternion rotation)> result = new();
 
@@ -151,6 +156,44 @@ public class NetworkGeneral : MonoBehaviour
 
             // Thêm vào danh sách
             result.Add((childPosition, childRotation));
+        }
+
+        return result;
+    }
+
+    public List<Quaternion> DecodeRotateData(byte[] receivedData, ref int offset)
+    {
+        List<Quaternion> result = new();
+
+        // Kiểm tra dữ liệu nhận được có hợp lệ không
+        if (receivedData == null || receivedData.Length < 16)   // 16 byte = 4 float
+        {
+            Debug.LogError("Received data is invalid or too short.");
+            return result;
+        }
+
+        // Hàm trợ giúp: Đọc float từ byte[]
+        float ReadFloat(byte[] data, ref int offset)
+        {
+            float value = BitConverter.ToSingle(data, offset);
+            offset += 4; // Mỗi float chiếm 4 byte
+            return value;
+        }
+
+
+        int temp = 0;
+        // Giải mã từng WheelOut child (3 floats cho position + 4 floats cho rotation mỗi child)
+        while (offset + 16 <= receivedData.Length && temp++ < 2) // 28 bytes = 7 floats
+        {
+            Quaternion rotation = new Quaternion(
+                ReadFloat(receivedData, ref offset),
+                ReadFloat(receivedData, ref offset),
+                ReadFloat(receivedData, ref offset),
+                ReadFloat(receivedData, ref offset)
+            );
+
+            // Thêm vào danh sách
+            result.Add(rotation);
         }
 
         return result;

@@ -40,17 +40,16 @@ public class NetworkSender : MonoBehaviour
     public void InitClientID()
     {
         int id_temp = 1;
-        foreach (var body in FindObjectsOfType<NetworkRecvMove>())
+        foreach (var control in FindObjectsOfType<NetworkObjectControl>())
         {
-            if (body.gameObject.CompareTag("MainPlayer"))
+            if (control.gameObject.CompareTag("MainPlayer"))
             {
-                body.id = this.mainID;
+                control.SetID(mainID);
             }
             else
             {
                 id_temp += (id_temp != mainID) ? 0 : 1;
-                body.id = id_temp;
-                id_temp++;
+                control.SetID(id_temp++);
             }
         }
     }

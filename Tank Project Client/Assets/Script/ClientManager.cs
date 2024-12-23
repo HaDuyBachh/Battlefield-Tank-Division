@@ -9,9 +9,22 @@ public class ClientManager : MonoBehaviour
     public int clientQuanty = 2;
     public NetworkSender sender;
     public UDPSender UDP;
-    public void Awake()
+    public void ResetClient(int clientPort, byte clientID)
     {
         UDP.SetClientPort(clientPort);
-        sender.SetMainID((byte)clientID);
+        sender.SetMainID(clientID);
     }
+    public void Awake()
+    {
+        ResetClient(clientPort, (byte)clientID);
+    }
+
+    ////For test change clientID
+    //public void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.L))
+    //    {
+    //        ResetClient(clientPort, (byte)clientID);
+    //    }    
+    //}
 }

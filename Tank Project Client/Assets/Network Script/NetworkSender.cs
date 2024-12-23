@@ -27,10 +27,10 @@ public class NetworkSender : MonoBehaviour
     private bool rotateChange = false;
     public void SetMainID(byte id)
     {
-        this.mainID = id;
-    }
-    public void InitClientID()
-    {
+        /// Id chính của main
+        mainID = id;
+
+        /// Cấp phát ID phụ
         int id_temp = 1;
         foreach (var control in FindObjectsOfType<NetworkObjectControl>())
         {
@@ -48,7 +48,6 @@ public class NetworkSender : MonoBehaviour
     public void Start()
     {
         udp = FindAnyObjectByType<UDPSender>();
-        InitClientID();
     }
     public void Update()
     {

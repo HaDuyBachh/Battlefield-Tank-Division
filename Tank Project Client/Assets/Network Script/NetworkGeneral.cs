@@ -94,7 +94,6 @@ public class NetworkGeneral : MonoBehaviour
 
         //Debug.Log("Finished decoding all packets.");
     }
-
     public void SetMoveRevc(List<(Vector3 position, Quaternion rotation)> revcData, int id)
     {
         revcMoveData[id] = revcData;

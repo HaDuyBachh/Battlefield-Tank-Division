@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static NetworkSender;
+using static GeneralSystem;
 
 public class NetworkGeneral : MonoBehaviour
 {
@@ -160,7 +160,6 @@ public class NetworkGeneral : MonoBehaviour
 
         return result;
     }
-
     public List<Quaternion> DecodeRotateData(byte[] receivedData, ref int offset)
     {
         List<Quaternion> result = new();

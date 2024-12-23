@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using UnityEngine;
+using static GeneralSystem;
 
 public class UDPSender : MonoBehaviour
 {
@@ -35,7 +36,9 @@ public class UDPSender : MonoBehaviour
     public void OnReceive(IAsyncResult ar)
     {
         IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
-        byte[] receivedData = udpClient.EndReceive(ar, ref remoteEndPoint);
+
+        ///Đã giải nén gói
+        byte[] receivedData =  Decompress(udpClient.EndReceive(ar, ref remoteEndPoint));
 
         general.RecvData(receivedData);
 

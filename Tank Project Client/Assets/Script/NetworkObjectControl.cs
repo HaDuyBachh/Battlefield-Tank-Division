@@ -1,3 +1,4 @@
+using ChobiAssets.PTM;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,10 +24,23 @@ public class NetworkObjectControl : MonoBehaviour
         
         inputMove = GetComponent<InputMoveListener>();
         inputRotate = GetComponent<InputRotateListener>();
-        
-
         recvMoveData.control = this;
         recvRotateData.control = this;
+
+        if (!CompareTag("MainPlayer")) SetNotMain();
+    }
+
+    public void SetNotMain()
+    {
+        recvInteract.cannon.SetDisable(true);
+        foreach (var damage in GetComponents<Damage_Control_00_Base_CS>())
+        {
+            damage.enabled = false;
+        }
+        foreach (var damgage in GetComponentsInChildren<Damage_Control_00_Base_CS>())
+        {
+            damgage.enabled = false;
+        }
     }
 
     public int ID { get { return id; } }

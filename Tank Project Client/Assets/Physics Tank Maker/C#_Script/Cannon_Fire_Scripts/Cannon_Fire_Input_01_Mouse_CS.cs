@@ -11,6 +11,7 @@ namespace ChobiAssets.PTM
         private float thresh_hold = 0;
         public bool fire = false;
         public bool changeFire = false;
+        public bool isDisable = false;
 
         public override void Prepare(Cannon_Fire_CS cannonFireScript)
         {
@@ -22,18 +23,21 @@ namespace ChobiAssets.PTM
 
         public override void Get_Input()
 		{
-            // Fire.
-            if (thresh_hold > 0) thresh_hold -= Time.deltaTime;
-            if (turretScript.Is_Ready && Input.GetKey(General_Settings_CS.Fire_Key) && thresh_hold <= 0)
+            if (!isDisable)
             {
-                cannonFireScript.SendActiveFire();
-                thresh_hold = cannonFireScript.Reload_Time;
-            }
+                // Fire.
+                if (thresh_hold > 0) thresh_hold -= Time.deltaTime;
+                if (turretScript.Is_Ready && Input.GetKey(General_Settings_CS.Fire_Key) && thresh_hold <= 0)
+                {
+                    cannonFireScript.SendActiveFire();
+                    thresh_hold = cannonFireScript.Reload_Time;
+                }
 
-            // Switch the bullet type.
-            if (Input.GetKeyDown(General_Settings_CS.Switch_Bullet_Key))
-            {
-                cannonFireScript.SendActiveFireChange();
+                // Switch the bullet type.
+                if (Input.GetKeyDown(General_Settings_CS.Switch_Bullet_Key))
+                {
+                    cannonFireScript.SendActiveFireChange();
+                }
             }
 
             if (changeFire)
@@ -46,7 +50,6 @@ namespace ChobiAssets.PTM
                     {
                         continue;
                     }
-                    Debug.Log("Da Doi Kieu");
                     cannonFireScript.Bullet_Generator_Scripts[i].Switch_Bullet_Type();
                 }
 
@@ -71,6 +74,11 @@ namespace ChobiAssets.PTM
         {
             changeFire = true;
             Get_Input();
+        }
+
+        public override void SetEnable(bool state)
+        {
+            isDisable = state;
         }
     }
 

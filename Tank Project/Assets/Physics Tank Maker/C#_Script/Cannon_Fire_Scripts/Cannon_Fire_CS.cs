@@ -4,43 +4,45 @@ using System.Collections;
 namespace ChobiAssets.PTM
 {
 
-	public class Cannon_Fire_CS : MonoBehaviour
-	{
-		/*
+    public class Cannon_Fire_CS : MonoBehaviour
+    {
+        /*
 		 * This script is attached to the "Cannon_Base" in the tank.
 		 * This script controls the firining of the tank.
 		 * When firing, this script calls "Bullet_Generator_CS" and "Recoil_Brake_CS" scripts placed under this object in the hierarchy.
 		 * In case of AI tank, this script works in combination with "AI_CS", "Turret_Horizontal_CS", "Cannon_Vertical_CS" and "Aiming_Control_CS".
 		*/
 
-		// User options >>
-		public float Reload_Time = 2.0f;
-		public float Recoil_Force = 5000.0f;
-		// << User options
+        // User options >>
+        public float Reload_Time = 2.0f;
+        public float Recoil_Force = 5000.0f;
+        // << User options
 
 
-		// Set by "inputType_Settings_CS".
-		public int inputType = 0;
+        // Set by "inputType_Settings_CS".
+        public int inputType = 0;
 
-		// Referred to from "UI_Reloading_Circle_CS".
-		public float Loading_Count;
-		public bool Is_Loaded = true;
+        // Referred to from "UI_Reloading_Circle_CS".
+        public float Loading_Count;
+        public bool Is_Loaded = true;
 
         Rigidbody bodyRigidbody;
         Transform thisTransform;
         int direction = 1; // For twin barrels, 1 = left, 2 = right.
-		public Bullet_Generator_CS[] Bullet_Generator_Scripts; // Referred to from "Cannon_Fire_Input_##_###".
+        public Bullet_Generator_CS[] Bullet_Generator_Scripts; // Referred to from "Cannon_Fire_Input_##_###".
         Recoil_Brake_CS[] recoilScripts;
 
+        protected Network_Interact_Control interact_Control;
         protected Cannon_Fire_Input_00_Base_CS inputScript;
+
 
         bool isSelected;
 
 
         void Start()
-		{
-			Initialize();
-		}
+        {
+            Initialize();
+        }
 
 
         void Initialize()
@@ -99,22 +101,35 @@ namespace ChobiAssets.PTM
                 return;
             }
 
-            if (isSelected || inputType == 10)
+            //if (isSelected || inputType == 10)
             { // The tank is selected, or AI.
                 inputScript.Get_Input();
+                Debug.Log("Đang chạy");
             }
+        }
+
+
+        public bool NetworkFire()
+        {
+            return inputScript.NetWorkFire();
+        }
+
+        public bool NetworkChangeFire()
+        {
+            return inputScript.NetWorkChangeFire();
         }
 
 
         public void Fire()
         { // Called from "Cannon_Fire_Input_##_###".
-            // Call all the "Bullet_Generator_CS".
+          // Call all the "Bullet_Generator_CS".
+
             for (int i = 0; i < Bullet_Generator_Scripts.Length; i++)
             {
                 Bullet_Generator_Scripts[i].Fire_Linkage(direction);
             }
 
-            // Call all the "Recoil_Brake_CS".
+            //Call all the "Recoil_Brake_CS".
             for (int i = 0; i < recoilScripts.Length; i++)
             {
                 recoilScripts[i].Fire_Linkage(direction);

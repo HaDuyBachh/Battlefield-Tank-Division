@@ -47,14 +47,22 @@ public class NetworkGeneral : MonoBehaviour
                     activeList[(int)Active.Move] = true;
                     break;
                 case (byte)Command.Fire:
-                    activeList[(int)Active.Fire] = true;
-                    fireData[id] = true;
-                    ///Chỗ này sẽ trả về respond luôn vì UDP sẽ theo cơ chế nhận rồi gửi
+                    if (SetRevcFire(id))
+                    {
+                        activeList[(int)Active.Fire] = true;
+                        fireData[id] = true;
+                        Debug.Log("Đã bắn");
+                    }
+
                     break;
                 case (byte)Command.ChangeFire:
-                    activeList[(int)Active.ChangeFire] = true;
-                    changeFireData[id] = true;
-                    ///Chỗ này sẽ trả về respond luôn vì UDP sẽ theo cơ chế nhận rồi gửi
+                    if (SetRevcChangeFire(id))
+                    {
+                        activeList[(int)Active.ChangeFire] = true;
+                        changeFireData[id] = true;
+                        Debug.Log("Đã nhận dữ liệu đổi súng");
+                    }
+
                     break;
             }
         }
@@ -63,8 +71,8 @@ public class NetworkGeneral : MonoBehaviour
     //Get Data ResPond
     public byte[] GetDataRespond()
     {
-        List<byte> respond = new(); 
-        for (int i = 0; i< Enum.GetValues(typeof(Active)).Length; i++)
+        List<byte> respond = new();
+        for (int i = 0; i < Enum.GetValues(typeof(Active)).Length; i++)
         {
             if (activeList[i])
             {
@@ -186,6 +194,8 @@ public class NetworkGeneral : MonoBehaviour
     }
 
     // Set Receive
+    public bool SetRevcFire(int id) => clientIdObjectControl[id].interact_Control.Fire();
+    public bool SetRevcChangeFire(int id) => clientIdObjectControl[id].interact_Control.ChangeFire();
     public void SetRevcRotate(Vector3[] recvData, int id)
     {
         //Debug.Log("Thông số xoay là: " + id + "    " + recvData[0] + "  " + recvData[1]);

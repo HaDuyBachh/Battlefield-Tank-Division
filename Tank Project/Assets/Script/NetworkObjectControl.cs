@@ -11,6 +11,7 @@ public class NetworkObjectControl : MonoBehaviour
     private NetworkSendRotateData sendRotateData;
     public Network_Move_Control move_Control;
     public Network_Rotate_Control rotate_Control;
+    public Network_Interact_Control interact_Control;
     public void Awake()
     {
         //init
@@ -19,6 +20,7 @@ public class NetworkObjectControl : MonoBehaviour
         sendRotateData = GetComponent<NetworkSendRotateData>();
         move_Control = GetComponent<Network_Move_Control>();
         rotate_Control = GetComponent<Network_Rotate_Control>();
+        interact_Control = GetComponent<Network_Interact_Control>();
     }
     public int ID { get { return id; } }
     public void SetID(int id)

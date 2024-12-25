@@ -83,6 +83,8 @@ namespace ChobiAssets.PTM
                 aiScript.StartCoroutine("Wake_Up_Timer");
             }
 
+            Debug.Log("Đang ăn damag ở đây! " + damage + "   " + type +"   " + index);
+
             switch (type)
             {
                 case 0: // MainBody
@@ -220,7 +222,7 @@ namespace ChobiAssets.PTM
             }
 
             // Send Message to "Damage_Control_00_MainBody_CS", "Damage_Control_01_Turret_CS", "Respawn_Controller_CS", "AI_CS", "UI_Aim_Marker_Control_CS", "Aiming_Marker_Control_CS", "Drive_Control_CS", "Drive_Wheel_Parent_CS", "Drive_Wheel_CS", "Steer_Wheel_CS", "Stabilizer_CS", "Fix_Shaking_Rotation_CS", "Sound_Control_##_CS".
-            bodyTransform.parent.BroadcastMessage("MainBody_Destroyed_Linkage", SendMessageOptions.DontRequireReceiver);
+            //bodyTransform.parent.BroadcastMessage("MainBody_Destroyed_Linkage", SendMessageOptions.DontRequireReceiver);
 
             // Add NavMeshObstacle to the MainBody.
             NavMeshObstacle navMeshObstacle = bodyTransform.gameObject.AddComponent<NavMeshObstacle>();

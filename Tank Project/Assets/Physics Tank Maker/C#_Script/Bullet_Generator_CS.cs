@@ -82,7 +82,9 @@ namespace ChobiAssets.PTM
             { // Single barrel, or the same direction.
 
                 // Generate the bullet and shoot it.
-                StartCoroutine("Generate_Bullet");
+                //StartCoroutine("Generate_Bullet");
+                //Generate_Bullet();
+                StartCoroutine(Generate_Bullet());
             }
         }
 
@@ -139,7 +141,7 @@ namespace ChobiAssets.PTM
             bulletObject.layer = Layer_Settings_CS.Bullet_Layer;
 
             // Shoot.
-            yield return new WaitForFixedUpdate();
+            //yield return new WaitForFixedUpdate();
             Rigidbody rigidbody = bulletObject.GetComponent<Rigidbody>();
             Vector3 currentVelocity = bulletObject.transform.forward * Current_Bullet_Velocity;
             rigidbody.velocity = currentVelocity;

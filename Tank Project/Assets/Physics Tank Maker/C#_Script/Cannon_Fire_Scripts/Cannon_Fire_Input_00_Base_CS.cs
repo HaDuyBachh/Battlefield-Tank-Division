@@ -19,7 +19,12 @@ namespace ChobiAssets.PTM
 		public virtual void Get_Input()
 		{
 		}
-
+		public virtual bool NetWorkFire() {
+			return false;
+		}
+		public virtual bool NetWorkChangeFire() {
+			return false;
+		}
 	}
 
 }

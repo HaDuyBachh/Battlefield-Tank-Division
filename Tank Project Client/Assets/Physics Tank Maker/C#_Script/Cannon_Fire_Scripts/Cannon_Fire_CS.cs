@@ -71,12 +71,12 @@ namespace ChobiAssets.PTM
 
         public void SetDisable(bool state)
         {
-            Debug.Log("Dang hoat dong");
+            //Debug.Log("Dang hoat dong");
             isDisable = state;
         }
         public void SendActiveFire()
         {
-            Debug.Log("Send Fire");
+            //Debug.Log("Send Fire");
             networkInteract.SendActiveFire();
         }
         public void SendActiveFireChange()

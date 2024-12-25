@@ -74,6 +74,13 @@ namespace ChobiAssets.PTM
             Initial_Right_Track_HP = Right_Track_HP;
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                Receive_Damage(1000, 3, 0);
+            }
+        }
 
         public bool Receive_Damage(float damage, int type, int index)
         { // Called from "Damage_Control_##_##_CS" scripts in the tank.

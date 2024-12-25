@@ -75,9 +75,9 @@ public class NetworkSender : MonoBehaviour
             rotateChange = false;
         }
 
-        Debug.Log("Đang chạy ở đây với send là: " + sendData.Count);
-
         if (sendData.Count < 2) sendData.AddRange(Encode(StringToByte("X "), (byte)Command.Move, mainID));
+
+        Debug.Log("Đang chạy ở đây với send là: " + sendData.Count); 
 
         udp.SendData(sendData.ToArray());
             

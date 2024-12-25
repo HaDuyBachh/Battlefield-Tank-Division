@@ -78,7 +78,7 @@ namespace ChobiAssets.PTM
 
         public void Fire_Linkage(int direction) 
         { // Called from "Cannon_Fire_CS".
-            Debug.Log("Đã bắn ở đây " + Barrel_Type + "  " + direction);
+            //Debug.Log("Đã bắn ở đây " + Barrel_Type + "  " + direction);
             if (Barrel_Type == 0 || Barrel_Type == direction)
             { // Single barrel, or the same direction.
                 // Generate the bullet and shoot it.

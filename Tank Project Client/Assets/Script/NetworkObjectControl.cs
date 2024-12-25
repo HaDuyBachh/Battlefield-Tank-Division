@@ -1,4 +1,4 @@
-using ChobiAssets.PTM;
+﻿using ChobiAssets.PTM;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,14 +32,14 @@ public class NetworkObjectControl : MonoBehaviour
 
     public void SetNotMain()
     {
-        recvInteract.cannon.SetDisable(true);
+        recvInteract.SetNotMain(true);
         foreach (var damage in GetComponents<Damage_Control_00_Base_CS>())
         {
-            damage.enabled = false;
+            if (damage is not Damage_Control_04_Track_Collider_CS) damage.enabled = false;
         }
-        foreach (var damgage in GetComponentsInChildren<Damage_Control_00_Base_CS>())
+        foreach (var damage in GetComponentsInChildren<Damage_Control_00_Base_CS>())
         {
-            damgage.enabled = false;
+            if (damage is not Damage_Control_04_Track_Collider_CS) damage.enabled = false;
         }
     }
 
@@ -54,5 +54,11 @@ public class NetworkObjectControl : MonoBehaviour
     {
         if (general.revcMoveData[id].Count > 0) recvMoveData.SetValue();
         if (general.revcRotData[id].Count > 0) recvRotateData.SetValue();
+        if (general.revcFireData[id])
+        {
+            Debug.Log("ID: " + id + " Đã gọi bắn");
+            general.revcFireData[id] = false;
+            recvInteract.NetworkCallFire();
+        }
     }
 }

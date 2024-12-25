@@ -104,7 +104,7 @@ namespace ChobiAssets.PTM
             //if (isSelected || inputType == 10)
             { // The tank is selected, or AI.
                 inputScript.Get_Input();
-                Debug.Log("Đang chạy");
+                //Debug.Log("Đang chạy");
             }
         }
 

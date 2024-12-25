@@ -27,7 +27,7 @@ public class UDPSender : MonoBehaviour
     {
         // Gửi dữ liệu qua UDP
         udpClient.Send(data, data.Length, serverIP, serverPort);
-        Debug.Log($"Sent to server.c: Message={data.Length}");
+        //Debug.Log($"Sent to server.c: Message={data.Length}");
     }
     public void BeginReceive()
     {
@@ -42,7 +42,7 @@ public class UDPSender : MonoBehaviour
 
         general.RecvData(receivedData);
 
-        Debug.Log("Nhận phản hồi từ server: " + receivedData.Length);
+        //Debug.Log("Nhận phản hồi từ server: " + receivedData.Length); 
     }
     private void OnApplicationQuit()
     {

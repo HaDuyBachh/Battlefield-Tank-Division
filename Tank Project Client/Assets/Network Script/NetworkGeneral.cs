@@ -9,6 +9,9 @@ public class NetworkGeneral : MonoBehaviour
     public ClientManager clientManager;
     public List<(Vector3 position, Quaternion rotation)>[] revcMoveData;
     public List<Quaternion>[] revcRotData;
+    public bool[] revcFireData;
+    public bool[] revcChangeFireData;
+
     [SerializeField]
     private NetworkRecvInteract[] recvInteract;
     public void AddRecvInteract(NetworkRecvInteract interact)
@@ -27,6 +30,8 @@ public class NetworkGeneral : MonoBehaviour
         clientManager = FindAnyObjectByType<ClientManager>();
         revcMoveData = new List<(Vector3 position, Quaternion rotation)>[clientManager.clientQuanty + 1];
         revcRotData = new List<Quaternion>[clientManager.clientQuanty + 1];
+        revcFireData = new bool[clientManager.clientQuanty + 1];
+        revcChangeFireData = new bool[clientManager.clientQuanty + 1];
         for (int i = 1; i < revcMoveData.Length; i++)
         {
             revcMoveData[i] = new();
@@ -53,7 +58,7 @@ public class NetworkGeneral : MonoBehaviour
         foreach (var (command, id, dataLength, data) in DecodeWithoutCheckByte(encodedData))
         {
             var offsetIn = 0;
-            Debug.Log("Command:" + command);
+            Debug.Log("Command:" + command + " id: " + id);
             switch ((Command)command)
             {
                 case Command.Move:
@@ -61,17 +66,12 @@ public class NetworkGeneral : MonoBehaviour
                     SetRotRevc(DecodeRotateData(data, ref offsetIn), id);
                     break;
                 case Command.Fire:
-                    if (recvInteract[id] != null)
-                        recvInteract[id].NetworkCallFire();
-                    else
-                        Debug.LogError("Error recvInteract[id] not found");
+                    revcFireData[id] = true;
                     //Debug.Log("Đã nhận được phản hồi: fire");
                     break;
                 case Command.ChangeFire:
-                    if (recvInteract[id] != null)
-                        recvInteract[id].NetworkCallChangeFire();
-                    else
-                        Debug.LogError("Error recvInteract[id] not found");
+                    //recvInteract[id].NetworkCallChangeFire();
+                    revcChangeFireData[id] = true;
                     //Debug.Log("Đã nhận được phản hồi: change fire");
                     break;
                 default:

@@ -83,7 +83,7 @@ namespace ChobiAssets.PTM
                 aiScript.StartCoroutine("Wake_Up_Timer");
             }
 
-            Debug.Log("Đang ăn damag ở đây! " + damage + "   " + type +"   " + index);
+            //Debug.Log("Đang ăn damag ở đây! " + damage + "   " + type +"   " + index);
 
             switch (type)
             {

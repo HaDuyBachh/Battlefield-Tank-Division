@@ -29,7 +29,7 @@ public class InputMoveListener: MonoBehaviour
         if (sendStr.Length > 0)
         {
             isSent = true;
-            Debug.Log(sendStr);
+            //Debug.Log(sendStr);
             sender.SetMoveData(sendStr);
         }
         else

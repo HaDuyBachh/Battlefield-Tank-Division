@@ -43,7 +43,8 @@ namespace ChobiAssets.PTM
         { // Called from "Bullet_Control_CS", when the bullet hits this collider.
 
             // Send the damage value to the "Damage_Control_Center_CS".
-            if (centerScript.Receive_Damage(damage, 3, Track_Index) == true)
+            //if (centerScript.Receive_Damage(damage, 3, Track_Index) == true)
+            if (true)
             { // type = 3 (Track_Collider), index = Track_Index (0 = Left, 1 = Right). true = The track has been destroyed.
                 
                 // Breaking the track by calling the "Linked_Piece_Script". ("Static_Track_Piece_CS" script in the track piece.)

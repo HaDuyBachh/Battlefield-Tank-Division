@@ -19,6 +19,7 @@ public static class GeneralSystem
         Rotate,
         Fire,
         ChangeFire,
+        Damaged,
     }
 
     // Function
@@ -174,7 +175,7 @@ public static class GeneralSystem
             offset += 4 + dataLength;
         }
 
-        Debug.Log("Decoding complete.");
+        //Debug.Log("Decoding complete.");
         return result;
     }
     public static List<(byte command, int id, int dataLength, byte[] data)> DecodeWithCheckByte(byte[] encodedData) => DecodeAll(encodedData, 1);

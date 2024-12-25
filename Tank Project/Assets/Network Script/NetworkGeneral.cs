@@ -10,47 +10,62 @@ public class NetworkGeneral : MonoBehaviour
     public List<NetworkObjectControl> clientIdObjectControl;
     private List<byte>[] sendMoveData = new List<byte>[256];
     private List<byte>[] sendRotData = new List<byte>[256];
-    private bool[] fireData = new bool[256];
-    private bool[] changeFireData = new bool[256];
+
+   // [Các Client] [Các Client được active được gửi đến phiên của client đang xét]
+    private bool[][] fireData = new bool[256][];
+    private bool[][] changeFireData = new bool[256][];
+    // [Các Client] [Các client đó có lệnh nào được gọi]
+    private bool[][] activeList = new bool[256][];
     enum Active
     {
         Move,
         Fire,
         ChangeFire
     }
-    private bool[] activeList = new bool[Enum.GetValues(typeof(Active)).Length];
 
-    public void Awake()
+
+    public void Initialize()
     {
         for (int id = 1; id < clientIdObjectControl.Count; id++)
         {
             clientIdObjectControl[id].SetID(id);
             sendMoveData[id] = new();
             sendRotData[id] = new();
+            activeList[id] = new bool[Enum.GetValues(typeof(Active)).Length];
+            fireData[id] = new bool[clientIdObjectControl.Count + 1];
+            changeFireData[id] = new bool[clientIdObjectControl.Count + 1];
         }
+    }    
+    public void Awake()
+    {
+        Initialize();
     }
 
-
     //Reveice
-    public void RecvData(byte[] encodedData)
+    public int RecvData(byte[] encodedData)
     {
+        int idx = -1;
         foreach (var (command, id, dataLength, data) in DecodeWithCheckByte(encodedData))
         {
+            //Debug.Log("Lệnh gửi đến server là: " + command + " id la: " + id);
+            if (idx == -1) idx = id;
             switch (command)
             {
                 case (byte)Command.Move:
                     SetRevcMove(DecodeMoveData(data), id);
-                    activeList[(int)Active.Move] = true;
+                    SetActiveListValue(Active.Move,id);
+                    //activeList[(int)Active.Move] = true;
                     break;
                 case (byte)Command.Rotate:
                     SetRevcRotate(DecodeRotateData(data), id);
-                    activeList[(int)Active.Move] = true;
+                    SetActiveListValue(Active.Move, id);
+                    //activeList[(int)Active.Move] = true;
                     break;
                 case (byte)Command.Fire:
                     if (SetRevcFire(id))
                     {
-                        activeList[(int)Active.Fire] = true;
-                        fireData[id] = true;
+                        ///SetActiveListValue
+                        SetActiveListValue(Active.Fire, id);
                         Debug.Log("Đã bắn");
                     }
 
@@ -58,23 +73,25 @@ public class NetworkGeneral : MonoBehaviour
                 case (byte)Command.ChangeFire:
                     if (SetRevcChangeFire(id))
                     {
-                        activeList[(int)Active.ChangeFire] = true;
-                        changeFireData[id] = true;
+                        ///SetActiveListValue
+                        SetActiveListValue(Active.ChangeFire, id);
                         Debug.Log("Đã nhận dữ liệu đổi súng");
                     }
 
                     break;
             }
         }
+        Debug.Log("dữ liệu id là: " + idx);
+        return idx;
     }
 
     //Get Data ResPond
-    public byte[] GetDataRespond()
+    public byte[] GetDataRespond(int id)
     {
         List<byte> respond = new();
         for (int i = 0; i < Enum.GetValues(typeof(Active)).Length; i++)
         {
-            if (activeList[i])
+            if (activeList[id][i])
             {
                 switch ((Active)i)
                 {
@@ -82,14 +99,14 @@ public class NetworkGeneral : MonoBehaviour
                         respond.AddRange(GetMoveDataRespond());
                         break;
                     case Active.Fire:
-                        respond.AddRange(GetFireInteractDataRespond());
+                        respond.AddRange(GetFireInteractDataRespond(id));
                         break;
                     case Active.ChangeFire:
-                        respond.AddRange(GetChangeFireInteractDataRespond());
+                        respond.AddRange(GetChangeFireInteractDataRespond(id));
                         break;
                 }
 
-                activeList[i] = false;
+                activeList[id][i] = false;
             }
         }
         return respond.ToArray();
@@ -121,15 +138,20 @@ public class NetworkGeneral : MonoBehaviour
             return respond;
         }
     }
-    public List<byte> GetFireInteractDataRespond()
+    /// <summary>
+    /// Lấy dữ liệu bắn cho client idx
+    /// </summary>
+    /// <param name="idx">mã client</param>
+    /// <returns></returns>
+    public List<byte> GetFireInteractDataRespond(int idx)
     {
         List<byte> respond = new();
 
         for (byte id = 1; id < clientIdObjectControl.Count; id++)
         {
-            if (fireData[id])
+            if (fireData[idx][id])
             {
-                fireData[id] = false;
+                fireData[idx][id] = false;
                 ///[command]:   1 byte
                 respond.Add((byte)Command.Fire);
                 ///[id]:        1 byte
@@ -141,15 +163,21 @@ public class NetworkGeneral : MonoBehaviour
 
         return respond;
     }
-    public List<byte> GetChangeFireInteractDataRespond()
+
+    /// <summary>
+    /// Lấy dữ liệu đổi súng cho client idx
+    /// </summary>
+    /// <param name="idx">mã client</param>
+    /// <returns></returns>
+    public List<byte> GetChangeFireInteractDataRespond(int idx)
     {
         List<byte> respond = new();
 
         for (byte id = 1; id < clientIdObjectControl.Count; id++)
         {
-            if (changeFireData[id])
+            if (changeFireData[idx][id])
             {
-                changeFireData[id] = false;
+                changeFireData[idx][id] = false;
                 ///[command]:   1 byte
                 respond.Add((byte)Command.ChangeFire);
                 ///[id]:        1 byte
@@ -162,7 +190,42 @@ public class NetworkGeneral : MonoBehaviour
         return respond;
     }
 
-
+    /// <summary>
+    /// Set giá trị hành động tương tác
+    /// </summary>
+    /// <param name="act">mã hành động</param>
+    /// <param name="id"> mã id có hành động tương tác đó </param>
+    private void SetActiveListValue(Active act, int id)
+    {
+        switch (act)
+        {
+            case Active.Move:
+                // Active
+                for (int i = 1; i<clientIdObjectControl.Count; i++)
+                {
+                    activeList[i][(int)act] = true;
+                }    
+                break;
+            case Active.Fire:
+                //  i: các lưu trữ dữ liệu client
+                // id: mã id được cần lưu vào 
+                for (int i = 1; i < clientIdObjectControl.Count; i++)
+                {
+                    activeList[i][(int)act] = true;
+                    fireData[i][id] = true;
+                }
+                break;
+            case Active.ChangeFire:
+                //  i: các lưu trữ dữ liệu client
+                // id: mã id được cần lưu vào
+                for (int i = 1; i<clientIdObjectControl.Count; i++)
+                {
+                    activeList[(int)act][id] = true;
+                    changeFireData[i][id] = true;
+                }
+                break;
+        }    
+    }    
 
     //Set Data Respond
     public void SetMoveDataRespond(List<byte> data, int id)

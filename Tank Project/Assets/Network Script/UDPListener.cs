@@ -35,13 +35,13 @@ public class UDPListener : MonoBehaviour
             byte[] receivedData = udpClient.EndReceive(ar, ref remoteEndPoint);
 
             ///Nhận câu lệnh:
-            var idx = general.RecvData(receivedData);
+            var current_client = general.RecvData(receivedData);
 
             // Gửi phản hồi lại server.c
             //SendResponse(new byte[] { 0x11, 0x22, 0x12 }, remoteEndPoint);
 
             // Đã nén gói
-            SendResponse(Compress(general.GetDataRespond(idx)), remoteEndPoint);
+            SendResponse(Compress(general.GetDataRespond(current_client)), remoteEndPoint);
             //Debug.Log("Phản hồi lại: ");
             
         }

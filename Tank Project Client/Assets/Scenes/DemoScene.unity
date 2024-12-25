@@ -22791,8 +22791,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sender: {fileID: 0}
   cannon: {fileID: 0}
+  damage_Control: {fileID: 0}
   control: {fileID: 0}
-  damageTrack: []
   isNotMain: 1
 --- !u!114 &615208881
 MonoBehaviour:
@@ -39763,7 +39763,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182523473}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e527b9bf83a259747b98847bb05eed53, type: 3}
   m_Name: 
@@ -40296,8 +40296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sender: {fileID: 0}
   cannon: {fileID: 0}
+  damage_Control: {fileID: 0}
   control: {fileID: 0}
-  damageTrack: []
   isNotMain: 1
 --- !u!1 &1187554089
 GameObject:
@@ -51225,7 +51225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d9a55d21a364b49a1cb1a5223a59c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientID: 2
+  clientID: 1
   clientPort: 8881
   clientQuanty: 3
   sender: {fileID: 1990859386}

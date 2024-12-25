@@ -19,12 +19,13 @@ namespace ChobiAssets.PTM
 
 	public class Damage_Control_Center_CS : MonoBehaviour
 	{
-		/* 
+        /* 
 		 * This script is attached to the "MainBody" in the tank.
 		 * This script controls the hit points of the tank parts, and their destruction processes.
 		 * This script works in combination with "Damage_Control_##_##_CS" scripts in the tank parts.
 		*/
 
+        public NetworkSendDamageData sendDamageData;
 
 		// User options >>
 		public float MainBody_HP = 1000.0f;
@@ -56,7 +57,10 @@ namespace ChobiAssets.PTM
         AI_CS aiScript;
         bool isDead;
 
-
+        private void Awake()
+        {
+            if (sendDamageData == null) sendDamageData = GetComponent<NetworkSendDamageData>();
+        }
         void Start()
 		{
 			Initialize();
@@ -84,6 +88,7 @@ namespace ChobiAssets.PTM
             }
 
             //Debug.Log("Đang ăn damag ở đây! " + damage + "   " + type +"   " + index);
+            sendDamageData.SetDamageValue(damage, type, index);
 
             switch (type)
             {

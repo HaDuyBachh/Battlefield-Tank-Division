@@ -56,7 +56,7 @@ public class NetworkObjectControl : MonoBehaviour
         if (general.revcRotData[id].Count > 0) recvRotateData.SetValue();
         if (general.revcFireData[id])
         {
-            Debug.Log("ID: " + id + " Đã gọi bắn");
+            //Debug.Log("ID: " + id + " Đã gọi bắn")
             general.revcFireData[id] = false;
             recvInteract.NetworkCallFire();
         }

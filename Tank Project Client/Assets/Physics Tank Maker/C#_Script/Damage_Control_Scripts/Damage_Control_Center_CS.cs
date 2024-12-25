@@ -56,6 +56,8 @@ namespace ChobiAssets.PTM
         AI_CS aiScript;
         bool isDead;
 
+        public (float damage, int type, int index)? current_Damage;
+
 
         void Start()
 		{
@@ -76,9 +78,10 @@ namespace ChobiAssets.PTM
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.K))
+            if (current_Damage.HasValue)
             {
-                Receive_Damage(1000, 3, 0);
+                Receive_Damage(current_Damage.Value.damage, current_Damage.Value.type, current_Damage.Value.index);
+                current_Damage = null;
             }
         }
 
@@ -227,7 +230,7 @@ namespace ChobiAssets.PTM
             }
 
             // Send Message to "Damage_Control_00_MainBody_CS", "Damage_Control_01_Turret_CS", "Respawn_Controller_CS", "AI_CS", "UI_Aim_Marker_Control_CS", "Aiming_Marker_Control_CS", "Drive_Control_CS", "Drive_Wheel_Parent_CS", "Drive_Wheel_CS", "Steer_Wheel_CS", "Stabilizer_CS", "Fix_Shaking_Rotation_CS", "Sound_Control_##_CS".
-            bodyTransform.parent.BroadcastMessage("MainBody_Destroyed_Linkage", SendMessageOptions.DontRequireReceiver);
+            //bodyTransform.parent.BroadcastMessage("MainBody_Destroyed_Linkage", SendMessageOptions.DontRequireReceiver);
 
             // Add NavMeshObstacle to the MainBody.
             NavMeshObstacle navMeshObstacle = bodyTransform.gameObject.AddComponent<NavMeshObstacle>();
@@ -266,7 +269,7 @@ namespace ChobiAssets.PTM
             }
 
             // Send Message to "Damage_Control_01_Turret_CS", "Turret_Horizontal_CS", "Cannon_Vertical_CS", "Cannon_Fire_CS", "Gun_Camera_CS", "Recoil_Brake_CS", "Sound_Control_Motor_CS".
-            Turret_Props[index].turretBaseTransform.BroadcastMessage("Turret_Destroyed_Linkage", SendMessageOptions.DontRequireReceiver);
+            //Turret_Props[index].turretBaseTransform.BroadcastMessage("Turret_Destroyed_Linkage", SendMessageOptions.DontRequireReceiver);
 
             // Blow off the turret.
             if (Turret_Props[index].blowOff == true)

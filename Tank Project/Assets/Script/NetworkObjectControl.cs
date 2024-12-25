@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +9,7 @@ public class NetworkObjectControl : MonoBehaviour
     private NetworkGeneral general;
     private NetworkSendMoveData sendMoveData;
     private NetworkSendRotateData sendRotateData;
+    private NetworkSendDamageData sendDamageData;
     public Network_Move_Control move_Control;
     public Network_Rotate_Control rotate_Control;
     public Network_Interact_Control interact_Control;
@@ -18,6 +19,7 @@ public class NetworkObjectControl : MonoBehaviour
         general = FindAnyObjectByType<NetworkGeneral>();
         sendMoveData = GetComponent<NetworkSendMoveData>();
         sendRotateData = GetComponent<NetworkSendRotateData>();
+        sendDamageData = GetComponent<NetworkSendDamageData>();
         move_Control = GetComponent<Network_Move_Control>();
         rotate_Control = GetComponent<Network_Rotate_Control>();
         interact_Control = GetComponent<Network_Interact_Control>();
@@ -32,5 +34,8 @@ public class NetworkObjectControl : MonoBehaviour
     {
         general.SetMoveDataRespond(sendMoveData.GetValue(), ID);
         general.SetRotateDataRespond(sendRotateData.GetValue(), ID);
+
+        if (sendDamageData.hasValue)
+            general.SetDamageDataRespond(sendDamageData.GetValue(), ID);
     }
 }

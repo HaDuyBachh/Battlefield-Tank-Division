@@ -19,6 +19,7 @@ public static class GeneralSystem
         Rotate,
         Fire,
         ChangeFire,
+        Damage,
     }
 
     // Function
@@ -119,6 +120,54 @@ public static class GeneralSystem
         byte lowByte = (byte)(value & 0xFF); // Byte thấp
 
         return new byte[] { highByte, lowByte };
+    }
+    public static byte[] EncodeIntTo4Bytes(int value)
+    {
+        // Không cần kiểm tra phạm vi vì int luôn nằm trong khoảng của 4 byte
+
+        // Tách thành 4 byte
+        byte byte1 = (byte)((value >> 24) & 0xFF); // Byte cao nhất
+        byte byte2 = (byte)((value >> 16) & 0xFF);
+        byte byte3 = (byte)((value >> 8) & 0xFF);
+        byte byte4 = (byte)(value & 0xFF); // Byte thấp nhất
+
+        return new byte[] { byte1, byte2, byte3, byte4 };
+    }
+    public static byte[] EncodeFloatTo4Bytes(float value)
+    {
+        // Chuyển float thành int (dùng BitConverter để lấy giá trị bit của float)
+        int intRepresentation = BitConverter.ToInt32(BitConverter.GetBytes(value), 0);
+
+        // Tách thành 4 byte từ int
+        byte byte1 = (byte)((intRepresentation >> 24) & 0xFF); // Byte cao nhất
+        byte byte2 = (byte)((intRepresentation >> 16) & 0xFF);
+        byte byte3 = (byte)((intRepresentation >> 8) & 0xFF);
+        byte byte4 = (byte)(intRepresentation & 0xFF); // Byte thấp nhất
+
+        return new byte[] { byte1, byte2, byte3, byte4 };
+    }
+    public static int Decode4BytesToInt(byte[] bytes)
+    {
+        if (bytes == null || bytes.Length != 4)
+            throw new ArgumentException("Input must be an array of 4 bytes.");
+
+        // Kết hợp 4 byte thành số nguyên
+        int value = (bytes[0] << 24) | (bytes[1] << 16) | (bytes[2] << 8) | bytes[3];
+        return value;
+    }
+    public static float Decode4BytesToFloat(byte[] bytes)
+    {
+        // Kiểm tra độ dài mảng byte
+        if (bytes.Length != 4)
+        {
+            throw new ArgumentException("Mảng byte phải có độ dài 4", nameof(bytes));
+        }
+
+        // Kết hợp 4 byte thành 1 int
+        int intRepresentation = (bytes[0] << 24) | (bytes[1] << 16) | (bytes[2] << 8) | bytes[3];
+
+        // Chuyển đổi từ int thành float
+        return BitConverter.ToSingle(BitConverter.GetBytes(intRepresentation), 0);
     }
     public static List<byte> Encode(byte[] messageBytes, byte command, byte id)
     {

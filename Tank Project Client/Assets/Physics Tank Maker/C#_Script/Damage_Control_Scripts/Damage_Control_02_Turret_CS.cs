@@ -12,8 +12,9 @@ namespace ChobiAssets.PTM
 
 		public override bool Get_Damage(float damage, int bulletType)
 		{ // Called from "Bullet_Control_CS", when the bullet hits this collider.
-			// Send the damage value to the "Damage_Control_Center_CS".
-			return centerScript.Receive_Damage(damage, 1, Turret_Index); // type = 1 (Turret), index = Turret_ID (0 = Main turret).
+		  // Send the damage value to the "Damage_Control_Center_CS".
+		  //return centerScript.Receive_Damage(damage, 1, Turret_Index); // type = 1 (Turret), index = Turret_ID (0 = Main turret).
+			return false;
 		}
 
 

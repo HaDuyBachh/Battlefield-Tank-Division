@@ -70,9 +70,12 @@ public class NetworkGeneral : MonoBehaviour
                     //Debug.Log("Đã nhận được phản hồi: fire");
                     break;
                 case Command.ChangeFire:
-                    //recvInteract[id].NetworkCallChangeFire();
                     revcChangeFireData[id] = true;
                     //Debug.Log("Đã nhận được phản hồi: change fire");
+                    break;
+                case Command.Damage:
+                    recvInteract[id].NetworkCallDamage(DecodeDamageData(data));
+                    //Debug.Log("Đã nhận đc phản hồi damage của " + id);
                     break;
                 default:
                     break;
@@ -180,5 +183,56 @@ public class NetworkGeneral : MonoBehaviour
         }
 
         return result;
+    }
+
+    public (float damage, int type, int index) DecodeDamageData(byte[] receivedData)
+    {
+        if (receivedData == null || receivedData.Length != 12)
+            throw new ArgumentException("Invalid data array. Must contain exactly 12 bytes.");
+
+        int offset = 0;
+
+        // Decode damage (float, 4 bytes)
+        var damage = DecodeFloatFrom4Bytes(receivedData, offset);
+        offset += 4;
+
+        // Decode type (int, 4 bytes)
+        var type = DecodeIntFrom4Bytes(receivedData, offset);
+        offset += 4;
+
+        // Decode index (int, 4 bytes)
+        var index = DecodeIntFrom4Bytes(receivedData, offset);
+
+        return (damage, type, index);
+    }
+
+    // Helper method to decode a float from 4 bytes
+    private float DecodeFloatFrom4Bytes(byte[] data, int offset)
+    {
+        if (data == null || data.Length < offset + 4)
+            throw new ArgumentException("Invalid data array or offset.");
+
+        // Combine 4 bytes into an int representation
+        int intRepresentation =
+            (data[offset] << 24) |
+            (data[offset + 1] << 16) |
+            (data[offset + 2] << 8) |
+            data[offset + 3];
+
+        // Convert the int representation back to float
+        return BitConverter.ToSingle(BitConverter.GetBytes(intRepresentation), 0);
+    }
+
+    // Helper method to decode an int from 4 bytes
+    private int DecodeIntFrom4Bytes(byte[] data, int offset)
+    {
+        if (data == null || data.Length < offset + 4)
+            throw new ArgumentException("Invalid data array or offset.");
+
+        // Combine 4 bytes into an int
+        return (data[offset] << 24) |
+               (data[offset + 1] << 16) |
+               (data[offset + 2] << 8) |
+               data[offset + 3];
     }
 }

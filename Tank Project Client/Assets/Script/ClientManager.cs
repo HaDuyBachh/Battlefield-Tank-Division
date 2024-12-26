@@ -19,6 +19,7 @@ public class ClientManager : MonoBehaviour
         var sys = FindAnyObjectByType<SystemValue>();
         if (sys != null)
         {
+            UDP.serverIP = sys.serverIP;
             UDP.serverPort = sys.serverPort;
             clientID = sys.mainClientID;
         }

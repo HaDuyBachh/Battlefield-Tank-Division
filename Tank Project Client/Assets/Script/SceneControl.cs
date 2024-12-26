@@ -9,6 +9,10 @@ public class SceneControl : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+    public void ChangeScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }    
     public void Quit()
     {
         Application.Quit();

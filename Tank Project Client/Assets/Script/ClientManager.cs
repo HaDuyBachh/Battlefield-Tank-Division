@@ -6,7 +6,7 @@ public class ClientManager : MonoBehaviour
 {
     public int clientID = 1;
     public int clientPort = 8880;
-    public int clientQuanty = 2;
+    public int clientQuanty = 6;
     public NetworkSender sender;
     public UDPSender UDP;
     public void ResetClient(int clientPort, byte clientID)
@@ -16,6 +16,12 @@ public class ClientManager : MonoBehaviour
     }
     public void Awake()
     {
+        var sys = FindAnyObjectByType<SystemValue>();
+        if (sys != null)
+        {
+            UDP.serverPort = sys.serverPort;
+            clientID = sys.mainClientID;
+        }
         ResetClient(clientPort, (byte)clientID);
     }
 

@@ -25,11 +25,13 @@ public class SystemValue : MonoBehaviour
     }    
     public void SetClientID(string ID)
     { 
-        mainClientID = 0;
+        var temp_mainClientID = 0;
         foreach (var m in ID)
         {
-            if ('0' <= m && m <= '9') mainClientID = mainClientID * 10 + (m - '0');
-        }    
+            if ('0' <= m && m <= '9') temp_mainClientID = temp_mainClientID * 10 + (m - '0');
+        }
+
+        if (temp_mainClientID > 0) mainClientID = temp_mainClientID;
     }
 
     public void SetServerPort(string serverPort)

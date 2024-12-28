@@ -35,8 +35,9 @@ namespace ChobiAssets.PTM
 
         protected Cannon_Fire_Input_00_Base_CS inputScript;
 
+        [SerializeField]
         bool isSelected;
-        bool isDisable = false;
+        bool isEnable = false;
 
 
         void Start()
@@ -65,14 +66,13 @@ namespace ChobiAssets.PTM
             if (inputScript != null)
             {
                 inputScript.Prepare(this);
-                inputScript.SetEnable(isDisable);
+                inputScript.SetEnable(isEnable);
             }
         }
 
-        public void SetDisable(bool state)
+        public void SetEnable(bool state)
         {
-            //Debug.Log("Dang hoat dong");
-            isDisable = state;
+            isEnable = state;
         }
         public void SendActiveFire()
         {

@@ -10,7 +10,7 @@ public class NetworkRecvInteract : MonoBehaviour
     public Cannon_Fire_CS cannon = null;
     public Damage_Control_Center_CS damage_Control;
     public NetworkObjectControl control;
-    public bool isNotMain = true;
+    public bool isMain = false;
     private void Awake()
     {
         if (sender == null) sender = FindAnyObjectByType<NetworkSender>();
@@ -24,10 +24,11 @@ public class NetworkRecvInteract : MonoBehaviour
         Debug.Log("Damage: " + value.damage + "  " + value.type + "  " + value.index);
         damage_Control.current_Damage = value;
     }
-    public void SetNotMain(bool state)
+    public void SetMain(bool state)
     {
         if (cannon == null) cannon = GetComponentInChildren<Cannon_Fire_CS>();
-        isNotMain = state;
+        isMain = state;
+        cannon.SetEnable(isMain);
     }
     public void SendActiveFire()
     {

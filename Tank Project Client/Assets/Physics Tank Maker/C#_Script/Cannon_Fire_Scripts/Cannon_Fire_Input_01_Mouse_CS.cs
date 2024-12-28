@@ -11,7 +11,7 @@ namespace ChobiAssets.PTM
         private float thresh_hold = 0;
         public bool fire = false;
         public bool changeFire = false;
-        public bool isDisable = false;
+        public bool isEnable = false;
 
         public override void Prepare(Cannon_Fire_CS cannonFireScript)
         {
@@ -23,7 +23,7 @@ namespace ChobiAssets.PTM
 
         public override void Get_Input()
 		{
-            if (!isDisable)
+            if (isEnable)
             {
                 // Fire.
                 if (thresh_hold > 0) thresh_hold -= Time.deltaTime;
@@ -78,7 +78,7 @@ namespace ChobiAssets.PTM
 
         public override void SetEnable(bool state)
         {
-            isDisable = state;
+            isEnable = state;
         }
     }
 

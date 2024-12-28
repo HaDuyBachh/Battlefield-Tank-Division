@@ -17,9 +17,9 @@ public class NetworkGeneral : MonoBehaviour
     public void AddRecvInteract(NetworkRecvInteract interact)
     {
         if (clientManager == null) clientManager = FindAnyObjectByType<ClientManager>();
-        if (recvInteract == null || recvInteract.Length != clientManager.clientQuanty)
+        if (recvInteract == null || recvInteract.Length != clientManager.clientQuanty+1)
         {
-            recvInteract = new NetworkRecvInteract[clientManager.clientQuanty];
+            recvInteract = new NetworkRecvInteract[clientManager.clientQuanty+1];
         }
 
         recvInteract[interact.control.ID] = interact;

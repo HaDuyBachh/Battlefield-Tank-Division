@@ -26,13 +26,13 @@ public class NetworkObjectControl : MonoBehaviour
         inputRotate = GetComponent<InputRotateListener>();
         recvMoveData.control = this;
         recvRotateData.control = this;
-
-        if (!CompareTag("MainPlayer")) SetNotMain();
     }
 
-    public void SetNotMain()
+    public void SetMain(bool state)
     {
-        recvInteract.SetNotMain(true);
+        if (recvInteract == null) recvInteract = GetComponent<NetworkRecvInteract>();
+        recvInteract.SetMain(state);
+
         foreach (var damage in GetComponents<Damage_Control_00_Base_CS>())
         {
             if (damage is not Damage_Control_04_Track_Collider_CS) damage.enabled = false;
@@ -47,8 +47,7 @@ public class NetworkObjectControl : MonoBehaviour
     public void SetID(int id)
     {
         this.id = id;
-        general.AddRecvInteract(GetComponent<NetworkRecvInteract>());
-         
+        general.AddRecvInteract(GetComponent<NetworkRecvInteract>());   
     }
     public void Update()
     {

@@ -37,11 +37,13 @@ public class NetworkSender : MonoBehaviour
             if (control.gameObject.CompareTag("MainPlayer"))
             {
                 control.SetID(mainID);
+                control.SetMain(true);
             }
             else
             {
                 id_temp += (id_temp != mainID) ? 0 : 1;
                 control.SetID(id_temp++);
+                control.SetMain(false);
             }
         }
     }

@@ -1,0 +1,47 @@
+Đã xong _____________________________________________________________________________
+Cơ chế truyền dòng 													(1 điểm) - Bách
+Cơ chế socket vào ra 												(2 điểm) - Bách
+Quản lý game online có tương tác									(8 điểm) - Bách
+	+ Cơ chế vật lí													
+	+ Model
+	+ Môi trường
+	+ Di chuyển của xe
+	+ Cơ chế nội suy bánh xe xoay và nóng súng xoay
+	+ Cơ chế camera (3 loại) trong game
+	+ Cơ chế nhận sát thương và nổ
+	+ Cơ chế bắn đạn (2 loại đạn)	
+	
+Giao diện đồ họa 													(3 điểm) - Bách
+																	14
+Đang làm ____________________________________________________________________________
+Đăng ký và quản lí tài khoản 										(2 điểm) - Ngọc
+Đăng ký và quản lí phiên 											(2 điểm) - Ngọc
+Tạo phòng chơi 														(1 điểm) - Bách
+																	 5
+Chưa xong ___________________________________________________________________________					
+Ghi lại log trận đấu và cập nhật khi khởi tạo trận 					(1 điểm) - Bách Ngọc
+Kiểm soát quyền truy cập 											(2 điểm) - Ngọc
+Hiển thị phòng chơi và tham gia										(2 điểm) - Bách Ngọc
+Lưu số điểm và thứ hạng 											(2 điểm) - Bách Ngọc
+Xây dựng hệ thống xếp hạng 											(3 điểm) - Bách
+ - Xếp hạng theo: 
+   elo = (win-loss) *50% + 
+		 (kill-dead)*30% + 
+		 (hit-miss) *20%
+Mời/ phê duyệt vào phòng 											(2 điểm) - Bách
+																	12
+Các tính năng cơ bản khác ___________________________________________________________
+Vote kick người chơi khỏi phòng (khi friendly fire hoặc gian lận)	(3 điểm) - Bách
+Chat trong trận 												 	(1 điểm) - Bách
+Kiểm tra ngôn từ không hợp lệ khi chat trong trận					(3 điểm) - Ngọc
+Tố cáo người chơi ngoài trận										(1 điểm) - Ngọc
+Kiểm tra tố cáo để khóa người chơi:									(3 điểm) - Ngọc
+	- Xét theo thời gian, 
+	  nếu (10 ngày bị quá 10 lượt tố cáo thì khóa tài khoản)
+																	11
+Các tính năng nâng cao khác __________________________________________________________
+Ghi lại toàn bộ trận đấu và replay:									Khó ẻ, nếu làm được thì điểm cao
+	+ Phân chia dữ liệu trận đấu:									(1 điểm)
+	+ Lưu trữ dữ liệu trận đấu vào database:						(2 điểm)
+	+ Gọi dữ liệu trận đấu và replay:								(2 điểm)
+																	 5

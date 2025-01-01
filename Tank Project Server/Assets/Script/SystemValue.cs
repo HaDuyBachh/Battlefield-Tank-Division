@@ -36,12 +36,20 @@ public class SystemValue : MonoBehaviour
                     return HandleStartGame();
                 case (byte)Command.EndGame:
                     return HandleEndGame();
+                case (byte)Command.RemoveClientId:
+                    HandleRemoveClientId(id);
+                    break;
                 default:
                     return new byte[0];
             }
         }
 
         return new byte[0];
+    }
+
+    private void HandleRemoveClientId(int id)
+    {
+        clientId[id] = false;
     }
 
     private byte[] HandleRegister(byte[] data)

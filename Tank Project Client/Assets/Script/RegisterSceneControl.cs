@@ -37,7 +37,7 @@ public class RegisterSceneControl : MonoBehaviour
     {
         var usr = sys.GetStringValid(username.text);
         var psw = sys.GetStringValid(password.text);
-        var correct_psw = sys.GetStringValid(password.text);
+        var correct_psw = sys.GetStringValid(correct_password.text);
 
         if (usr.Length > 0 && psw.Length > 0 && correct_psw == psw)
             SendRegisterRequest(usr, psw);

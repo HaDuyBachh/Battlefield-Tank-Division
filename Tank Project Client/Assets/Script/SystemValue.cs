@@ -31,7 +31,13 @@ public class SystemValue : MonoBehaviour
     }
     public void SetServerPort(string serverPort)
     {
-        this.serverPort = int.Parse(serverPort);
+        string s = "";
+        foreach (var c in serverPort)
+        {
+            if ( ('0' <= c && c <= '9')) s += c;
+            else break;
+        }
+        this.serverPort = int.Parse(s);
     }
     public void SetUserName(string username)
     {
@@ -110,5 +116,20 @@ public class SystemValue : MonoBehaviour
             mainClientID = ID;
             sceneControl.LoadDashboardAfter();
         }
+    }
+
+    public byte[] RemoveClientId()
+    {
+        var data = new List<byte>();
+        data.Add(CheckByte);
+        data.AddRange(Encode(StringToByte(""), (byte)Command.RemoveClientId, (byte)mainClientID));
+
+        return data.ToArray();
+    }    
+
+
+    public void OnApplicationQuit()
+    {
+        if (mainClientID > 0) GetComponent<UDPSender>().SendData(RemoveClientId());
     }
 }

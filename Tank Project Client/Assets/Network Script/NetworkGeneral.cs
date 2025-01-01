@@ -14,7 +14,7 @@ public class NetworkGeneral : MonoBehaviour
 
     [SerializeField]
     private NetworkRecvInteract[] recvInteract;
-    public void AddRecvInteract(NetworkRecvInteract interact)
+    public void AddRecvInteract(NetworkRecvInteract interact,int ID)
     {
         if (clientManager == null) clientManager = FindAnyObjectByType<ClientManager>();
         if (recvInteract == null || recvInteract.Length != clientManager.clientQuanty+1)
@@ -22,7 +22,7 @@ public class NetworkGeneral : MonoBehaviour
             recvInteract = new NetworkRecvInteract[clientManager.clientQuanty+1];
         }
 
-        recvInteract[interact.control.ID] = interact;
+        recvInteract[ID] = interact;
     }
     public void Init()
     {

@@ -17,13 +17,13 @@ public class NetworkObjectControl : MonoBehaviour
     public void Awake()
     {
         //init
-        general = FindAnyObjectByType<NetworkGeneral>();
-        recvMoveData = GetComponent<NetworkRecvMove>();
-        recvRotateData = GetComponent<NetworkRecvRot>();
-        recvInteract = GetComponent<NetworkRecvInteract>();
-        
-        inputMove = GetComponent<InputMoveListener>();
-        inputRotate = GetComponent<InputRotateListener>();
+        if (general == null) general = FindAnyObjectByType<NetworkGeneral>();
+        if (recvMoveData == null)  recvMoveData = GetComponent<NetworkRecvMove>();
+        if (recvRotateData == null)  recvRotateData = GetComponent<NetworkRecvRot>();
+        if (recvInteract == null)  recvInteract = GetComponent<NetworkRecvInteract>();
+
+        if (inputMove == null) inputMove = GetComponent<InputMoveListener>();
+        if (inputRotate == null) inputRotate = GetComponent<InputRotateListener>();
         recvMoveData.control = this;
         recvRotateData.control = this;
     }
@@ -47,7 +47,9 @@ public class NetworkObjectControl : MonoBehaviour
     public void SetID(int id)
     {
         this.id = id;
-        general.AddRecvInteract(GetComponent<NetworkRecvInteract>());   
+
+        if (general == null) general = FindAnyObjectByType<NetworkGeneral>();
+        general.AddRecvInteract(GetComponent<NetworkRecvInteract>(), id); 
     }
     public void Update()
     {

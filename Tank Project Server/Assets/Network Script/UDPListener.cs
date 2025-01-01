@@ -49,6 +49,7 @@ public class UDPListener : MonoBehaviour
                 case (byte)Command.Register:
                 case (byte)Command.StartGame:
                 case (byte)Command.EndGame:
+                case (byte)Command.RemoveClientId:
                     SendResponse(Compress(system.RecvData(receivedData)), remoteEndPoint);
                     break;
                 default:

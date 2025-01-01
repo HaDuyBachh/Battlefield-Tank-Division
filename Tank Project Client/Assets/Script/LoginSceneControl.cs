@@ -9,6 +9,7 @@ public class LoginSceneControl : MonoBehaviour
     public TextMeshProUGUI username;
     public TextMeshProUGUI password;
     public TextMeshProUGUI serverIP;
+    public TextMeshProUGUI serverPort;
     public SystemValue sys;
     public UDPSender udp;
 
@@ -47,11 +48,16 @@ public class LoginSceneControl : MonoBehaviour
 
     public void OnClickSetPort()
     {
-
+        sys.SetServerPort(serverPort.text);
     }
 
     public void OnClickSetIP()
     {
         sys.SetServerIP(serverIP.text);
+    }
+
+    public void OnClickQuit()
+    {
+        FindAnyObjectByType<SceneControl>().Quit();
     }
 }

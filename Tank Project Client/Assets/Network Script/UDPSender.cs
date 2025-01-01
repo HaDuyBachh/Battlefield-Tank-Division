@@ -14,16 +14,86 @@ public class UDPSender : MonoBehaviour
     public string serverIP = "127.0.0.1"; // IP của server.c
     public int serverPort = 8080;        // Cổng của server.c
     public int clientPort = 8880;       // Cổng để nhận phản hồi từ server.c
-    public void SetClientPort(int port)
-    {
-        clientPort = port;
-    }
+    private const int MAX_PORT_ATTEMPTS = 100;
     public void SetNetWorkGeneral(NetworkGeneral general)
     {
         this.general = general;
-    }    
+    }
+
+    public void SetClientPort(int port)
+    {
+        if (IsPortAvailable(port))
+        {
+            clientPort = port;
+            InitializeUdpClient();
+        }
+        else
+        {
+            Debug.LogWarning($"Port {port} đã được sử dụng. Tìm port khác...");
+            int newPort = FindAvailablePort(port);
+            clientPort = newPort;
+            InitializeUdpClient();
+        }
+    }
+    private bool IsPortAvailable(int port)
+    {
+        try
+        {
+            using (var client = new UdpClient(port))
+            {
+                client.Close();
+                return true;
+            }
+        }
+        catch (SocketException)
+        {
+            return false;
+        }
+    }
+    private int FindAvailablePort(int startPort)
+    {
+        int port = startPort;
+        int attempts = 0;
+
+        while (attempts < MAX_PORT_ATTEMPTS)
+        {
+            try
+            {
+                using (var client = new UdpClient(port))
+                {
+                    client.Close();
+                    Debug.Log($"Tìm thấy port khả dụng: {port}");
+                    return port;
+                }
+            }
+            catch (SocketException)
+            {
+                port++;
+                attempts++;
+            }
+        }
+        throw new Exception("Không tìm được port khả dụng sau " + MAX_PORT_ATTEMPTS + " lần thử");
+    }
+    private void InitializeUdpClient()
+    {
+        try
+        {
+            if (udpClient != null)
+            {
+                udpClient.Close();
+            }
+            udpClient = new UdpClient(clientPort);
+            Debug.Log($"UDPSender khởi tạo thành công trên port {clientPort}");
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Lỗi khởi tạo UDPClient: {ex.Message}");
+        }
+    }
+
     void Start()
     {
+        SetClientPort(clientPort);
         system = GetComponent<SystemValue>();
         udpClient = new UdpClient(clientPort); // Lắng nghe phản hồi trên cổng clientPort
         Debug.Log("UDPSender started.");

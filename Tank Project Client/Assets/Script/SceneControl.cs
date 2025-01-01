@@ -1,3 +1,4 @@
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneControl : MonoBehaviour
 {
-    public void ChangeScene(int scene)
+    public string sceneToLoad = "";
+    public void LoadDashboardAfter()
     {
-        SceneManager.LoadScene(scene);
+        sceneToLoad = "Dashboard";
     }
-    public void ChangeScene(string scene)
+    public void Update()
     {
-        SceneManager.LoadScene(scene);
-    }    
+        if (sceneToLoad.Length > 0)
+        {
+            SceneManager.LoadScene(sceneToLoad);
+            sceneToLoad = "";
+        }
+    }
+
     public void Quit()
     {
         Application.Quit();

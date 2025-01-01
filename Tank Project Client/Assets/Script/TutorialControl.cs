@@ -8,7 +8,7 @@ public class TutorialControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            FindAnyObjectByType<SceneControl>().ChangeScene(1);
+            FindAnyObjectByType<SceneControl>().LoadDashboardAfter();
         }    
     }
 }

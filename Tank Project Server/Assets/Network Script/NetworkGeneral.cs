@@ -28,6 +28,8 @@ public class NetworkGeneral : MonoBehaviour
 
     public void Initialize()
     {
+        FindAnyObjectByType<UDPListener>().SetNetWorkGeneral(this);
+
         for (int id = 1; id < clientIdObjectControl.Count; id++)
         {
             clientIdObjectControl[id].SetID(id);

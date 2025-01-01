@@ -13,16 +13,23 @@ public class UDPListener : MonoBehaviour
     public int listenPort = 9999; // Cổng nhận từ server.c
     private UdpClient udpClient;
     private NetworkGeneral general;
+    private SystemValue system;
     private Process serverProcess; // Để quản lý server chạy bên ngoài
     void Start()
     {
         StartServer();
 
-        general = FindAnyObjectByType<NetworkGeneral>();
+        system = GetComponent<SystemValue>();
         udpClient = new UdpClient(listenPort);
         Debug.Log($"UDPListener is listening on port {listenPort}");
         BeginReceive();
     }
+
+    public void SetNetWorkGeneral(NetworkGeneral g)
+    {
+        general = g;
+    }
+
     void BeginReceive()
     {
         udpClient.BeginReceive(OnReceive, null);
@@ -34,16 +41,22 @@ public class UDPListener : MonoBehaviour
             IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
             byte[] receivedData = udpClient.EndReceive(ar, ref remoteEndPoint);
 
-            ///Nhận câu lệnh:
-            var current_client = general.RecvData(receivedData);
 
-            // Gửi phản hồi lại server.c
-            //SendResponse(new byte[] { 0x11, 0x22, 0x12 }, remoteEndPoint);
+            switch (DecodeOnceWithCheckByte(receivedData)[0].command)
+            {
+                case (byte)Command.Login:
+                case (byte)Command.Register:
+                    SendResponse(Compress(system.RecvData(receivedData)), remoteEndPoint);
+                    break;
+                default:
+                    ///Nhận câu lệnh:
+                    var current_client = general.RecvData(receivedData);
 
-            // Đã nén gói
-            SendResponse(Compress(general.GetDataRespond(current_client)), remoteEndPoint);
-            //Debug.Log("Phản hồi lại: ");
-            
+                    // Đã nén gói
+                    SendResponse(Compress(general.GetDataRespond(current_client)), remoteEndPoint);
+                    //Debug.Log("Phản hồi lại: ");
+                    break;
+            }
         }
         finally
         {

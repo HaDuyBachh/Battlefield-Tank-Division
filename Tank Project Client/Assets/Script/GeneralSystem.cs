@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Text;
+using TMPro;
 using UnityEngine;
 
 public static class GeneralSystem
@@ -12,6 +13,7 @@ public static class GeneralSystem
     public enum Command
     {
         None,
+        RemoveClientId,
         Login,
         Register,
         ResetTank,
@@ -22,7 +24,13 @@ public static class GeneralSystem
         Damage,
     }
 
+    public const byte CheckByte = 0x11;
+
     // Function
+    public static bool ValidChar(char c)
+    {
+        return ('0' <= c && c <= '9') || ('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') || (c == '_');
+    }
     public static byte[] Decompress(byte[] compressedData)
     {
         using (var inputStream = new MemoryStream(compressedData))
@@ -185,6 +193,43 @@ public static class GeneralSystem
 
         return data;
     }
+    public static List<(byte command, int id, int dataLength, byte[] data)> DecodeOnce(byte[] encodedData, int offsetPre)
+    {
+        var result = new List<(byte command, int id, int dataLength, byte[] data)>();
+        int offset = offsetPre;
+
+        if (offset + 4 > encodedData.Length)
+        {
+            Debug.Log("Remaining data is too short to decode.");
+            return result;
+        }
+
+        // Đọc command và id
+        byte command = encodedData[offset];
+        byte id = encodedData[offset + 1];
+
+        // Đọc length (2 byte)
+        int dataLength = BitConverter.ToInt16(new byte[] { encodedData[offset + 3], encodedData[offset + 2] }, 0);
+
+        // Kiểm tra dữ liệu có đủ dài không
+        if (offset + 4 + dataLength > encodedData.Length)
+        {
+            Debug.Log("Invalid data length: not enough bytes for this packet.");
+            return result;
+        }
+
+        // Lấy dữ liệu thực tế
+        byte[] data = new byte[dataLength];
+        Array.Copy(encodedData, offset + 4, data, 0, dataLength);
+
+        // Thêm vào danh sách kết quả
+        result.Add((command, id, dataLength, data));
+
+        return result;
+    }
+    public static List<(byte command, int id, int dataLength, byte[] data)> DecodeOnceWithCheckByte(byte[] encodedData) => DecodeOnce(encodedData, 1);
+    public static List<(byte command, int id, int dataLength, byte[] data)> DecodeOnceWithoutCheckByte(byte[] encodedData) => DecodeOnce(encodedData, 0);
+
     public static List<(byte command, int id, int dataLength, byte[] data)> DecodeAll(byte[] encodedData, int offsetPre)
     {
         var result = new List<(byte command, int id, int dataLength, byte[] data)>();

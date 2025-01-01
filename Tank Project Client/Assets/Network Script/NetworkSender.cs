@@ -49,7 +49,7 @@ public class NetworkSender : MonoBehaviour
     }
     public void Start()
     {
-        udp = FindAnyObjectByType<UDPSender>();
+        udp = FindAnyObjectByType<UDPSender>(); 
     }
     public void Update()
     {
@@ -61,7 +61,7 @@ public class NetworkSender : MonoBehaviour
     }
     public void SendMoveData()
     {
-        sendData.Add(0x11);
+        sendData.Add(CheckByte);
 
         ///Encode Move
         if (moveData.Length > 0)
@@ -87,15 +87,12 @@ public class NetworkSender : MonoBehaviour
         //End Of Send
         sendData.Clear();
         nextSendTime = nextSendITimeout;
-
-        udp.BeginReceive();
     }
     public void SendInteractData(Command type)
     {
         var data = new List<byte> { 0x11 };
         data.AddRange(Encode(new byte[0], (byte)type, mainID));
         udp.SendData(data.ToArray());
-        udp.BeginReceive();
     }
     public void SendInteractiveData()
     {

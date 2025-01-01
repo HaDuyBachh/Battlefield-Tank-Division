@@ -10,6 +10,7 @@ public class SceneControl : MonoBehaviour
     public void LoadDashboardAfter() => sceneToLoad = "Dashboard";
     public void LoadRegisterAfter() => sceneToLoad = "Register";
     public void LoadSignInAfter() => sceneToLoad = "SignIn";
+    public void LoadTutorialAfter() => sceneToLoad = "Tutorial";
     
     public void Update()
     {

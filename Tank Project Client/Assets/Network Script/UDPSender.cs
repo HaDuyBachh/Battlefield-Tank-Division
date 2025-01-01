@@ -48,6 +48,8 @@ public class UDPSender : MonoBehaviour
         {
             case (byte)Command.Register:
             case (byte)Command.Login:
+            case (byte)Command.StartGame:
+            case (byte)Command.EndGame:
                 system.RecvData(receivedData);
                 break;
             default:

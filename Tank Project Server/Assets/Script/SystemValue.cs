@@ -8,12 +8,15 @@ public class SystemValue : MonoBehaviour
 {
     private bool[] clientId = new bool[1025];
     private DatabaseConnect database;
+    private SceneControl sceneControl;
     private void Initialize()
     {
         database = GetComponent<DatabaseConnect>();
+        sceneControl = GetComponent<SceneControl>();
     }    
     private void Awake()
     {
+        if (FindObjectsOfType<SystemValue>().Length > 1) Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
         Initialize();
     }
@@ -22,12 +25,17 @@ public class SystemValue : MonoBehaviour
     {
         foreach (var (command, id, dataLength, data) in DecodeWithCheckByte(encodedData))
         {
+            Debug.Log("Nhan du lieu: command:" + command + "  id:" + id);
             switch (command)
             {
                 case (byte)Command.Login:
                     return HandleLogin(data);
                 case (byte)Command.Register:
                     return HandleRegister(data);
+                case (byte)Command.StartGame:
+                    return HandleStartGame();
+                case (byte)Command.EndGame:
+                    return HandleEndGame();
                 default:
                     return new byte[0];
             }
@@ -90,6 +98,29 @@ public class SystemValue : MonoBehaviour
             
 
         return Encode(sendData, (byte)Command.Login, 0).ToArray();
+    } 
+    
+    public byte[] HandleStartGame()
+    {
+        if (!sceneControl.currentScene.Contains("Tutorial"))
+        {
+            Debug.Log("da nhan duoc start");
+            Debug.Log("Scene:: " + sceneControl.currentScene);
+            sceneControl.LoadTutorialdAfter();
+        }
+        else
+        {
+            Debug.Log("Scene hien tai la: " + sceneControl.currentScene);
+        }
+
+        return Encode(new byte[0], (byte)Command.StartGame, 0).ToArray();
+    }    
+
+    public byte[] HandleEndGame()
+    {
+        FindAnyObjectByType<SceneControl>().LoadMainAfter();
+
+        return Encode(new byte[0], (byte)Command.EndGame, 0).ToArray();
     }    
 
 

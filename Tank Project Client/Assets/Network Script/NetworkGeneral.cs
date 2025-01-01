@@ -26,6 +26,7 @@ public class NetworkGeneral : MonoBehaviour
     }
     public void Init()
     {
+        FindAnyObjectByType<UDPSender>().SetNetWorkGeneral(this);
         ///Khởi tạo revcStr
         clientManager = FindAnyObjectByType<ClientManager>();
         revcMoveData = new List<(Vector3 position, Quaternion rotation)>[clientManager.clientQuanty + 1];

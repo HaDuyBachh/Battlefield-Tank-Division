@@ -72204,7 +72204,7 @@ Transform:
   m_GameObject: {fileID: 1294294759}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.52, y: -1.02, z: 0.33}
+  m_LocalPosition: {x: 10.58, y: -1.02, z: 0.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -79783,7 +79783,7 @@ MonoBehaviour:
   clientPort: 8880
   clientQuanty: 3
   sender: {fileID: 1990859386}
-  UDP: {fileID: 1990859385}
+  UDP: {fileID: 0}
 --- !u!1 &1493385788
 GameObject:
   m_ObjectHideFlags: 0
@@ -107651,7 +107651,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1990859382}
   - component: {fileID: 1990859384}
-  - component: {fileID: 1990859385}
   - component: {fileID: 1990859386}
   m_Layer: 0
   m_Name: Networking
@@ -107691,22 +107690,6 @@ MonoBehaviour:
   revcFireData: 
   revcChangeFireData: 
   recvInteract: []
---- !u!114 &1990859385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990859381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a8cc6699744c6640a90d2b7aa56be49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  general: {fileID: 1990859384}
-  serverIP: 127.0.0.1
-  serverPort: 8080
-  clientPort: 8880
 --- !u!114 &1990859386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107720,7 +107703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainID: 0
-  udp: {fileID: 1990859385}
+  udp: {fileID: 0}
 --- !u!1 &1994248422
 GameObject:
   m_ObjectHideFlags: 0

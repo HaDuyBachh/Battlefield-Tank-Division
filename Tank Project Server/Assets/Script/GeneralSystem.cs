@@ -15,6 +15,8 @@ public static class GeneralSystem
         RemoveClientId,
         Login,
         Register,
+        StartGame,
+        EndGame,
         ResetTank,
         Move,
         Rotate,

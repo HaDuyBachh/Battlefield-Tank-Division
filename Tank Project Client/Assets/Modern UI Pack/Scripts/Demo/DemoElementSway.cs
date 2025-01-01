@@ -54,9 +54,9 @@ namespace Michsky.MUIP
             if (allowSway == true) { cursorPos = Mouse.current.position.ReadValue(); }
 #endif
 
-            if (mainCanvas.renderMode == RenderMode.ScreenSpaceOverlay) { ProcessOverlay(); }
-            else if (mainCanvas.renderMode == RenderMode.ScreenSpaceCamera) { ProcessSSC(); }
-            else if (mainCanvas.renderMode == RenderMode.WorldSpace) { ProcessWorldSpace(); }
+            //if (mainCanvas.renderMode == RenderMode.ScreenSpaceOverlay) { ProcessOverlay(); }
+            //else if (mainCanvas.renderMode == RenderMode.ScreenSpaceCamera) { ProcessSSC(); }
+            //else if (mainCanvas.renderMode == RenderMode.WorldSpace) { ProcessWorldSpace(); }
         }
 
         void ProcessOverlay()

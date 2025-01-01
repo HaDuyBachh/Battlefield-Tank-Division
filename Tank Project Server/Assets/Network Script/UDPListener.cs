@@ -41,11 +41,14 @@ public class UDPListener : MonoBehaviour
             IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 0);
             byte[] receivedData = udpClient.EndReceive(ar, ref remoteEndPoint);
 
+            Debug.Log("da nhan data tu unity sender");
 
             switch (DecodeOnceWithCheckByte(receivedData)[0].command)
             {
                 case (byte)Command.Login:
                 case (byte)Command.Register:
+                case (byte)Command.StartGame:
+                case (byte)Command.EndGame:
                     SendResponse(Compress(system.RecvData(receivedData)), remoteEndPoint);
                     break;
                 default:

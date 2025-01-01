@@ -29,16 +29,6 @@ public class SystemValue : MonoBehaviour
         }
         if (s.Length != 0) serverIP = s;
     }
-    public void SetClientID(string ID)
-    {
-        var temp_mainClientID = 0;
-        foreach (var m in ID)
-        {
-            if ('0' <= m && m <= '9') temp_mainClientID = temp_mainClientID * 10 + (m - '0');
-        }
-
-        if (temp_mainClientID > 0) mainClientID = temp_mainClientID;
-    }
     public void SetServerPort(string serverPort)
     {
         this.serverPort = int.Parse(serverPort);
@@ -87,11 +77,19 @@ public class SystemValue : MonoBehaviour
                 case Command.Register:
                     HandleRegister(data);
                     break;
+                case Command.StartGame:
+                    HandleStartGame();
+                    break;
                 default:
                     break;
             }
         }
     }
+
+    private void HandleStartGame()
+    {
+        sceneControl.LoadTutorialAfter();
+    } 
 
     private void HandleRegister(byte[] data)
     {

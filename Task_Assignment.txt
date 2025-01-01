@@ -12,17 +12,23 @@ Quản lý game online có tương tác									(8 điểm) - Bách
 	+ Cơ chế bắn đạn (2 loại đạn)	
 	
 Giao diện đồ họa 													(3 điểm) - Bách
-																	14
-Đang làm ____________________________________________________________________________
 Đăng ký và quản lí tài khoản 										(2 điểm) - Ngọc
 Đăng ký và quản lí phiên 											(2 điểm) - Ngọc
-Tạo phòng chơi 														(1 điểm) - Bách
-																	 5
+																	18			
+														
+Đang làm ____________________________________________________________________________
+
+
+
+Hiển thị phòng chơi và tham gia										(2 điểm) - Bách, Ngọc
+Tạo phòng chơi 														(1 điểm) - Bách, Ngọc
+																	 1
 Chưa xong ___________________________________________________________________________					
 Ghi lại log trận đấu và cập nhật khi khởi tạo trận 					(1 điểm) - Bách Ngọc
 Kiểm soát quyền truy cập 											(2 điểm) - Ngọc
-Hiển thị phòng chơi và tham gia										(2 điểm) - Bách Ngọc
+
 Lưu số điểm và thứ hạng 											(2 điểm) - Bách Ngọc
+
 Xây dựng hệ thống xếp hạng 											(3 điểm) - Bách
  - Xếp hạng theo: 
    elo = (win-loss) *50% + 

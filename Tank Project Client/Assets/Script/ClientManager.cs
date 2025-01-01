@@ -16,6 +16,7 @@ public class ClientManager : MonoBehaviour
     }
     public void Awake()
     {
+        UDP = FindAnyObjectByType<UDPSender>();
         var sys = FindAnyObjectByType<SystemValue>();
         if (sys != null)
         {

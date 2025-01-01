@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using static GeneralSystem;
@@ -15,6 +16,7 @@ public class SystemValue : MonoBehaviour
     public SceneControl sceneControl;
     public void Awake()
     {
+        if (FindObjectsOfType<SystemValue>().Length > 1) Destroy(this.gameObject);
         DontDestroyOnLoad(this);
         sceneControl = GetComponent<SceneControl>();
     }
@@ -60,6 +62,18 @@ public class SystemValue : MonoBehaviour
             this.password += c;
         }
     }
+
+    public string GetStringValid(string str)
+    {
+        var s = "";
+        foreach (var c in str)
+        {
+            if (!ValidChar(c)) return s;
+            s += c;
+        }
+
+        return s;
+    }
     public void RecvData(byte[] encodedData)
     {
         foreach (var (command, id, dataLength, data) in DecodeWithoutCheckByte(encodedData))
@@ -70,11 +84,26 @@ public class SystemValue : MonoBehaviour
                 case Command.Login:
                     HandleLogin(data);
                     break;
+                case Command.Register:
+                    HandleRegister(data);
+                    break;
                 default:
                     break;
             }
         }
     }
+
+    private void HandleRegister(byte[] data)
+    {
+        if (Encoding.UTF8.GetString(data).Contains("SUCCESS"))
+        {
+            Debug.Log("Dang ky thanh cong");
+            sceneControl.LoadSignInAfter();
+        }
+        else
+            Debug.Log("Dang ky that bai");
+    }
+
     public void HandleLogin(byte[] data)
     {
         int ID = Decode4BytesToInt(data);

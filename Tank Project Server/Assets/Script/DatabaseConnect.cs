@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
 using Npgsql;
 using System;
 using System.Threading.Tasks;
@@ -19,6 +18,63 @@ public class DatabaseConnect : MonoBehaviour
         string password = "bachbeo30";
 
         connString = $"Host={host};Port={port};Username={username};Password={password};Database={database}";
+    }
+
+    public async Task<(bool success, string message)> Register(string username, string password)
+    {
+        try
+        {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                await conn.OpenAsync();
+
+                // Kiểm tra username đã tồn tại chưa
+                using (var checkCmd = new NpgsqlCommand())
+                {
+                    checkCmd.Connection = conn;
+                    checkCmd.CommandText = @"
+                    SELECT EXISTS (
+                        SELECT 1 FROM public.""User""
+                        WHERE username = @username
+                    );";
+                    checkCmd.Parameters.AddWithValue("username", username);
+
+                    bool userExists = (bool)await checkCmd.ExecuteScalarAsync();
+                    if (userExists)
+                    {
+                        Debug.Log("Username da ton tai");
+                        return (false, "Username đã tồn tại!");
+                    }
+                }
+
+                // Thêm user mới
+                using (var insertCmd = new NpgsqlCommand())
+                {
+                    insertCmd.Connection = conn;
+                    insertCmd.CommandText = @"
+                    INSERT INTO public.""User"" (username, password, info, rank, kills)
+                    VALUES (@username, @password, @info, @rank, @kills)";
+
+                    insertCmd.Parameters.AddWithValue("username", username);
+                    insertCmd.Parameters.AddWithValue("password", password);
+                    insertCmd.Parameters.AddWithValue("info", "Info for player");
+                    insertCmd.Parameters.AddWithValue("rank", "Bronze");
+                    insertCmd.Parameters.AddWithValue("kills", 0);
+
+                    int rowsAffected = await insertCmd.ExecuteNonQueryAsync();
+                    if (rowsAffected > 0)
+                    {
+                        return (true, "Đăng ký thành công!");
+                    }
+                    return (false, "Đăng ký thất bại!");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Lỗi đăng ký: {ex.Message}");
+            return (false, "Lỗi khi đăng ký: " + ex.Message);
+        }
     }
 
     public async Task<bool> Login(string username, string password)

@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class SceneControl : MonoBehaviour
 {
     public string sceneToLoad = "";
-    public void LoadDashboardAfter()
-    {
-        sceneToLoad = "Dashboard";
-    }
+    public void LoadDashboardAfter() => sceneToLoad = "Dashboard";
+    public void LoadRegisterAfter() => sceneToLoad = "Register";
+    public void LoadSignInAfter() => sceneToLoad = "SignIn";
+    
     public void Update()
     {
         if (sceneToLoad.Length > 0)

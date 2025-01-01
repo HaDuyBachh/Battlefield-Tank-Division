@@ -33,4 +33,14 @@ public class LoginSceneControl : MonoBehaviour
         if (sys.username.Length > 0 && sys.password.Length > 0)
             SendLoginRequest();
     }
+
+    public void SetClickQuit()
+    {
+        FindAnyObjectByType<SceneControl>().Quit();
+    }
+
+    public void SetClickRegister()
+    {
+        FindAnyObjectByType<SceneControl>().LoadRegisterAfter();
+    }
 }

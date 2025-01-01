@@ -38,7 +38,24 @@ public class SystemValue : MonoBehaviour
 
     private byte[] HandleRegister(byte[] data)
     {
-        return new byte[0];
+        var inputData = Encoding.UTF8.GetString(data);
+
+        var input = inputData.Split('|');
+        byte[] sendData = new byte[0];
+
+        if (database.Register(input[0], input[1]).Result.success)
+        {
+            Debug.Log("Dang ky thanh cong");
+            sendData = StringToByte("SUCCESS");
+        }
+        else
+        {
+            Debug.Log("Dang ky khong thanh cong");
+            sendData = StringToByte("FAIL");
+        }
+
+
+        return Encode(sendData, (byte)Command.Register, 0).ToArray();
     }    
     private byte[] HandleClientId()
     {

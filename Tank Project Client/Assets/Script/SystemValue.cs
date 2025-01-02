@@ -34,7 +34,7 @@ public class SystemValue : MonoBehaviour
         string s = "";
         foreach (var c in serverPort)
         {
-            if ( ('0' <= c && c <= '9')) s += c;
+            if (('0' <= c && c <= '9')) s += c;
             else break;
         }
         this.serverPort = int.Parse(s);
@@ -92,9 +92,10 @@ public class SystemValue : MonoBehaviour
         }
     }
 
+    Coroutine _startGame = null;
     private void HandleStartGame()
     {
-        sceneControl.LoadTutorialAfter();
+       sceneControl.LoadTutorialAfter(1.0f);
     } 
 
     private void HandleRegister(byte[] data)

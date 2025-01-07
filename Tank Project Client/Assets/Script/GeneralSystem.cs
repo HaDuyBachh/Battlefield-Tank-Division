@@ -186,7 +186,7 @@ public static class GeneralSystem
         // Chuyển thông điệp thành byte  --------------------------------------
         ///[command]:   1 byte
         data.Add(command);
-        ///[id]:        1 byte
+        ///[id]:            
         data.Add(id);
         ///[length]:    2 byte
         data.AddRange(EncodeIntTo2Bytes(messageBytes.Length));

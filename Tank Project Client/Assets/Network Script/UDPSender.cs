@@ -20,6 +20,10 @@ public class UDPSender : MonoBehaviour
         this.general = general;
     }
 
+    public void SetServerIP(string IP)
+    {
+        serverIP = IP;
+    }
     public void SetClientPort(int port)
     {
         if (IsPortAvailable(port))

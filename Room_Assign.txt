@@ -1,0 +1,7 @@
+
+Các chế độ chơi 1 phòng
+[Mode:     free] Bắn nhau tự do trong 1 khoảng thời gian xem ai được nhiều điểm nhất.
+[Mode: conquest] Chiếm cư điểm, kiểm soát mục tiêu.
+
+Cấu trúc gửi đi: Room Struct
+[Room Code][Scene][Players Count][Time][Mode]

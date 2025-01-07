@@ -28,6 +28,8 @@ public class SystemValue : MonoBehaviour
             if (c == '.' || ('0' <= c && c <= '9')) s += c;
         }
         if (s.Length != 0) serverIP = s;
+
+        GetComponent<UDPSender>().SetServerIP(serverIP);
     }
     public void SetServerPort(string serverPort)
     {

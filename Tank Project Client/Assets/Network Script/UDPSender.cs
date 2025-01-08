@@ -118,18 +118,14 @@ public class UDPSender : MonoBehaviour
         ///Đã giải nén gói
         byte[] receivedData =  Decompress(udpClient.EndReceive(ar, ref remoteEndPoint));
 
-        switch (DecodeOnceWithoutCheckByte(receivedData)[0].command)
+        if (DecodeOnceWithoutCheckByte(receivedData)[0].command < (int)Command.END_OF_UI_NOT_USE)
         {
-            case (byte)Command.Register:
-            case (byte)Command.Login:
-            case (byte)Command.StartGame:
-            case (byte)Command.EndGame:
-                system.RecvData(receivedData);
-                break;
-            default:
-                general.RecvData(receivedData);
-                break;
-        }    
+            system.RecvData(receivedData);
+        }
+        else
+        {
+            general.RecvData(receivedData);
+        }
         //Debug.Log("Nhận phản hồi từ server: " + receivedData.Length); 
     }
     private void OnApplicationQuit()

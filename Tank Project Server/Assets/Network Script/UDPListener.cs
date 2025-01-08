@@ -43,24 +43,19 @@ public class UDPListener : MonoBehaviour
 
             Debug.Log("da nhan data tu unity sender");
 
-            switch (DecodeOnceWithCheckByte(receivedData)[0].command)
+            if (DecodeOnceWithCheckByte(receivedData)[0].command < (int)Command.END_OF_UI_NOT_USE)
             {
-                case (byte)Command.Login:
-                case (byte)Command.Register:
-                case (byte)Command.StartGame:
-                case (byte)Command.EndGame:
-                case (byte)Command.RemoveClientId:
-                    SendResponse(Compress(system.RecvData(receivedData)), remoteEndPoint);
-                    break;
-                default:
-                    ///Nhận câu lệnh:
-                    var current_client = general.RecvData(receivedData);
-
-                    // Đã nén gói
-                    SendResponse(Compress(general.GetDataRespond(current_client)), remoteEndPoint);
-                    //Debug.Log("Phản hồi lại: ");
-                    break;
+                /// Nhận dữ liệu ở system nếu là UI request
+                SendResponse(Compress(system.RecvData(receivedData)), remoteEndPoint);
             }
+            else
+            {
+                /// Nhận dữ liệu ở system nếu là online game request
+                var current_client = general.RecvData(receivedData);
+                // Đã nén gói
+                SendResponse(Compress(general.GetDataRespond(current_client)), remoteEndPoint);
+                //Debug.Log("Phản hồi lại: ");
+            }    
         }
         finally
         {

@@ -11,18 +11,53 @@ public static class GeneralSystem
     /// Type
     public enum Command
     {
+        /// UI Data
         None,
         RemoveClientId,
         Login,
         Register,
-        StartGame,
-        EndGame,
+        CreateRoom,
+        JoinRoom,
+        LeaveRoom,
+        GetRoomList,        //Chạy liên tục trong room list
+        GetPlayerInRoom,    //Chạy liên tục trong room
+        AddFriend,
+        GetAddFriend,       //Chạy liên tục trong dashboard
+        ReplyFriendRequest,
+        Report,
+        Invite,
+        GetInvite,          //Chạy liên tục trong dashboard
+        ReplyInvite,
+        StartMatch,
+        LeaveMatch,
+        GetFriendList,
+        GetAllPlayersList,
+        GetHistoryList,
+        END_OF_UI_NOT_USE,
+
+        /// Game Play Data
         ResetTank,
         Move,
         Rotate,
         Fire,
         ChangeFire,
         Damage,
+        StartGame,
+        EndGame
+    }
+
+    public struct Room
+    {
+        public int mode, number, time;
+        public int code;
+        public bool isStart; 
+        public List<int> Player;
+    }
+
+    public struct Request
+    {
+        public List<int> add_friend_request;
+        public int invite_request;
     }
 
     public const byte CheckByte = 0x11;

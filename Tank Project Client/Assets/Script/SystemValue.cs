@@ -14,6 +14,7 @@ public class SystemValue : MonoBehaviour
     public string username = "";
     public string password = "";
     public SceneControl sceneControl;
+    public RoomControl roomControl;
     public void Awake()
     {
         if (FindObjectsOfType<SystemValue>().Length > 1) Destroy(this.gameObject);
@@ -60,7 +61,6 @@ public class SystemValue : MonoBehaviour
             this.password += c;
         }
     }
-
     public string GetStringValid(string str)
     {
         var s = "";
@@ -88,10 +88,42 @@ public class SystemValue : MonoBehaviour
                 case Command.StartGame:
                     HandleStartGame();
                     break;
+                case Command.CreateRoom:
+                    HandleCreateRoom(data);
+                    break;
+                case Command.GetPlayerInRoom:
+                    HandleGetPlayerInRoom(data);
+                    break;
                 default:
                     break;
             }
         }
+    }
+
+    private void HandleGetPlayerInRoom(byte[] data)
+    {
+        var playerString = Encoding.UTF8.GetString(data);
+        string[] playerNames = playerString.Split(';', StringSplitOptions.RemoveEmptyEntries);
+        foreach (var n in playerNames)
+        {
+            Debug.Log("Ten nguoi chơi la: " + n);
+        }
+
+        roomControl.SetPlayerName(playerNames);
+    }
+
+    private void HandleCreateRoom(byte[] data)
+    {
+        Debug.Log("Dữ liệu room coce nhận được là: " + data.Length);
+        int roomcode = Decode4BytesToInt(data);
+        Debug.Log(roomcode);
+
+        if (roomcode == 0)
+        {
+            Debug.LogError("Error room code");
+            return;
+        }
+        roomControl.SetNewRoom(roomcode);
     }
 
     Coroutine _startGame = null;

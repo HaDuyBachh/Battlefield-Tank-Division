@@ -18,6 +18,8 @@ namespace Michsky.UI.Heat
 
             if (EditorGUIUtility.isProSkin == true) { customSkin = HeatUIEditorHandler.GetDarkEditor(customSkin); }
             else { customSkin = HeatUIEditorHandler.GetLightEditor(customSkin); }
+
+            mmTarget.UIManagerAsset.enableSplashScreen = false;
         }
 
         public override void OnInspectorGUI()

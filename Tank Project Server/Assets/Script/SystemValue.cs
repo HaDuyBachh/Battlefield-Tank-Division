@@ -88,7 +88,7 @@ public class SystemValue : MonoBehaviour
             sendData.AddRange(EncodeIntTo4Bytes(r.time));
         }
 
-        return sendData.ToArray();
+        return Encode(sendData.ToArray(), (byte)Command.GetRoomList, 0).ToArray();
     }
 
     /// <summary>
@@ -163,14 +163,16 @@ public class SystemValue : MonoBehaviour
         {
             if (r.code == code)
             {
-                if (r.Player.Count < r.number && !r.Player.Contains(playerID))
+                if (r.Player.Count < r.number)// && !r.Player.Contains(playerID))
                 {
                     r.Player.Add(playerID);
-                    sendData = StringToByte("OK");
+                    sendData = EncodeIntTo4Bytes(code);
+                    Debug.Log("Trả về room ở đây nè: " + code);
                 }
                 else
                 {
-                    sendData = StringToByte("NOT");
+                    sendData = EncodeIntTo4Bytes(0);
+                    Debug.Log("không trả về");
                 }
                 break;
             }

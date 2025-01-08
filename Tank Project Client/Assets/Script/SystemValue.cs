@@ -14,7 +14,8 @@ public class SystemValue : MonoBehaviour
     public string username = "";
     public string password = "";
     public SceneControl sceneControl;
-    public RoomControl roomControl;
+    public DashboardSceneControl dashboard;
+
     public void Awake()
     {
         if (FindObjectsOfType<SystemValue>().Length > 1) Destroy(this.gameObject);
@@ -94,10 +95,68 @@ public class SystemValue : MonoBehaviour
                 case Command.GetPlayerInRoom:
                     HandleGetPlayerInRoom(data);
                     break;
+                case Command.GetRoomList:
+                    HandleGetRoomList(data);
+                    break;
+                case Command.JoinRoom:
+                    HandleJoinRoom(data);
+                    break;
                 default:
                     break;
             }
         }
+    }
+
+    private void HandleJoinRoom(byte[] data)
+    {
+        Debug.Log("Dữ liệu room coce nhận được là: " + data.Length);
+        int roomcode = Decode4BytesToInt(data);
+        Debug.Log(roomcode);
+
+        if (roomcode == 0)
+        {
+            Debug.LogError("Error room code");
+            return;
+        }
+
+        dashboard.SetJoinRoom(roomcode);
+    }    
+
+    private void HandleGetRoomList(byte[] data)
+    {
+        //Debug.Log("Đã nhận được: " + data.Length + "dữ liệu");
+
+        if (data.Length % 16 != 0)
+        {
+            Debug.LogError("Invalid data length: cannot parse room list.");
+            return;
+        }
+
+        var rooms = new List<Room>();
+        var temp = new byte[4];
+        int st = 0;
+        while (st + 4 < data.Length)
+        {
+            Room r = new();
+            Array.Copy(data, st, temp, 0, 4);
+            r.code = Decode4BytesToInt(temp);
+
+            st += 4;
+            Array.Copy(data, st, temp, 0, 4);
+            r.mode = Decode4BytesToInt(temp);
+
+            st += 4;
+            Array.Copy(data, st, temp, 0, 4);
+            r.number = Decode4BytesToInt(temp);
+
+            st += 4;
+            Array.Copy(data, st, temp, 0, 4);
+            r.time = Decode4BytesToInt(temp);
+
+            rooms.Add(r);
+        }
+
+        dashboard.roomListControl.SetRoomList(rooms.ToArray());
     }
 
     private void HandleGetPlayerInRoom(byte[] data)
@@ -109,7 +168,7 @@ public class SystemValue : MonoBehaviour
             Debug.Log("Ten nguoi chơi la: " + n);
         }
 
-        roomControl.SetPlayerName(playerNames);
+        dashboard.roomControl.SetPlayerName(playerNames);
     }
 
     private void HandleCreateRoom(byte[] data)
@@ -123,7 +182,7 @@ public class SystemValue : MonoBehaviour
             Debug.LogError("Error room code");
             return;
         }
-        roomControl.SetNewRoom(roomcode);
+        dashboard.roomControl.SetNewRoom(roomcode);
     }
 
     Coroutine _startGame = null;

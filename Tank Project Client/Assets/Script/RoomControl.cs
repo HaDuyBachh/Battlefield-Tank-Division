@@ -1,4 +1,5 @@
 ﻿using Michsky.UI.Heat;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class RoomControl : MonoBehaviour
     [SerializeField]
     private PanelManager panel;
     [SerializeField]
+    private GameObject panelButton;
+
+    [SerializeField]
     private bool getPlayerInRoom = false;
     private float getPlayerInRoomDelta = 0.0f;
     private float getPlayerInRoomTimeout = 1.0f;
@@ -27,18 +31,8 @@ public class RoomControl : MonoBehaviour
     private void Awake()
     {
         control = GetComponent<DashboardSceneControl>();
-        FindAnyObjectByType<SystemValue>().roomControl = this;
     }
-    public void NewRoom()
-    {
-        _mode = 0;
-        _num = 2;
-        _time = 1;
-        _friendlyfire = false;
-        currentRoomCode = 0;
 
-        playerObj.ForEach(x => x.SetActive(false));
-    }
     public void ClickGameMode(int mode)
     {
         _mode = mode;
@@ -59,17 +53,35 @@ public class RoomControl : MonoBehaviour
     {
         control.SendCreateRoomRequest(_mode, _num, _time);
     }
+
+    public void ClickLeaveRoom()
+    {
+        if (currentRoomCode > 0) LeaveRoom();
+    }
+
+    public void NewRoom()
+    {
+        _mode = 0;
+        _num = 2;
+        _time = 1;
+        _friendlyfire = false;
+        currentRoomCode = 0;
+
+        playerObj.ForEach(x => x.SetActive(false));
+        panelButton.SetActive(false);
+    }
     public void LeaveRoom()
     {
         currentRoomCode = 0;
         getPlayerInRoom = false;
         openPlayerInRoomPanel = false;
+        panelButton.SetActive(true);
     }
     public void Update()
     {
         if (getPlayerInRoom)
         {
-            getPlayerInRoomDelta -= Time.deltaTime ;
+            getPlayerInRoomDelta -= Time.deltaTime;
             if (getPlayerInRoomDelta <= 0)
             {
                 control.SendGetPlayerInRoom(currentRoomCode);
@@ -105,12 +117,16 @@ public class RoomControl : MonoBehaviour
         getPlayerInRoom = true;
         getPlayerInRoomDelta = 0.0f;
         openPlayerInRoomPanel = false;
-
         playerObj.ForEach(x => x.SetActive(false));
     }
 
     public void SetPlayerName(string[] name)
     {
         playerName = name;
+    }
+
+    internal void SetNewRoomCodeAfter()
+    {
+        throw new NotImplementedException();
     }
 }

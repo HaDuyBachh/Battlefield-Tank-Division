@@ -50,8 +50,8 @@ namespace Michsky.UI.Heat
         public Sprite gameLogo;
 
         // Splash Screen
-        public bool enableSplashScreen = true;
-        public bool showSplashScreenOnce = true;
+        public bool enableSplashScreen = false;
+        public bool showSplashScreenOnce = false;
         public PressAnyKeyTextType pakType;
         public string pakText = "Press {Any Key} To Start";
         public string pakLocalizationText = "PAK_Part1 {PAK_Key} PAK_Part2";

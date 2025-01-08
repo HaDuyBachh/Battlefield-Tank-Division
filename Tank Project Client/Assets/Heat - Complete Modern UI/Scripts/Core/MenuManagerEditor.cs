@@ -41,6 +41,8 @@ namespace Michsky.UI.Heat
                 mmTarget.UIManagerAsset.enableSplashScreen = GUILayout.Toggle(mmTarget.UIManagerAsset.enableSplashScreen, new GUIContent(""), customSkin.FindStyle("Toggle Helper"));
                 GUILayout.EndHorizontal();
 
+               
+
                 if (mmTarget.splashScreen != null)
                 {
                     GUILayout.BeginHorizontal();
@@ -64,6 +66,11 @@ namespace Michsky.UI.Heat
                     GUILayout.EndHorizontal();
                 }
             }
+            else
+            {
+                mmTarget.UIManagerAsset.enableSplashScreen = false;
+            } 
+                
 
             serializedObject.ApplyModifiedProperties();
         }

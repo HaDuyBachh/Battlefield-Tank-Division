@@ -124,7 +124,7 @@ public class SystemValue : MonoBehaviour
 
     private void HandleGetRoomList(byte[] data)
     {
-        //Debug.Log("Đã nhận được: " + data.Length + "dữ liệu");
+        Debug.Log("Đã nhận được: " + data.Length + "dữ liệu");
 
         if (data.Length % 16 != 0)
         {
@@ -135,7 +135,7 @@ public class SystemValue : MonoBehaviour
         var rooms = new List<Room>();
         var temp = new byte[4];
         int st = 0;
-        while (st + 4 < data.Length)
+        while (st < data.Length)
         {
             Room r = new();
             Array.Copy(data, st, temp, 0, 4);
@@ -152,6 +152,8 @@ public class SystemValue : MonoBehaviour
             st += 4;
             Array.Copy(data, st, temp, 0, 4);
             r.time = Decode4BytesToInt(temp);
+
+            st += 4;
 
             rooms.Add(r);
         }

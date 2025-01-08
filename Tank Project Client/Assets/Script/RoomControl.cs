@@ -75,6 +75,7 @@ public class RoomControl : MonoBehaviour
         currentRoomCode = 0;
         getPlayerInRoom = false;
         openPlayerInRoomPanel = false;
+        panel.OpenPanelByIndex(0);
         panelButton.SetActive(true);
     }
     public void Update()

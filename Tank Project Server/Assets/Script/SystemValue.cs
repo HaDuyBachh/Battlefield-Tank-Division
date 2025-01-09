@@ -58,6 +58,9 @@ public class SystemValue : MonoBehaviour
                 case (byte)Command.StartGame:
                     sendData.AddRange(HandleStartGame());
                     break;
+                case (byte)Command.GetAllPlayersList:
+                    sendData.AddRange(HandleGetAllPlayerList());
+                    break;
                 case (byte)Command.EndGame:
                     sendData.AddRange(HandleEndGame());
                     break;
@@ -68,6 +71,13 @@ public class SystemValue : MonoBehaviour
         }
 
         return sendData.ToArray();
+    }
+
+    private byte[] HandleGetAllPlayerList()
+    {
+        string player_name = "";
+        foreach (var name in clientId) player_name += name + ';';   
+        return Encode(StringToByte(player_name), (byte)Command.GetAllPlayersList, 0).ToArray();
     }
 
     /// <returns>

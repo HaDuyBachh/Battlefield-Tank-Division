@@ -33,6 +33,7 @@ public static class GeneralSystem
         GetFriendList,
         GetAllPlayersList,
         GetHistoryList,
+        StartGame,
         END_OF_UI_NOT_USE,
 
         /// Game Play Data
@@ -42,7 +43,6 @@ public static class GeneralSystem
         Fire,
         ChangeFire,
         Damage,
-        StartGame,
         EndGame
     }
 

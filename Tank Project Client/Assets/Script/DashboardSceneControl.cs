@@ -10,6 +10,7 @@ public class DashboardSceneControl : MonoBehaviour
     public UDPSender udp;
     public RoomControl roomControl;
     public RoomListControl roomListControl;
+    public FriendControl friendControl;
     public PanelManager panelManager;
     public int changePanel = -1;
     public int roomcode = 0;
@@ -20,8 +21,18 @@ public class DashboardSceneControl : MonoBehaviour
         udp = FindAnyObjectByType<UDPSender>();
         roomControl = GetComponent<RoomControl>();
         roomListControl = GetComponent<RoomListControl>();
+        friendControl = GetComponent<FriendControl>();
         sys.dashboard = this;
     }
+
+    public void SendStartGameRequest()
+    {
+        Debug.Log("Đang gửi dữ liệu đi");
+        List<byte> sendData = new();
+        sendData.Add(CheckByte);
+        sendData.AddRange(Encode(new byte[0], (byte)Command.StartGame, (byte)sys.mainClientID));
+        udp.SendData(sendData.ToArray());
+    }    
     public void SendCreateRoomRequest(int mode, int num, int time)
     {
         List<byte> data = new();
@@ -41,7 +52,15 @@ public class DashboardSceneControl : MonoBehaviour
         sendData.Add(CheckByte);
         sendData.AddRange(Encode(EncodeIntTo4Bytes(code), (byte)Command.GetPlayerInRoom, (byte)sys.mainClientID));
         udp.SendData(sendData.ToArray());
-    }    
+    }
+
+    public void SendGetAllPlayersList()
+    {
+        List<byte> sendData = new();
+        sendData.Add(CheckByte);
+        sendData.AddRange(Encode(new byte[0], (byte)Command.GetAllPlayersList, (byte)sys.mainClientID));
+        udp.SendData(sendData.ToArray());
+    }
 
     public void SendJoinRoom(int code)
     {
@@ -63,6 +82,7 @@ public class DashboardSceneControl : MonoBehaviour
     {
         if (id == 1) roomControl.NewRoom(); else roomControl.LeaveRoom();
         if (id == 2) roomListControl.ClickListRoom(); else roomListControl.LeaveListRoom();
+        if (id == 4) friendControl.ClickFriendPanel(); else friendControl.LeaveFriendPanel();
     }
 
     public void Update()

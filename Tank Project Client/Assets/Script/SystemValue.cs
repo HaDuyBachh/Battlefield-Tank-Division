@@ -101,10 +101,25 @@ public class SystemValue : MonoBehaviour
                 case Command.JoinRoom:
                     HandleJoinRoom(data);
                     break;
+                case Command.GetAllPlayersList:
+                    HandleGetAllPlayerList(data);
+                    break;
                 default:
                     break;
             }
         }
+    }
+
+    private void HandleGetAllPlayerList(byte[] data)
+    {
+        var playerString = Encoding.UTF8.GetString(data);
+        string[] playerNames = playerString.Split(';', StringSplitOptions.RemoveEmptyEntries);
+        foreach (var n in playerNames)
+        {
+            Debug.Log("Ten nguoi chơi la: " + n);
+        }
+
+        dashboard.friendControl.SetNameList(playerNames);
     }
 
     private void HandleJoinRoom(byte[] data)

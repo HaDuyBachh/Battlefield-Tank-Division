@@ -43,7 +43,7 @@ public class RoomControl : MonoBehaviour
     }
     public void ClickNumberOfPlayer(int num)
     {
-        _num = num;
+        _num = (num + 1)*2;
     }
     public void ClickMatchTime(int time)
     {

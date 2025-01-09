@@ -55,7 +55,7 @@ public class RoomListControl : MonoBehaviour
                 {
                     if (i < rooms.Length)
                     {
-                        roomObjs[i].setDescription("Mode: " + rooms[i].mode + "\n" + "Code: " + rooms[i].code + "\n" + "Players: " + rooms[i].number + "\n" + "Time: " + rooms[i].time);
+                        roomObjs[i].setDescription("Mode: " + (rooms[i].mode == 0 ? "Free" : "Conquest") + "\n" + "Code: " + rooms[i].code + "\n" + "Players: " + rooms[i].number + "\n" + "Time: " + rooms[i].time);
                         roomObjs[i].gameObject.SetActive(true);
                         roomObjs[i].code = rooms[i].code;
                     }    
